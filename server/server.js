@@ -4,58 +4,57 @@ const con = require('./database');
 const cors = require('cors')
 const bcrypt = require('bcrypt');
 const session = require('express-session')
-    // use cors midlware to allow server request from other origin
+const MySQLStore = require('express-mysql-session')(session);
+
+// use cors midlware to allow server request from other origin
 app.use(cors({
-    origin: ['http://localhost:5173'],
-    methods: ["GET", "POST"],
-    credentials: true
-}))
-app.use(session({
-        secret: "mySceret",
-        resave: false,
-        saveUninitialized: true,
-        cookie: { maxAge: 1000 * 60 * 60 * 24 },
+        origin: ['http://localhost:5173'],
+        methods: ["GET", "POST"],
+        credentials: true
     }))
-    // use urlencoded midlware to get data from the body of the page 
+    // creating a  session 
+const sessionStore = new MySQLStore({
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'user_sessions',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data'
+        }
+    },
+}, con)
+app.use(session({
+    key: "pms",
+    secret: "mySceret",
+    resave: false,
+    saveUninitialized: true,
+    store: sessionStore,
+    cookie: {
+        maxAge: 86000000
+    }
+
+}))
+
+
+// use urlencoded midlware to get data from the body of the page 
 app.use(express.urlencoded({ extended: false }));
 // use json midlware is used to change josn data from api to object 
 app.use(express.json());
-app.post('/registor', async(req, res) => {
-    const { Email, password } = req.body;
-    console.log(req.body)
-        // hash password 
-    try {
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const sql = `INSERT INTO user (Email , password) VALUES ('${Email}','${hashedPassword}') `
-        con.query(sql, (err) => {
-            if (err) throw err;
-        })
-    } catch {
-        console.log(err)
-    }
-})
-app.post("/muker", (req, res) => {
-    console.log(req.sessionID);
-    const { username, password } = req.body;
-    if (username && password) {
-        console.log(username, password)
-    }
-})
 app.post('/login', (req, res) => {
-    console.log(req.body)
     const { Email, password } = req.body;
     const sql = `SELECT * FROM USER WHERE Email = '${Email}' `;
     con.query(sql, (err, data) => {
         if (err) throw err;
-        if (data.length > 0) {
-            const check = bcrypt.compare(password, data[0].password, (error, result) => {
-                if (error) throw err;
+        if (data) {
+            bcrypt.compare(password, data[0].password, (error, result) => {
                 if (result) {
+                    req.session.user = data;
+                    res.send(req.session.user);
                     console.log("your password is succsseful")
-                    res.status(200).send(data);
                 } else {
-                    console.log(" wrong password and email combnation");
                     res.send({ message: " i am sorry man" })
+                    console.log(" wrong password and email combnation");
                 }
             })
         } else {

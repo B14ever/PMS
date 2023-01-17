@@ -1,26 +1,27 @@
-import React from 'react';
-import i18n from 'i18next';
-import {useTranslation,Trans} from 'react-i18next';
+import React,{useState,useContext} from 'react';
+import Context from '../Context/Contexts';
 import {useNavigate} from 'react-router-dom'
-import { useState,useEffect } from 'react';
 import axios from 'axios'
+axios.defaults.withCredentials = true;
 import '../index.css'
-axios.defaults.withCredentials=true;
+import { useEffect } from 'react';
 const Login = ()=>{
-  const {t} = useTranslation()
-  const [Email,setEmail] = useState('');
-  const [password,setPassword]= useState('');
-  const navigate = useNavigate();
-  const login = async (e)=>{
+   const getContext = useContext(Context);
+   const {setAuthentication,t,i18n} = getContext;
+   const [Email,setEmail] = useState('');
+   const [password,setPassword]= useState('');
+   const navigate = useNavigate();
+   const login = async (e)=>{
     e.preventDefault()
     try{
-      const result= await axios.post('http://localhost:5000/login',{Email:Email,password:password});
-      console.log(result.data)
-      if(result.data){ navigate('home')}
-     
+      const responce= await axios.post('http://localhost:5000/login',{Email:Email,password:password});
+       setAuthentication(true)
+        setEmail('');
+        setPassword('');
+        navigate('/home');
     }
-     catch{
-      console.log("error")
+     catch (err){
+          throw err;
      }
     }
   return <>

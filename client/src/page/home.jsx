@@ -1,15 +1,16 @@
-import React ,{useContext} from 'react';
-import i18n from "i18next"
-import {useTranslation } from 'react-i18next';
+import React ,{useContext,useEffect} from 'react';
 import SideBar from '../Componet/sidebar';
 import Navbar from '../Componet/navbar';
-import Context from '../Context/ContextApi';
-import useToogleHook from '../Hook/useToogleHook';
+import Context from '../Context/Contexts';
 export const Home = ()=>{
-    const {t} = useTranslation();
-    const [toggle,setToggle,langBtn,setLangBtn,dropdawn,dropRef,handleDropDawn] = useToogleHook()
-    return<> 
-    <Context.Provider value={{toggle,setToggle,langBtn,setLangBtn,dropdawn,handleDropDawn,dropRef,t}}>  
+    const getContext = useContext(Context);
+    const {t,setAuthentication} = getContext;
+    useEffect(()=>{
+        const auth=  window.localStorage.getItem('authentication');
+          console.log(JSON.parse(auth))
+          setAuthentication(JSON.parse(auth))
+       },[])
+    return<>  
     <Navbar/>
     <div className="countainer">
        <SideBar/>
@@ -17,6 +18,5 @@ export const Home = ()=>{
             <h1>{t("Home")}</h1>
         </main>
     </div>
-   </Context.Provider>
     </> 
 }

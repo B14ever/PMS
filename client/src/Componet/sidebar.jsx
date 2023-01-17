@@ -2,7 +2,7 @@ import React ,{useContext} from 'react';
 import {NavLink} from 'react-router-dom'
 import { MiddleSideBarList,BottomSideBarList } from '../Data/list';
 import photo from '../image/images.jpg'
-import Context from '../Context/ContextApi';
+import Context from '../Context/Contexts';
 
 import List from './list';
 const SideBar = ()=>{

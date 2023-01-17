@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import Context from '../Context/ContextApi';
+import Context from '../Context/Contexts';
 const Navbar = () => {
     const StateContext = useContext(Context);
-    const {toggle, setToggle,langBtn, setLangBtn} = StateContext;
+    const {toggle, setToggle,langBtn, setLangBtn,i18n} = StateContext;
     return <>
      <header className="header">
     <button className="menu-icon-btn" onClick={()=>toggle?setToggle(false):setToggle(true)}>
