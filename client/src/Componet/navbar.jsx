@@ -13,7 +13,6 @@ const Navbar = () => {
     <div className="dropdawn-menu">
        <button className='lang' onClick={()=>i18n.changeLanguage("am")}>አማረኛ</button>
        <button className='lang' onClick={()=>i18n.changeLanguage("en")}>ENG</button>
-       <button className='lang'>ORM</button>
     </div>
    </div>
     </header>

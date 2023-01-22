@@ -1,13 +1,13 @@
 import React,{useState,useContext} from 'react';
 import Context from '../Context/Contexts';
 import {useNavigate} from 'react-router-dom'
+import photo from '../image/images.jpg'
 import axios from 'axios'
 axios.defaults.withCredentials = true;
 import '../index.css'
-import { useEffect } from 'react';
 const Login = ()=>{
    const getContext = useContext(Context);
-   const {setAuthentication,t,i18n} = getContext;
+   const {t,i18n} = getContext;
    const [Email,setEmail] = useState('');
    const [password,setPassword]= useState('');
    const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Login = ()=>{
     e.preventDefault()
     try{
       const responce= await axios.post('http://localhost:5000/login',{Email:Email,password:password});
-       setAuthentication(true)
+        sessionStorage.setItem("autenthicate",JSON.stringify(responce.data[0].Email));
         setEmail('');
         setPassword('');
         navigate('/home');
@@ -25,32 +25,55 @@ const Login = ()=>{
      }
     }
   return <>
-  <div className="logInpage">
-       <section className='side'>
-        <img src="image\img.svg" alt="" />
-       </section>
-      <section className='main'>
-        <div className="login-countainer">
-        <p className='title'>PMS</p>
-            <div className='separator'></div>
-            <p className='welcome-message'>{t("loginText")}</p>
-          <form action="" className='login-form' onSubmit={login}>
-            <div className="form-control">
-            <input type="email" placeholder='User Name'  onChange={e=>{setEmail(e.target.value)}} />
-            </div>
-            <div className="form-control">
-              <input type="password" placeholder='Password' onChange={e=>setPassword(e.target.value)}/>
-            </div>
-            <div className="language">
-              <p >Language</p>
-              <button onClick={()=>i18n.changeLanguage("am")}>አማረኛ</button>
-               <button onClick={()=>i18n.changeLanguage("en")}>English</button>
-            </div>
-           <button  type='submit' className='submit' >{t("buttonText")}</button>
+  <div className="login-container">
+        <div className="form">
+            <form className="form__content" action="#!" onSubmit={login}>
+                <div className="form__content__header">
+                    <div className="logo">
+                    <img src={photo} alt="Channal logo"/>
+                    </div>
+                    <div className="heading">
+                        <h1 className="form__content__heading">{t("Software")}</h1>
+                    </div>
+                </div>
+                <div className="form__field">
+                    <label className="form__label" >User Name</label>
+                    <input className="form__input" type="email" name="email" id="email" onChange={e=>{setEmail(e.target.value)}}/>
+                </div>
+                <div className="form__field">
+                    <label className="form__label" >Password</label>
+                    <input className="form__input" type="password" name="pwd" id="pwd" onChange={e=>setPassword(e.target.value)}/>
+                </div>
+                <div className="form__field form__submit">
+                    <button type='submit' className='btn'>{t("buttonText")}</button>
+                </div>
             </form>
+            <div className="select-lang">
+                <select onChange={(e)=>i18n.changeLanguage(e.target.value)}>
+                     <option defaultValue >{t("LNG")}</option>
+                    <option value="am">አማረኛ</option>
+                    <option value="en">Engilsh</option>
+                    </select>
+                    <a href="#!">Forgot password?</a>
+                </div>
         </div>
-      </section>
-      </div>
+        <div className="cta">
+            <div className="cta__content">
+                <div className="box">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
   </>
   
 }

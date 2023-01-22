@@ -8,7 +8,7 @@ export const TranslationEn = {
     Company:"Dire Dawa Adminstration",
     Software:"Property managment System",
     Home:"Home",
-    LNG:"LNG",
+    LNG:"English",
     Stock:"Stock",
     Information:"Information",
     Employee:"Employee",
