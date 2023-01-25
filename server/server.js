@@ -45,20 +45,20 @@ app.post('/login', (req, res) => {
     const { Email, password } = req.body;
     const sql = `SELECT * FROM USER WHERE Email = '${Email}' `;
     con.query(sql, (err, data) => {
-        if (err) throw err;
-        if (data) {
+        if (data.length == 0) {
+            console.log("user doesnt exist ")
+            res.send({ userERR: "user doesnt exsit" })
+        } else {
             bcrypt.compare(password, data[0].password, (error, result) => {
                 if (result) {
                     req.session.user = data;
-                    res.send(req.session.user);
                     console.log("your password is succsseful")
+                    res.send(req.session.user);
                 } else {
-                    res.send({ message: " i am sorry man" })
+                    res.send({ passERR: "wrong password" });
                     console.log(" wrong password and email combnation");
                 }
             })
-        } else {
-            console.log("user doesnt exist ")
         }
     })
 })

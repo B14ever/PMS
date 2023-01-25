@@ -17,13 +17,10 @@ body {
     padding: 0;
 }
 
-.blogin-container {
+.login-container {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
     line-height: 1.4;
-    background-color: #fafafa;
     letter-spacing: 0.012em;
 }
 
@@ -31,7 +28,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #fff;
     margin: calc(var(--space)*2) calc(var(--space)*2) 0;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.03), 0 1rem 2rem rgba(0, 0, 0, 0.05), 0 2rem 4rem rgba(0, 0, 0, 0.05), 0 4rem 8rem rgba(0, 0, 0, 0.05);
@@ -39,7 +35,11 @@ body {
 
 .form__content {
     width: 100%;
-    padding: calc(var(--space)*2);
+    padding: calc(var(--space)*2) calc(var(--space)*2) 0;
+}
+
+.form__field input:invalid span {
+    display: block;
 }
 
 .form__content__header {
@@ -63,7 +63,16 @@ body {
 }
 
 .form__field {
-    margin-bottom: calc(var(--space)*2);
+    margin-top: calc(var(--space)*2);
+}
+
+.form__field span {
+    color: #ff0000;
+}
+
+.recover {
+    margin-top: .5rem;
+    text-align: right;
 }
 
 .form__label {
@@ -85,12 +94,15 @@ body {
 }
 
 .form__submit {
-    text-align: center;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
     display: block;
-    width: 100%;
+    width: 80%;
     font-family: inherit;
     background: var(--blue-low);
     color: #fff;
@@ -108,10 +120,6 @@ body {
     background-color: var(--blue-high);
 }
 
-.form__submit a {
-    font-size: 1rem;
-}
-
 a {
     text-decoration: none;
     color: var(--blue-dark);
@@ -119,23 +127,18 @@ a {
 
 .select-lang {
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 8rem;
-    position: relative;
+    margin: .5rem 0 1rem;
 }
 
 select {
-    background-color: var(--blue-low);
-    flex: .5;
+    background-color: #e9e9e9;
     outline: 0;
-    border: 0;
+    border: 0 solid #fff;
     padding: .5rem;
-    color: #fff;
+    color: var(--blue-dark);
     cursor: pointer;
     border-radius: 4px;
-    position: relative;
+    margin-left: 1rem;
 }
 
 option {
@@ -168,7 +171,7 @@ option {
         all: unset;
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background: linear-gradient(to right, #0575e6, #021b79);
     }
     .box div {
@@ -244,6 +247,6 @@ option {
 @media (min-width: 72rem) {
     .form__content {
         width: calc(var(--space)*32);
-        padding: calc(var(--space)*4);
+        padding: calc(var(--space)*4) calc(var(--space)*4) 0;
     }
 }
