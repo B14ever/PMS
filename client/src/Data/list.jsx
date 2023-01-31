@@ -1,44 +1,52 @@
 import {AiOutlineStock} from "react-icons/ai";
-import * as biIcon from "react-icons/bi";
 import * as RiIcons from 'react-icons/ri';
+import * as IconName  from "react-icons/fa";
+import { GrCubes} from "react-icons/gr";
+import  {IoEllipsisVerticalSharp,IoEnterOutline} from "react-icons/io5";
 export const MiddleSideBarList = [
     {
         id:1,
         name:"Stock",
-        svg: <AiOutlineStock className="sidebar-icon"/>, 
-        iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,
+        svg: <IconName.FaCubes className="sidebar-icon"/>,
         submenu:[
             {
                 id:1,
                 name:"Information",
-                svg: <AiOutlineStock className="sidebar-icon"/>,
+                svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
                 iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,
                 classfication:[
                     {
                         id:1,
-                        name:"Employee",
-                        Title:"(supplier | deliverer)",
-                        path:"/employe",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        name:"OrganizationIstitution",
+                        path:"PropertyInformationRegistration",
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
                         id:2,
-                        name:"Property",
-                        path:"PropertyInformationRegistration",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        name:"Employee",
+                        Title:"(supplier | deliverer)",
+                        path:"/employe",
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
+                  
                     {
                         id:3,
                         name:"PropertyI",
                         path:"PropertyRegistration",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
+                    },
+                    {
+                        id:4,
+                        name:"Propertyclassification",
+                        path:"PropertyRegistration",
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                 ],
             },
             {
                 id:2,
                 name:"Income",
-                svg: <AiOutlineStock className="sidebar-icon"/>,
+                svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
                 iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,
                 classfication:[
                     {
@@ -46,35 +54,35 @@ export const MiddleSideBarList = [
                         name:"Fixed",
                         Title:"Model 19ሀ",
                         path:"Immovableproperty",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
                         id:2,
                         name:"PropertyII",
                         Title:"Model 19ለ",
                         path:"PropertyInformationRegistration",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
                     },
                     {
                         id:3,
                         name:"propertyIII",
                         Title:"Model 19ሐ",
                         path:"PropertyRegistration",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
                         id:4,
                         name:"Adjustment",
                         Title:"Model 19መ",
                         path:"Adjustment",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
                     },
                 ],  
             },
             {
                 id:3,
                 name:"Cost",
-                svg: <AiOutlineStock className="sidebar-icon"/>,
+                svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
                 iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,   
                 classfication:[
                     {
@@ -82,28 +90,29 @@ export const MiddleSideBarList = [
                         name:"Fixed",
                         Title:"Model 19ሀ",
                         path:"CostImmovableproperty",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
                     },
                     {
                         id:2,
                         name:"PropertyII",
                         Title:"Model 19ለ",
                         path:"CostPropertyInformationRegistration",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
                     },
                     {
                         id:3,
                         name:"propertyIII",
                         Title:"Model 19ሐ",
                         path:"CostPropertyRegistration",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>,  
                     },
                     {
                         id:4,
                         name:"Adjustment",
                         Title:"Model 19መ",
                         path:"CostAdjustment",
-                        svg: <AiOutlineStock className="sidebar-icon"/>,  
+                        svg: <IoEnterOutline className="sidebar-icon"/>,  
                     },
                 ],  
             },
@@ -112,26 +121,97 @@ export const MiddleSideBarList = [
     {
         id:2,
         name:"Fixed",
-        svg: <AiOutlineStock className="sidebar-icon"/>,
-        iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,  
+        svg: <IconName.FaCoins className="sidebar-icon"/>, 
         submenu:[
             {
                 id:1,
-                name:"Income",
+                name:"InformationRegister",
                 path:"Fixedincome",
-                svg: <AiOutlineStock className="sidebar-icon"/>,  
+                svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
+                iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,   
+                classfication:[
+                    {
+                        id:1,
+                        name:"CategorySource",
+                        Title:"Model 19ሀ",
+                        path:"CostImmovableproperty",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
+                    },
+                    {
+                        id:2,
+                        name:"IdentificationNumber",
+                        Title:"Model 19ለ",
+                        path:"CostPropertyInformationRegistration",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                    },
+                ],  
+                  
             },
             {
                 id:2,
-                name:"Cost",
+                name:"PropertyInventory",
                 path:"Fixedcost",
-                svg: <AiOutlineStock className="sidebar-icon"/>,  
+                svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
+                iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />, 
+                classfication:[
+                    {
+                        id:1,
+                        name:"InventoryFixedAssets",
+                        Title:"Model 19ሀ",
+                        path:"CostImmovableproperty",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
+                    }]  
             },
             {
                 id:3,
                 name:"propertyIII",
                 path:"Fixedused",
-                svg: <AiOutlineStock className="sidebar-icon"/>,  
+                svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
+                iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />, 
+                classfication:[
+                    {
+                        id:1,
+                        name:"FAOU",
+                        Title:"Model 19ሀ",
+                        path:"CostImmovableproperty",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
+                    },
+                    {
+                        id:2,
+                        name:"FAOUIC",
+                        Title:"Model 19ሀ",
+                        path:"CostImmovableproperty",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
+                    },
+                    {
+                        id:3,
+                        name:"FAOUC",
+                        Title:"Model 19ሀ",
+                        path:"CostImmovableproperty",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
+                    },
+                    {
+                        id:4,
+                        name:"FAOUS",
+                        Title:"Model 19ሀ",
+                        path:"CostImmovableproperty",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
+                    },
+                    {
+                        id:5,
+                        name:"FAOUM",
+                        Title:"Model 19ሀ",
+                        path:"CostImmovableproperty",
+                        svg: <IoEnterOutline className="sidebar-icon"/>, 
+                        
+                    },
+                ]  
             },
         ],
     },

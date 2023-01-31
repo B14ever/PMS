@@ -174,7 +174,7 @@ option {
         height: 100%;
         background: linear-gradient(to right, #0575e6, #021b79);
     }
-    .box div {
+    .boxs div {
         position: absolute;
         left: 5%;
         top: 92%;
@@ -186,47 +186,47 @@ option {
         opacity: 0.2;
         border-radius: 10%;
     }
-    .box div:nth-child(1) {
+    .boxs div:nth-child(1) {
         left: 12%;
         top: 92%;
         animation: animate 17s linear infinite;
     }
-    .box div:nth-child(2) {
+    .boxs div:nth-child(2) {
         left: 20%;
         top: 92%;
         animation: animate 15s linear infinite;
     }
-    .box div:nth-child(3) {
+    .boxs div:nth-child(3) {
         left: 30%;
         top: 92%;
         animation: animate 13s linear infinite;
     }
-    .box div:nth-child(4) {
+    .boxs div:nth-child(4) {
         left: 40%;
         top: 92%;
         animation: animate 17s linear infinite;
     }
-    .box div:nth-child(5) {
+    .boxs div:nth-child(5) {
         left: 50%;
         top: 92%;
         animation: animate 20s linear infinite;
     }
-    .box div:nth-child(6) {
+    .boxs div:nth-child(6) {
         left: 60%;
         top: 92%;
         animation: animate 23s linear infinite;
     }
-    .box div:nth-child(7) {
+    .boxs div:nth-child(7) {
         left: 70%;
         top: 92%;
         animation: animate 26s linear infinite;
     }
-    .box div:nth-child(8) {
+    .boxs div:nth-child(8) {
         left: 80%;
         top: 92%;
         animation: animate 29s linear infinite;
     }
-    .box div:nth-child(9) {
+    .boxs div:nth-child(9) {
         left: 90%;
         top: 92%;
         animation: animate 31s linear infinite;

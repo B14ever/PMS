@@ -11,7 +11,12 @@ export const  ContextProvider =({ children })=> {
     {
      setDropDawn(!dropdawn)
     }
-    return <Context.Provider value={{toggle,setToggle,langBtn,setLangBtn,dropdawn,handleDropDawn,t,i18n}}>
+    const [Sdropdawn,setSDropDawn] = useState(false);
+    const ShandleDropDawn=()=>
+    {
+     setSDropDawn(!dropdawn)
+    }
+    return <Context.Provider value={{toggle,setToggle,langBtn,setLangBtn,dropdawn,handleDropDawn,Sdropdawn,ShandleDropDawn,t,i18n}}>
            {children}
    </Context.Provider>
 }

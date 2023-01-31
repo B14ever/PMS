@@ -7,12 +7,12 @@ import Dropdawn from './Dropdawn';
 const List = ({item})=>{
     const {t} = useTranslation();
     const StateContext = useContext(Context);
-    const {dropdawn,handleDropDawn,dropRef} = StateContext;
-    const {id,name,svg,iconClosed,submenu} = item;
+    const {handleDropDawn,dropRef} = StateContext;
+    const {id,name,svg,submenu} = item;
      return <li id ={id} ref={dropRef} onClick={handleDropDawn} 
-     className={`sidebar-list-item ${dropdawn?"show":null}`}>
+     className="sidebar-list-item">
               { submenu ?(<><NavLink  role="button"className="sidebar-link ">
-                 {svg}<div className="hidden-sidebar ">{t(`${name}`)}</div>{iconClosed}
+                 {svg}<div className="hidden-sidebar ">{t(`${name}`)}</div>
                 </NavLink><Dropdawn sublist={submenu}/></>):<NavLink className="sidebar-link ">
                  {svg}<div className="hidden-sidebar ">{t(`${name}`)}</div> </NavLink>}  
        </li>

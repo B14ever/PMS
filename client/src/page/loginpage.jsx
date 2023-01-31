@@ -81,7 +81,7 @@ const Login = ()=>{
         </div>
         <div className="cta">
             <div className="cta__content">
-                <div className="box">
+                <div className="boxs">
                     <div></div>
                     <div></div>
                     <div></div>
