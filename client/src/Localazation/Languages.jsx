@@ -35,7 +35,21 @@ export const TranslationEn = {
     Propertyclassification:"Property measurement",
     Costcenters:"Cost Center",
     vechiles:"Vechiles",
-    Details:"Detail"
+    NewVechiles:"New Vechiles",
+    Vehiclelist:"Vechiles List",
+    Report:"Report",
+    Details:"Detail",
+    Logout:"Logout",
+    EmployeeList:"Employee Information List",
+    NewEmployee:" Add New Employee ",
+    Order:"Order",
+    EmployeePhoto:"Employee Picture",
+    ID:"Id Number",
+    FullName:"FullName",
+    Gender:"Gender",
+    WorkClass:"Work Class",
+    WorkRoom:"Work Room",
+    Action:"ተግባራት"
     };
     export const TranslationAm = {
         loginText:"እባኮትን ለመቀጠል እና ሁሉንም አገልግሎቶቻችንን ለማግኘት ኢሜል እና የዪለፍ ቃል ያስገቡ",
@@ -74,6 +88,20 @@ export const TranslationEn = {
         Propertyclassification:"ንብረት መድብና መለኪያ",
         Costcenters:"ወጪ ማእከላት",
         vechiles:"ተሽከርካሪ",
-        Details:"ዝርዝር"
+        NewVechiles:"አዲስ ተሽከርካሪ",
+        Vehiclelist:"ተሽክርካሪ ዝርዝር",
+        Report:"ሪፖርት",
+        Details:"ዝርዝር",
+        Logout:"ውጣ",
+        EmployeeList:"የሰራተኛ መርጃ መዝገቦች ዝርዝር",
+        NewEmployee:" አዲስ ሰራተኛ መዝግብ",
+        Order:"ተራ",
+        EmployeePhoto:"ሰራተኛ ፎቶ",
+        ID:"የመታወቂያ ቁጥር",
+        FullName:"ሙሉ ስም",
+        Gender:"ጾታ",
+        WorkClass:"የስራ መደብ",
+        WorkRoom:"የስራ ክፍል",
+        Action:"ተግባራት"
          };
     

@@ -9,8 +9,8 @@ function Box() {
   const [employe,setEmployee] = useState();
   const [department,setDepartment]= useState();
   useEffect(()=>{
-       const GetEmploye = async ()=>{
-          const responce = await axios.get("http://localhost:5000/getEmploye")
+       const GetTotalEmploye = async ()=>{
+          const responce = await axios.get("http://localhost:5000/getTotalEmploye")
           setEmployee(responce.data[0].Employee);
        }
        const GetDepartment = async ()=>{
@@ -18,7 +18,7 @@ function Box() {
         setDepartment(responce.data[0].Department)
        }
        GetDepartment()
-       GetEmploye()
+       GetTotalEmploye()
        .catch(console.error);
   },[])
   return (

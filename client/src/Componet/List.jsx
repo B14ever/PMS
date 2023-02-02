@@ -12,7 +12,8 @@ const List = ({item})=>{
      return <li id ={id} ref={dropRef} onClick={handleDropDawn} 
      className="sidebar-list-item">
               { submenu ?(<><NavLink  role="button"className="sidebar-link ">
-                 {svg}<div className="hidden-sidebar ">{t(`${name}`)}</div>
+                <div className="icon">{svg}<div className="name">{t(`${name}`)}</div></div>
+                <div className="hidden-sidebar ">{t(`${name}`)}</div>
                 </NavLink><Dropdawn sublist={submenu}/></>):<NavLink className="sidebar-link ">
                  {svg}<div className="hidden-sidebar ">{t(`${name}`)}</div> </NavLink>}  
        </li>

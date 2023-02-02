@@ -32,6 +32,7 @@ const Login = ()=>{
     else
       {
         sessionStorage.setItem("autenthicate",JSON.stringify(responce.data[0].Email));
+        sessionStorage.setItem("autherazetion",JSON.stringify(responce.data[0].Access_Level));
         setEmail('');
         setPassword('');
         navigate('/home');

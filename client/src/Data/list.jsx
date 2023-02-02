@@ -1,7 +1,6 @@
 import {AiOutlineStock} from "react-icons/ai";
 import * as RiIcons from 'react-icons/ri';
 import * as IconName  from "react-icons/fa";
-import { GrCubes} from "react-icons/gr";
 import  {IoEllipsisVerticalSharp,IoEnterOutline} from "react-icons/io5";
 export const MiddleSideBarList = [
     {
@@ -18,7 +17,7 @@ export const MiddleSideBarList = [
                     {
                         id:1,
                         name:"OrganizationIstitution",
-                        path:"PropertyInformationRegistration",
+                        path:"/OrganizationIstitution",
                         svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
@@ -32,13 +31,13 @@ export const MiddleSideBarList = [
                     {
                         id:3,
                         name:"PropertyI",
-                        path:"PropertyRegistration",
+                        path:"/PropertyI",
                         svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
                         id:4,
                         name:"Propertyclassification",
-                        path:"PropertyRegistration",
+                        path:"/Propertyclassification",
                         svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                 ],
@@ -53,28 +52,28 @@ export const MiddleSideBarList = [
                         id:1,
                         name:"Fixed",
                         Title:"Model 19ሀ",
-                        path:"Immovableproperty",
+                        path:"/FixedIncome",
                         svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
                         id:2,
                         name:"PropertyII",
                         Title:"Model 19ለ",
-                        path:"PropertyInformationRegistration",
+                        path:"/RareItemIncome",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                     },
                     {
                         id:3,
                         name:"propertyIII",
                         Title:"Model 19ሐ",
-                        path:"PropertyRegistration",
+                        path:"/UsedProrpertIncome",
                         svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
                         id:4,
                         name:"Adjustment",
                         Title:"Model 19መ",
-                        path:"Adjustment",
+                        path:"/IncomeAdjustment",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                     },
                 ],  
@@ -89,7 +88,7 @@ export const MiddleSideBarList = [
                         id:1,
                         name:"Fixed",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/FixedCost",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     },
@@ -97,21 +96,21 @@ export const MiddleSideBarList = [
                         id:2,
                         name:"PropertyII",
                         Title:"Model 19ለ",
-                        path:"CostPropertyInformationRegistration",
+                        path:"/RareItemCost",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                     },
                     {
                         id:3,
                         name:"propertyIII",
                         Title:"Model 19ሐ",
-                        path:"CostPropertyRegistration",
+                        path:"/UsedPropertyCost",
                         svg: <IoEnterOutline className="sidebar-icon"/>,  
                     },
                     {
                         id:4,
                         name:"Adjustment",
                         Title:"Model 19መ",
-                        path:"CostAdjustment",
+                        path:"/CostAdjustment",
                         svg: <IoEnterOutline className="sidebar-icon"/>,  
                     },
                 ],  
@@ -126,7 +125,6 @@ export const MiddleSideBarList = [
             {
                 id:1,
                 name:"InformationRegister",
-                path:"Fixedincome",
                 svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
                 iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,   
                 classfication:[
@@ -134,7 +132,7 @@ export const MiddleSideBarList = [
                         id:1,
                         name:"CategorySource",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/CategorySourceFunding",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     },
@@ -142,7 +140,7 @@ export const MiddleSideBarList = [
                         id:2,
                         name:"IdentificationNumber",
                         Title:"Model 19ለ",
-                        path:"CostPropertyInformationRegistration",
+                        path:"/IdentificationNumber",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                     },
                 ],  
@@ -151,7 +149,6 @@ export const MiddleSideBarList = [
             {
                 id:2,
                 name:"PropertyInventory",
-                path:"Fixedcost",
                 svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
                 iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />, 
                 classfication:[
@@ -159,15 +156,14 @@ export const MiddleSideBarList = [
                         id:1,
                         name:"InventoryFixedAssets",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/PropertyInventory",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     }]  
             },
             {
                 id:3,
-                name:"propertyIII",
-                path:"Fixedused",
+                name:"Report",
                 svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
                 iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />, 
                 classfication:[
@@ -175,7 +171,7 @@ export const MiddleSideBarList = [
                         id:1,
                         name:"FAOU",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/FixedAssetsOfUsers",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     },
@@ -183,7 +179,7 @@ export const MiddleSideBarList = [
                         id:2,
                         name:"FAOUIC",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/FixedAssetsOfUsersIAndC",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     },
@@ -191,7 +187,7 @@ export const MiddleSideBarList = [
                         id:3,
                         name:"FAOUC",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/InventoryUsersProperty",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     },
@@ -199,7 +195,7 @@ export const MiddleSideBarList = [
                         id:4,
                         name:"FAOUS",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/FixedAssetDiscountRate",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     },
@@ -207,7 +203,7 @@ export const MiddleSideBarList = [
                         id:5,
                         name:"FAOUM",
                         Title:"Model 19ሀ",
-                        path:"CostImmovableproperty",
+                        path:"/FixedAssetAccountReport",
                         svg: <IoEnterOutline className="sidebar-icon"/>, 
                         
                     },
@@ -215,6 +211,25 @@ export const MiddleSideBarList = [
             },
         ],
     },
+    {
+        id:3,
+        name:"vechiles",
+        svg: <IconName.FaTruckMonster className="sidebar-icon"/>, 
+        submenu:[
+            {
+                id:1,
+                name:"NewVechiles",
+                path:"/NewVechiles",
+                svg: <IoEnterOutline className="sidebar-icon"/>,
+            },
+            {
+                id:2,
+                name:"Vehiclelist",
+                path:"/Vehiclelist",
+                svg: <IoEnterOutline className="sidebar-icon"/>,
+            },
+        ]
+    }
   
 ];
 export const BottomSideBarList =[

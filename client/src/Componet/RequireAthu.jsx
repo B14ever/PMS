@@ -1,10 +1,11 @@
-import React, { useContext,useEffect} from "react";
+import React from "react";
 import { Navigate,Outlet } from "react-router-dom";
-import Context  from "../Context/Contexts";
-const RequireAuth =  ()=>{
+const RequireAuth = ({Autherazetion})=>{
+   
     return <>
        {
-       sessionStorage.getItem("autenthicate")?<Outlet/>:<Navigate to="/"/>
+       sessionStorage.getItem("autenthicate")?(Autherazetion.includes(JSON.parse(sessionStorage.getItem("autherazetion")))?
+       <Outlet/>:<Navigate to="/Forbiden"/>):<Navigate to="/"/>
        }
     </>
 }

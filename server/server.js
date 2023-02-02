@@ -62,7 +62,7 @@ app.post('/login', (req, res) => {
         }
     })
 })
-app.get('/getEmploye', (req, res) => {
+app.get('/getTotalEmploye', (req, res) => {
     const sql = `SELECT COUNT(*) AS Employee FROM employee `;
     con.query(sql, (err, data) => {
         res.send(data);
@@ -72,6 +72,12 @@ app.get('/getdepartment', (req, res) => {
     const sql = `SELECT COUNT(*) AS Department from departments`;
     con.query(sql, (err, data) => {
         res.send(data);
+    })
+})
+app.get('/getEmployes', async(req, res) => {
+    const sql = `SELECT * FROM employee ORDER BY ID`;
+    con.query(sql, (err, data) => {
+        res.send(data)
     })
 })
 app.listen(5000)
