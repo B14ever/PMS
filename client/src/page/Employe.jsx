@@ -5,30 +5,15 @@ import Context from '../Context/Contexts';
 import PageHeader from '../Componet/PageTitle';
 import RegistorButton from '../Componet/RegistorButton'
 import * as bootstrapIcon from "react-icons/bs";
-import axios from 'axios';
+import {useGetData} from '../Hook/GetData';
+import LoadMore from '../Componet/LoadMore';
+import Find from '../Componet/Find';
 const Employe = ()=>{
     const getContext = useContext(Context);
-    const [employe,setEmployee] = useState([])
-    const [load,setLoad] = useState(4);
-    const {t} = getContext;
+    const {t,load,find} = getContext;
+    const [employe] = useGetData(`http://localhost:5000/getEmployes?find=${find}`)
     const TableHeading = [t("Order"),t("EmployeePhoto"),t("ID"),t("FullName"),t("Gender"),
     t("WorkClass"),t("WorkRoom"),t("Action")];
-    useEffect(()=>{
-        const GetEmploye = async ()=>{
-            try{
-                const responce = await axios.get("http://localhost:5000/getEmployes")
-    
-                setEmployee(responce.data);
-            }
-            catch(err){
-                console.error(err)
-            }
-        }
-        GetEmploye()
-   },[])
-      const HandleChange = (e)=>{
-    setLoad(e.target.value)
-       }
     return<>   
     <Navbar/>
     <div className="countainer">
@@ -39,38 +24,34 @@ const Employe = ()=>{
             <RegistorButton Message= {[t("NewEmployee"),'/newEmployee']}/>
             </div>
             {employe.length === 0?<h1>Loading...</h1>:<>
-            <div className="loadMore">
-                 <select name="" id="" onChange={HandleChange}>
-                     <option value="10">5</option>
-                     <option value="15">10</option>
-                     <option value="20">15</option>
-                    <option value="25">20</option>
-                </select>           
-             </div>
+            <div className='Table-Componet '><LoadMore/> <Find/></div>
             <div className='Table'>
                <table>
                <thead>
                     <tr>{TableHeading.map((data,index)=><th key={index}>{data}</th>)}</tr>
               </thead>
               <tbody>
-                   {employe?.slice(0,load).map((data, index) => (
+                   {employe?.slice(0,load?load:5).map((data, index) => (
                         <tr key={index}>
-                         <td>{index+1}</td>
-                         <td>{employe[index].Photo}</td>
+                            <td>{index+1}</td>
+                         <td>{employe[index].Photo?<img src={`../image/${employe[index].Photo}`}/>:
+                         <bootstrapIcon.BsFillPersonFill className='Employee-Picture'/>}</td>
                          <td>{employe[index].ID_Number}</td>
                          <td>{employe[index].First_Name} {employe[index].Last_Name} </td>
                          <td>{employe[index].Sex}</td>
                          <td>{employe[index].Job_Title}</td>
                          <td>{employe[index].Department}</td>
-                         <td><button><bootstrapIcon.BsFillFileEarmarkCheckFill/></button>
+                         <td><div className="table-button">
+                            <button><bootstrapIcon.BsFillFileEarmarkCheckFill/></button>
                              <button><bootstrapIcon.BsFillFileEarmarkPersonFill/></button>
                              <button><bootstrapIcon.BsTrashFill/></button>
+                           </div>
                          </td>
                         </tr>
                          )) }                  
               </tbody>
            </table>
-         </div></>
+         </div> </>
 }
         </main>
     </div>

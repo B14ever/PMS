@@ -49,7 +49,9 @@ export const TranslationEn = {
     Gender:"Gender",
     WorkClass:"Work Class",
     WorkRoom:"Work Room",
-    Action:"ተግባራት"
+    Action:"ተግባራት",
+    Find:"Find",
+    FindPlaceHolder:"Employe Name",
     };
     export const TranslationAm = {
         loginText:"እባኮትን ለመቀጠል እና ሁሉንም አገልግሎቶቻችንን ለማግኘት ኢሜል እና የዪለፍ ቃል ያስገቡ",
@@ -102,6 +104,8 @@ export const TranslationEn = {
         Gender:"ጾታ",
         WorkClass:"የስራ መደብ",
         WorkRoom:"የስራ ክፍል",
-        Action:"ተግባራት"
+        Action:"ተግባራት",
+        Find:"ፈልግ",
+        FindPlaceHolder:"የሰራተኛ ስም",
          };
     

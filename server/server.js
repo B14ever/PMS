@@ -63,21 +63,29 @@ app.post('/login', (req, res) => {
     })
 })
 app.get('/getTotalEmploye', (req, res) => {
-    const sql = `SELECT COUNT(*) AS Employee FROM employee `;
+    const sql = `SELECT COUNT(*) AS Total FROM employee `;
     con.query(sql, (err, data) => {
         res.send(data);
     })
 })
 app.get('/getdepartment', (req, res) => {
-    const sql = `SELECT COUNT(*) AS Department from departments`;
+    const sql = `SELECT COUNT(*) AS Total from departments`;
     con.query(sql, (err, data) => {
         res.send(data);
     })
 })
 app.get('/getEmployes', async(req, res) => {
-    const sql = `SELECT * FROM employee ORDER BY ID`;
-    con.query(sql, (err, data) => {
-        res.send(data)
-    })
+    const { find } = req.query;
+    if (find) {
+        const sql = `SELECT * FROM employee WHERE First_Name LIKE '%${find}%' OR ID_Number LIKE '%${find}%' `;
+        con.query(sql, (err, data) => {
+            if (data.length > 0) res.send(data);
+        })
+    } else {
+        const sql = `SELECT * FROM employee`;
+        con.query(sql, (err, data) => {
+            res.send(data)
+        })
+    }
 })
 app.listen(5000)

@@ -2,25 +2,12 @@ import React, {useEffect,useState,useContext} from 'react'
 import * as IconName  from "react-icons/fa";
 import Context from '../Context/Contexts';
 import {NavLink} from 'react-router-dom'
-import axios from 'axios';
+import { useGetTotalData } from '../Hook/GetData';
 function Box() {
   const getContext = useContext(Context);
-    const {t} = getContext;
-  const [employe,setEmployee] = useState();
-  const [department,setDepartment]= useState();
-  useEffect(()=>{
-       const GetTotalEmploye = async ()=>{
-          const responce = await axios.get("http://localhost:5000/getTotalEmploye")
-          setEmployee(responce.data[0].Employee);
-       }
-       const GetDepartment = async ()=>{
-        const responce = await axios.get("http://localhost:5000/getdepartment")
-        setDepartment(responce.data[0].Department)
-       }
-       GetDepartment()
-       GetTotalEmploye()
-       .catch(console.error);
-  },[])
+   const {t} = getContext;
+  const [employe] = useGetTotalData("http://localhost:5000/getTotalEmploye");
+  const [department]= useGetTotalData("http://localhost:5000/getdepartment");
   return (
     <div className='box-countainer'>
          <div className="box">
