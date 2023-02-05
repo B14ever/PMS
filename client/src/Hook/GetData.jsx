@@ -38,4 +38,3 @@ export function useGetTotalData(url){
    return [data];
 }
 
-

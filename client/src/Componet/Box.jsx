@@ -7,7 +7,7 @@ function Box() {
   const getContext = useContext(Context);
    const {t} = getContext;
   const [employe] = useGetTotalData("http://localhost:5000/getTotalEmploye");
-  const [department]= useGetTotalData("http://localhost:5000/getdepartment");
+  const [department]= useGetTotalData("http://localhost:5000/getTotaldepartment");
   return (
     <div className='box-countainer'>
          <div className="box">

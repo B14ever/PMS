@@ -34,7 +34,7 @@ const Employe = ()=>{
                    {employe?.slice(0,load?load:5).map((data, index) => (
                         <tr key={index}>
                             <td>{index+1}</td>
-                         <td>{employe[index].Photo?<img src={`../image/${employe[index].Photo}`}/>:
+                         <td>{employe[index].Photo?<img className='Emplyee-Photo' src={`../image/${employe[index].Photo}`}/>:
                          <bootstrapIcon.BsFillPersonFill className='Employee-Picture'/>}</td>
                          <td>{employe[index].ID_Number}</td>
                          <td>{employe[index].First_Name} {employe[index].Last_Name} </td>

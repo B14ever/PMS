@@ -408,8 +408,8 @@
     }
     
     .content {
-        width: 100%;
         margin: 1rem;
+        width: 100%;
     }
     
     .content-countainer {
@@ -451,7 +451,7 @@
     th,
     td {
         text-align: left;
-        padding: 8px;
+        padding: 5px;
         border: 1px solid #000;
     }
     
@@ -530,7 +530,104 @@
     .Employee-Picture {
         fill: #3071E7;
         width: 4rem;
-        height: 4rem;
+        height: 3rem;
+    }
+    
+    .form-countainer {
+        border: 1px solid #e7e7e7;
+        margin: 1rem;
+    }
+    
+    .Form-Control {
+        margin: 1rem .5rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .Form-Control:nth-child(2),
+    .Form-Control:nth-child(3),
+    .Form-Control:nth-child(4) {
+        padding-top: .5rem;
+    }
+    
+    .Form-Control:last-child button {
+        width: 20%;
+    }
+    
+    .Form-Control:last-child fieldset {
+        margin-bottom: .5rem;
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .input-control {
+        margin-right: 1.5rem;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: .5rem;
+    }
+    
+    .input-control input,
+    .input-control select,
+    .input-control fieldset {
+        margin-left: 0;
+        background-image: none;
+        background-color: #fff;
+        padding: 9px 15px;
+        border: 1px solid #e7e7e7;
+        border-radius: 8px;
+        outline: none;
+        font-size: 1rem;
+    }
+    
+    .input-control input:focus,
+    .input-control select:focus {
+        box-shadow: inset 0 0 5px #C8E0EF;
+    }
+    
+    .input-control fieldset {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    fieldset label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+    }
+    
+    .Emplyee-Photo {
+        border-radius: 10%;
+        align-self: center;
+        width: 120px;
+        height: 70px;
+    }
+    
+    .submit-control {
+        margin-bottom: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+    
+    .submit-control button {
+        display: block;
+        color: #fff;
+        border: 0;
+        padding: 0.5rem;
+        cursor: pointer;
+        font-size: 1.15rem;
+        font-weight: 700;
+        border-radius: 10px;
     }
     
     @media (max-width: 768px) {
@@ -551,7 +648,24 @@
             left: 82px;
         }
         .box-countainer {
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
+        }
+        .Form-Control {
+            font-size: 25px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .input-control {
+            width: 90%;
+        }
+        .submit-control {
+            display: flex;
+            justify-content: center;
+        }
+        .input-control fieldset {
+            display: flex;
+            justify-content: center;
         }
     }

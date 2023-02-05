@@ -68,7 +68,7 @@ app.get('/getTotalEmploye', (req, res) => {
         res.send(data);
     })
 })
-app.get('/getdepartment', (req, res) => {
+app.get('/getTotaldepartment', (req, res) => {
     const sql = `SELECT COUNT(*) AS Total from departments`;
     con.query(sql, (err, data) => {
         res.send(data);
@@ -77,7 +77,7 @@ app.get('/getdepartment', (req, res) => {
 app.get('/getEmployes', async(req, res) => {
     const { find } = req.query;
     if (find) {
-        const sql = `SELECT * FROM employee WHERE First_Name LIKE '%${find}%' OR ID_Number LIKE '%${find}%' `;
+        const sql = `SELECT * FROM employee WHERE First_Name LIKE '%${find}%' OR ID_Number LIKE '%${find}%'git `;
         con.query(sql, (err, data) => {
             if (data.length > 0) res.send(data);
         })
@@ -87,5 +87,39 @@ app.get('/getEmployes', async(req, res) => {
             res.send(data)
         })
     }
+})
+app.get('/getdepartment', (req, res) => {
+    const sql = `SELECT Offices_Name  from departments`;
+    con.query(sql, (err, data) => {
+        res.send(data);
+    })
+})
+app.get('/getworkPlace', (req, res) => {
+    const sql = `SELECT Type_Name  from department_types`;
+    con.query(sql, (err, data) => {
+        res.send(data);
+    })
+})
+app.post('/postNewEmloyee', (req, res) => {
+    const {
+        FirstName,
+        MidleName,
+        LastName,
+        Gender,
+        PhoneNumber,
+        Mobile,
+        Email,
+        Address,
+        CostCenterName,
+        WorkPlaceName,
+        WorkPostionName,
+        Photo,
+    } = req.body;
+    console.log(req.body)
+    const sql = `INSERT INTO employee (First_Name,Middle_Name,Last_Name,Sex,Job_Title,Phone,Email,Moblie,Address,Department,Photo,Location) VALUES ("${FirstName}","${MidleName}","${LastName}","${Gender}","${WorkPostionName}","${PhoneNumber}","${Email}","${Mobile}","${Address}","${CostCenterName}","${Photo}","${WorkPlaceName}")`;
+    con.query(sql, (err, responce) => {
+        if (err) throw err;
+        console.log("succsful")
+    })
 })
 app.listen(5000)
