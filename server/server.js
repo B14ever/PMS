@@ -94,8 +94,8 @@ app.get('/getdepartment', (req, res) => {
         res.send(data);
     })
 })
-app.get('/getworkPlace', (req, res) => {
-    const sql = `SELECT Type_Name  from department_types`;
+app.get('/getjobTitles', (req, res) => {
+    const sql = `SELECT Name  from job_titles`;
     con.query(sql, (err, data) => {
         res.send(data);
     })
@@ -117,6 +117,29 @@ app.post('/postNewEmloyee', (req, res) => {
     } = req.body;
     console.log(req.body)
     const sql = `INSERT INTO employee (First_Name,Middle_Name,Last_Name,Sex,Job_Title,Phone,Email,Moblie,Address,Department,Photo,Location) VALUES ("${FirstName}","${MidleName}","${LastName}","${Gender}","${WorkPostionName}","${PhoneNumber}","${Email}","${Mobile}","${Address}","${CostCenterName}","${Photo}","${WorkPlaceName}")`;
+    con.query(sql, (err, responce) => {
+        if (err) throw err;
+        console.log("succsful")
+    })
+})
+app.post('/postNewProperty', (req, res) => {
+    const {
+        Propertycategory,
+        PropertySubcategory,
+        PropertyType,
+        Model,
+        ShelfNumber,
+        Mesurment,
+        ItemType,
+        Price,
+        MinValue,
+        MaxValue,
+        ExpireDate,
+        Photo,
+        Describtion
+    } = req.body;
+    console.log(req.body)
+    const sql = `INSERT INTO property (First_Name,Middle_Name,Last_Name,Sex,Job_Title,Phone,Email,Moblie,Address,Department,Photo,Location) VALUES ("${Propertycategory}","${PropertySubcategory}","${PropertyType}","${Model}","${ShelfNumber}","${Mesurment}","${ItemType}","${Price}","${MinValue}","${MaxValue}","${ExpireDate}","${Photo}","${Describtion}")`;
     con.query(sql, (err, responce) => {
         if (err) throw err;
         console.log("succsful")

@@ -5,7 +5,7 @@ import Employe from "./page/Employe";
 import ForbidenPage from "./page/ForbidenPage";
 import RequireAuth from "./Componet/RequireAthu";
 import NewEmployee from "./page/NewEmployee"
-
+import PropertyRegistration from "./page/PropertyRegistration";
 const App =()=>{
 return<>
     <Routes>
@@ -17,6 +17,7 @@ return<>
     <Route element={<RequireAuth Autherazetion={["Admin"]}/>}>
          <Route path="/employe" element={<Employe/>}></Route>
          <Route path="/newEmployee" element={<NewEmployee/>}></Route>
+         <Route path="/PropertyI" element={<PropertyRegistration/>}></Route>
    </Route>
      
    </Routes>

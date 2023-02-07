@@ -17,8 +17,7 @@ const intialstate ={
     CostCenterName:"",
     WorkPlaceName:"",
     WorkPostionName:"",
-    Photo:"",
-   
+    Photo:"", 
 };
 const reducer = (currentState, action) => {
   switch (action.type) {
@@ -54,10 +53,10 @@ function NewEmployee() {
   const getContext = useContext(Context);
   const {t} = getContext;
   const [CostCenternName] =  useGetData('http://localhost:5000/getdepartment');
-  const [WorkPlaceName] =  useGetData('http://localhost:5000/getworkPlace');
+  const [WorkPlaceName] =  useGetData('http://localhost:5000/getjobTitles');
   const [data, dispatch] = useReducer(reducer, intialstate);
   const [res,HandleSubmit] = usePostData({url:'http://localhost:5000/postNewEmloyee', Data:data})
-
+    
   return <>
        <Navbar/>
     <div className="countainer">
@@ -89,7 +88,6 @@ function NewEmployee() {
                   <label htmlFor="FFemale">{t("Female")}
                   <input type="radio" id='Female' value="ሴት" onClick={(e) =>dispatch({ type: "Gender",value:e.target.value})}/>
                   </label>
-                  
                  </fieldset>
                </div>
           </div>
@@ -130,7 +128,7 @@ function NewEmployee() {
                <option  defaultValue >{t("WorkPlaces")}</option>
                  {WorkPlaceName?.map((data,index)=>
                  {
-                  return <option key={index}>{WorkPlaceName[index].Type_Name}</option>
+                  return <option key={index}>{WorkPlaceName[index].Name}</option>
                  })}
               </select>
                </div>
@@ -141,6 +139,7 @@ function NewEmployee() {
           </div>
           <div className="Form-Control">
           <div className="input-control">
+          <label htmlFor="number">{t("EmployeePhoto")}</label>
             <fieldset>
               <img src={`../image/${data.Photo?data.Photo:'1vajvt.jpg'}`} alt="" className='Emplyee-Photo' />
            <input type="file" name="" id="photo" onChange={(e) =>dispatch({ type: "Photo",value:e.target.files[0].name})} />
@@ -151,13 +150,10 @@ function NewEmployee() {
                     <button style={{  background: '#3071E7'}} type='submit' onClick={HandleSubmit} >{t("Registor")}</button>
                     <button  style={{  background: '#DA0037'}} type='submit'>{t("Cancle")}</button>
               </div>
-            </div>
-            
+            </div> 
           </div>
         </form>
         </div>
-       
-
       </main>
     </div>
     </>
