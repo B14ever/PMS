@@ -115,7 +115,7 @@
         
         .sidebar {
             background-color: var(--main-background);
-            width: 80px;
+            width: 84px;
             border-right: 1px solid var(--light-gray);
             padding-top: 1rem;
             display: flex;
@@ -493,17 +493,14 @@
         }
         
         .Table-Componet {
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
             width: 100%;
-        }
-        
-        .loadMore {
-            flex-grow: 1;
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
         
         .Find {
+            justify-self: end;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -533,7 +530,8 @@
             height: 3rem;
         }
         
-        .form-countainer {
+        .form-countainer,
+        .lr-countainer {
             border: 1px solid #e7e7e7;
             margin: 1rem;
         }
@@ -641,7 +639,8 @@
             gap: 1rem;
         }
         
-        .submit-control button {
+        .submit-control button,
+        .submit-button {
             display: block;
             color: #fff;
             border: 0;

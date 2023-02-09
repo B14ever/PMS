@@ -4,8 +4,7 @@ import * as bootstrapIcon from "react-icons/bs";
 function RegistorButton({Message}) {
   return (
     <div className='Registor-New'>
-          <NavLink className="btn-New" role="button" to={Message[1]}>{Message[0]}</NavLink>
-          
+          <NavLink className="btn-New" role="button" to={Message[1]}>{Message[0]}</NavLink>   
     </div>
     
     

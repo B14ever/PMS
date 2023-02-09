@@ -5,6 +5,47 @@ import  {IoEllipsisVerticalSharp,IoEnterOutline} from "react-icons/io5";
 export const MiddleSideBarList = [
     {
         id:1,
+        name:"Organization",
+        svg:<IconName.FaLandmark className="sidebar-icon"/>,
+        submenu:[
+            {
+                id:1,
+                name:"Structure",
+                svg: <IoEllipsisVerticalSharp className="sidebar-icon"/>,
+                iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,
+                classfication:[
+                    {
+                        id:1,
+                        name:"Office",
+                        path:"/Office",
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
+                    },
+                    {
+                        id:2,
+                        name:"Department",
+                        path:"/Department",
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
+                    },
+                  
+                    {
+                        id:3,
+                        name:"DepartmentType",
+                        path:"/Departmenttype",
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
+                    },
+                    {
+                        id:4,
+                        name:"Employee",
+                        Title:"(supplier | deliverer)",
+                        path:"/employe",
+                        svg: <IoEnterOutline className="sidebar-icon"/>,
+                    },
+                ],
+            }
+        ]
+    },
+    {
+        id:2,
         name:"Stock",
         svg: <IconName.FaCubes className="sidebar-icon"/>,
         submenu:[
@@ -22,20 +63,12 @@ export const MiddleSideBarList = [
                     },
                     {
                         id:2,
-                        name:"Employee",
-                        Title:"(supplier | deliverer)",
-                        path:"/employe",
-                        svg: <IoEnterOutline className="sidebar-icon"/>,
-                    },
-                  
-                    {
-                        id:3,
                         name:"PropertyI",
                         path:"/PropertyI",
                         svg: <IoEnterOutline className="sidebar-icon"/>,
                     },
                     {
-                        id:4,
+                        id:3,
                         name:"Propertyclassification",
                         path:"/Propertyclassification",
                         svg: <IoEnterOutline className="sidebar-icon"/>,
@@ -118,7 +151,7 @@ export const MiddleSideBarList = [
         ]
     },
     {
-        id:2,
+        id:3,
         name:"Fixed",
         svg: <IconName.FaCoins className="sidebar-icon"/>, 
         submenu:[
@@ -212,18 +245,12 @@ export const MiddleSideBarList = [
         ],
     },
     {
-        id:3,
+        id:4,
         name:"vechiles",
         svg: <IconName.FaTruckMonster className="sidebar-icon"/>, 
         submenu:[
             {
                 id:1,
-                name:"NewVechiles",
-                path:"/NewVechiles",
-                svg: <IoEnterOutline className="sidebar-icon"/>,
-            },
-            {
-                id:2,
                 name:"Vehiclelist",
                 path:"/Vehiclelist",
                 svg: <IoEnterOutline className="sidebar-icon"/>,

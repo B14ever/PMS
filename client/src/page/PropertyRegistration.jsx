@@ -3,6 +3,7 @@ import SideBar from '../Componet/sidebar';
 import Navbar from '../Componet/navbar';
 import Context from '../Context/Contexts';
 import PageHeader from '../Componet/PageTitle';
+import {useGetData} from '../Hook/GetData'
 import usePostData from '../Hook/PostData';
 const intialstate ={
   Propertycategory:"",
@@ -54,6 +55,9 @@ function PropertyRegistration() {
   const [data, dispatch] = useReducer(reducer, intialstate);
   const getContext = useContext(Context);
   const {t} = getContext;
+  const [PropertyCategory] = useGetData('http://localhost:5000/getClassfication');
+  const [SubCategory] = useGetData('http://localhost:5000/getSubClassfication')
+  const [Units] = useGetData('http://localhost:5000/getUnits') 
   const [res,HandleSubmit] = usePostData({url:'http://localhost:5000/postNewProperty', Data:data})
   useEffect(()=>{
     console.log(data)
@@ -73,20 +77,20 @@ function PropertyRegistration() {
               <label htmlFor="Propertycategory">{t("Propertycategory")}</label>
               <select name="" id="Propertycategory"  onChange={(e) =>dispatch({ type: "Propertycategory",value:e.target.value})}>
               <option  defaultValue >{t("Propertycategory")}</option>
-                 {/* {CostCenternName?.map((data,index)=>
+                 {PropertyCategory?.map((data,index)=>
                  {
-                  return <option value={CostCenternName[index].Offices_Name} key={index}>{CostCenternName[index].Offices_Name}</option>
-                 })} */}
+                  return <option value={PropertyCategory[index].Offices_Name} key={index}>{PropertyCategory[index].Classification_Name}</option>
+                 })}
               </select>
               </div>
                <div className="input-control">
                <label htmlFor="PropertySubcategory">{t("PropertySubcategory")}</label>
                <select name="" id="PropertySubcategory"  onChange={(e) =>dispatch({ type: "PropertySubcategory",value:e.target.value})}>
                <option  defaultValue >{t("PropertySubcategory")}</option>
-                 {/* {WorkPlaceName?.map((data,index)=>
+                 {SubCategory?.map((data,index)=>
                  {
-                  return <option key={index}>{WorkPlaceName[index].Type_Name}</option>
-                 })} */}
+                  return <option key={index}>{SubCategory[index].Sub_Classification_Name}</option>
+                 })}
               </select>
                </div>
                <div className="input-control">
@@ -115,7 +119,13 @@ function PropertyRegistration() {
                </div>
                <div className="input-control">
                <label htmlFor="Mesurment">{t("Mesurment")}</label>
-               <input type="text" id='Mesurment' onChange={(e) =>dispatch({ type: "Mesurment",value:e.target.value})} />
+               <select name="" id="Mesurment"  onChange={(e) =>dispatch({ type: "PropertySubcategory",value:e.target.value})}>
+               <option  defaultValue >{t("Mesurment")}</option>
+                 {Units?.map((data,index)=>
+                 {
+                  return <option key={index}>{Units[index].Unit}</option>
+                 })}
+              </select>
                </div>
                <div className="input-control">
                <label htmlFor="ItemType">{t("ItemType")}</label>

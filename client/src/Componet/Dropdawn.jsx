@@ -12,7 +12,7 @@ const Dropdawn = ({sublist})=>{
             {item.classfication?(<><NavLink role="button"className="sidebar-drop-link">
                         {item.svg}
                         <div className="hidden-sidebar">{t(`${item.name}`)}</div>{item.iconClosed}
-                    </NavLink><Classfication list={item.classfication}/></>):<NavLink className="sidebar-drop-link">
+                    </NavLink><Classfication list={item.classfication}/></>):<NavLink to={item.path} className="sidebar-drop-link">
                         {item.svg}<div className="hidden-sidebar">{t(`${item.name}`)}</div> </NavLink>}
                 </li>
                 )

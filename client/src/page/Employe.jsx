@@ -23,7 +23,7 @@ const Employe = ()=>{
             <PageHeader Message= {[t("EmployeeList")]} />
             <RegistorButton Message= {[t("NewEmployee"),'/newEmployee']}/>
             </div>
-            {employe.length === 0?<h1>Loading...</h1>:<>
+            
             <div className='Table-Componet '><LoadMore/> <Find/></div>
             <div className='Table'>
                <table>
@@ -51,8 +51,8 @@ const Employe = ()=>{
                          )) }                  
               </tbody>
            </table>
-         </div> </>
-}
+         </div> 
+
         </main>
     </div>
     </> 

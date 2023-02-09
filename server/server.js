@@ -77,7 +77,7 @@ app.get('/getTotaldepartment', (req, res) => {
 app.get('/getEmployes', async(req, res) => {
     const { find } = req.query;
     if (find) {
-        const sql = `SELECT * FROM employee WHERE First_Name LIKE '%${find}%' OR ID_Number LIKE '%${find}%'git `;
+        const sql = `SELECT * FROM employee WHERE First_Name LIKE '%${find}%' OR ID_Number LIKE '%${find}%' `;
         con.query(sql, (err, data) => {
             if (data.length > 0) res.send(data);
         })
@@ -96,6 +96,79 @@ app.get('/getdepartment', (req, res) => {
 })
 app.get('/getjobTitles', (req, res) => {
     const sql = `SELECT Name  from job_titles`;
+    con.query(sql, (err, data) => {
+        res.send(data);
+    })
+})
+app.get('/getVechilesList', (req, res) => {
+    const { find } = req.query;
+    if (find) {
+        const sql = `SELECT * FROM vehicles WHERE Brand LIKE '%${find}%' OR Model LIKE '%${find}%' `;
+        con.query(sql, (err, data) => {
+            if (data.length > 0) res.send(data);
+        })
+    } else {
+        const sql = `SELECT * FROM vehicles`;
+        con.query(sql, (err, data) => {
+            res.send(data)
+        })
+    }
+})
+app.get('/getOfficeList', (req, res) => {
+    const { find } = req.query;
+    if (find) {
+        const sql = `SELECT * FROM bureaus WHERE Bureau_Name LIKE '%${find}%' OR Code LIKE '%${find}%' `;
+        con.query(sql, (err, data) => {
+            if (data.length > 0) res.send(data);
+        })
+    } else {
+        const sql = `SELECT * FROM bureaus`;
+        con.query(sql, (err, data) => {
+            res.send(data)
+        })
+    }
+})
+app.get('/getClassfication', (req, res) => {
+    const sql = `SELECT Classification_Name  from classification`;
+    con.query(sql, (err, data) => {
+        res.send(data);
+    })
+})
+app.get('/getSubClassfication', (req, res) => {
+    const sql = `SELECT Sub_Classification_Name  from sub_classification`;
+    con.query(sql, (err, data) => {
+        res.send(data);
+    })
+})
+app.get('/getUnits', (req, res) => {
+    const sql = `SELECT Unit from unit`;
+    con.query(sql, (err, data) => {
+        res.send(data);
+    })
+})
+app.get('/getInformation', (req, res) => {
+    const { find } = req.query;
+    if (find) {
+        const sql = `SELECT * FROM departments WHERE Offices_Name LIKE '%${find}%' OR Code LIKE '%${find}%' `;
+        con.query(sql, (err, data) => {
+            if (data.length > 0) res.send(data);
+        })
+    } else {
+        const sql = `SELECT * from departments`;
+        con.query(sql, (err, data) => {
+            res.send(data);
+        })
+    }
+
+})
+app.get('/getOfficeName', (req, res) => {
+    const sql = `SELECT Bureau_Name FROM bureaus`;
+    con.query(sql, (err, data) => {
+        res.send(data);
+    })
+})
+app.get('/getDepartmentType', (req, res) => {
+    const sql = `SELECT * FROM department_types`;
     con.query(sql, (err, data) => {
         res.send(data);
     })
@@ -145,4 +218,51 @@ app.post('/postNewProperty', (req, res) => {
         console.log("succsful")
     })
 })
+app.post('/postNewVechlies', (req, res) => {
+    const {
+        VehicleType,
+        VehicleModel,
+        VehcileYear,
+        MoterNumber,
+        Silnder,
+        Chassis,
+        PlateNumber,
+        DateOfPurchase,
+        Capacity,
+        TypeofGas,
+        OwenerIdNumber,
+        Describtion,
+    } = req.body;
+    console.log(req.body)
+    const sql = `INSERT INTO vehicles (Brand,Model,Year,Engine,Cylinder_Capacity,Chassis_Number,Plate_Number,Purchased_Date,Load_Capacity,Fuel_Type,Ownership_ID,Status_Description) VALUES ("${VehicleType}","${VehicleModel}","${VehcileYear}","${MoterNumber}","${Silnder}","${Chassis}","${PlateNumber}","${DateOfPurchase}","${Capacity}","${TypeofGas}","${OwenerIdNumber}","${Describtion}")`;
+    con.query(sql, (err, responce) => {
+        if (err) throw err;
+        console.log("succsful")
+    })
+})
+app.post('/AddOffice', (req, res) => {
+    const { officeName, Code, Description } = req.body;
+    const sql = `INSERT INTO bureaus (Bureau_Name,Code,Description) VALUES ("${officeName}","${Code}","${Description}")`;
+    con.query(sql, (err, responce) => {
+        if (err) throw err;
+        console.log("succsful")
+    })
+})
+app.post('/AddDepartment', (req, res) => {
+    const { officeName, Department, DepartmentType, Description } = req.body;
+    const sql = `INSERT INTO departments (Offices_Name,Offices_Type,Bureau,Description) VALUES ("${Department}","${DepartmentType}","${officeName}","${Description}")`;
+    con.query(sql, (err, responce) => {
+        if (err) throw err;
+        console.log("succsful")
+    })
+})
+app.post('/AddDepartmentType', (req, res) => {
+    const { departmentType } = req.body;
+    const sql = `INSERT INTO department_types (Type_Name) VALUES ("${departmentType}")`;
+    con.query(sql, (err, responce) => {
+        if (err) throw err;
+        console.log("succsful")
+    })
+})
+
 app.listen(5000)

@@ -1,8 +1,9 @@
-import React, { useEffect,useState } from 'react'
+import React, {useState } from 'react'
 import axios from 'axios';
 const usePostData =({url,Data}) => {
     const [data,setData] = useState([])
         const HandleSubmit = async (event)=>{
+            event.preventDefault()
             try{
                 const responce = await axios.post(url,Data)
                 setData(responce);

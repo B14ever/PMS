@@ -9,6 +9,7 @@ export const  ContextProvider =({ children })=> {
     const [dropdawn,setDropDawn] = useState(false);
     const [load,setLoad] = useState(5);
     const [find,setFind]= useState('')
+    const [refresh,setRefresh] = useState(false)
     const handleDropDawn=()=>
     {
      setDropDawn(!dropdawn)
@@ -20,7 +21,7 @@ export const  ContextProvider =({ children })=> {
      const HandleFind = (e)=>{
         setFind(e.target.value)
          }
-    return <Context.Provider value={{toggle,setToggle,langBtn,setLangBtn,dropdawn,handleDropDawn,load,HandleLoad,find,HandleFind,t,i18n}}>
+    return <Context.Provider value={{toggle,setToggle,langBtn,setLangBtn,dropdawn,handleDropDawn,load,HandleLoad,find,HandleFind,t,i18n,refresh,setRefresh}}>
            {children}
    </Context.Provider>
 }
