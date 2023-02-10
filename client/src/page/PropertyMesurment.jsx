@@ -9,6 +9,8 @@ import { useGetData } from "../Hook/GetData";
 import usePostData from "../Hook/PostData";
 import LoadMore from "../Componet/LoadMore";
 import Find from "../Componet/Find";
+import axios from "axios";
+import useDeleteData from "../Hook/DeleteData";
 
 const inState = {
   Name: "",
@@ -19,11 +21,11 @@ const inState = {
 const reducer = (current, action) => {
   switch (action.type) {
     case "Name":
-      return { current, Name: action.value };
+      return { ...current, Name: action.value };
     case "Code":
-      return { current, Code: action.value };
+      return { ...current, Code: action.value };
     case "Description":
-      return { current, Description: action.value };
+      return { ...current, Description: action.value };
   }
   return current;
 };
@@ -31,6 +33,7 @@ const reducer = (current, action) => {
 const PropertyMesurment = () => {
   const [data, dispatch] = useReducer(reducer, inState);
   const getContext = useContext(Context);
+  const [Id, setId] = useState("");
   const { t, load, find } = getContext;
 
   const [propertymeas] = useGetData(
@@ -40,6 +43,15 @@ const PropertyMesurment = () => {
     url: "http://localhost:5000/postPropClass",
     Data: data,
   });
+  // const handelevent = (id) => {
+  //   // axios.delete(`http://localhost:5000/deletePropClass/${id}`);
+  //   setId(id);
+  //   outDeleted;
+  // };
+
+  const [del, outDeleted] = useDeleteData(
+    `http://localhost:5000/deletePropClass/${Id}`
+  );
 
   const TableHeading = [
     t("ID"),
@@ -140,7 +152,7 @@ const PropertyMesurment = () => {
             <div className="Table-Right">
               <div className="Top-Text-Stoke">{t("StokeMainList")}</div>
               <div className="Table-Componet-Stoke">
-                <LoadMore /> <Find className="Findmargin" />
+                <LoadMore /> <Find />
               </div>
               <div className="TableStoke">
                 <table>
@@ -170,7 +182,12 @@ const PropertyMesurment = () => {
                                 <bootstrapIcon.BsFillFileEarmarkPersonFill />
                               </button>
                               <button>
-                                <bootstrapIcon.BsTrashFill />
+                                <bootstrapIcon.BsTrashFill
+                                  onClick={() => {
+                                    setId(propertymeas[index].ID);
+                                    outDeleted;
+                                  }}
+                                />
                               </button>
                             </div>
                           </td>

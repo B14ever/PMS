@@ -10,7 +10,7 @@ const MySQLStore = require("express-mysql-session")(session);
 app.use(
   cors({
     origin: ["http://localhost:5173"],
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "DELETE"],
     credentials: true,
   })
 );
@@ -293,6 +293,17 @@ app.post("/AddDepartmentType", (req, res) => {
   con.query(sql, (err, responce) => {
     if (err) throw err;
     console.log("succsful");
+  });
+});
+app.delete("/deletePropClass/:deletID", (req, res) => {
+  const Id = req.params.deletID;
+  const sql = `DELETE FROM classification WHERE ID =${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
   });
 });
 
