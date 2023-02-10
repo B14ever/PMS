@@ -140,7 +140,7 @@ const PropertyMesurment = () => {
             <div className="Table-Right">
               <div className="Top-Text-Stoke">{t("StokeMainList")}</div>
               <div className="Table-Componet-Stoke">
-                <LoadMore /> <Find />
+                <LoadMore /> <Find className="Findmargin" />
               </div>
               <div className="TableStoke">
                 <table>
