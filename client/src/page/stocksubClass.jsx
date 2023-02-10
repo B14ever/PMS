@@ -19,16 +19,16 @@ const inState = {
 const reducer = (current, action) => {
   switch (action.type) {
     case "Name":
-      return { current, Name: action.value };
+      return { ...current, Name: action.value };
     case "Code":
-      return { current, Code: action.value };
+      return { ...current, Code: action.value };
     case "Description":
-      return { current, Description: action.value };
+      return { ...current, Description: action.value };
   }
   return current;
 };
 
-const PropertyMesurment = () => {
+const SubClassification = () => {
   const [data, dispatch] = useReducer(reducer, inState);
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
@@ -60,14 +60,18 @@ const PropertyMesurment = () => {
             <div className="Top-Btn">
               <RegistorButton
                 className="stoke"
-                Message={[t("StokeMain"), "/Propertyclassification", "stoke"]}
+                Message={[
+                  t("StokeMain"),
+                  "/Propertyclassification",
+                  "btn-New stoke",
+                ]}
               />
               <RegistorButton
                 className="subStoke"
                 Message={[
                   t("subStoke"),
                   "/PropertySubclassification",
-                  "subStoke",
+                  "btn-New subStoke",
                 ]}
               />
               <RegistorButton
@@ -75,14 +79,14 @@ const PropertyMesurment = () => {
                 Message={[
                   t("stokeMeasurment"),
                   "/Propertyclassification",
-                  "stokeMeas",
+                  "btn-New stokeMeas",
                 ]}
               />
             </div>
           </div>
           <div className="Two-Table">
-            <div className="Table-Left">
-              <div className="Top-Text-Stoke">{t("StokeMainReg")}</div>
+            <div className="Table-Left bordersubStoke">
+              <div className="Top-Text-Stoke subStoke">{t("StokeMainReg")}</div>
               <form action="" className="StokeRegForm">
                 <div className="StokeForm">
                   <div className="StokeMain">
@@ -128,7 +132,7 @@ const PropertyMesurment = () => {
                   <div className="StokeMain">
                     <button
                       type="submit"
-                      className="Stock-btn"
+                      className="Stock-btn subStoke"
                       onClick={propertyReg}
                     >
                       {t("Registor")}
@@ -137,8 +141,10 @@ const PropertyMesurment = () => {
                 </div>
               </form>
             </div>
-            <div className="Table-Right">
-              <div className="Top-Text-Stoke">{t("StokeMainList")}</div>
+            <div className="Table-Right bordersubStoke">
+              <div className="Top-Text-Stoke subStoke">
+                {t("StokeMainList")}
+              </div>
               <div className="Table-Componet-Stoke">
                 <LoadMore /> <Find />
               </div>
@@ -187,4 +193,4 @@ const PropertyMesurment = () => {
   );
 };
 
-export default PropertyMesurment;
+export default SubClassification;
