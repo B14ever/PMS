@@ -10,7 +10,6 @@ import usePostData from "../Hook/PostData";
 import LoadMore from "../Componet/LoadMore";
 import Find from "../Componet/Find";
 import axios from "axios";
-import useDeleteData from "../Hook/DeleteData";
 
 const inState = {
   Name: "",
@@ -33,7 +32,6 @@ const reducer = (current, action) => {
 const PropertyMesurment = () => {
   const [data, dispatch] = useReducer(reducer, inState);
   const getContext = useContext(Context);
-  const [Id, setId] = useState("");
   const { t, load, find } = getContext;
 
   const [propertymeas] = useGetData(
@@ -43,15 +41,9 @@ const PropertyMesurment = () => {
     url: "http://localhost:5000/postPropClass",
     Data: data,
   });
-  // const handelevent = (id) => {
-  //   // axios.delete(`http://localhost:5000/deletePropClass/${id}`);
-  //   setId(id);
-  //   outDeleted;
-  // };
-
-  const [del, outDeleted] = useDeleteData(
-    `http://localhost:5000/deletePropClass/${Id}`
-  );
+  const handelevent = (id) => {
+    axios.delete(`http://localhost:5000/deletePropClass/${id}`);
+  };
 
   const TableHeading = [
     t("ID"),
@@ -181,13 +173,13 @@ const PropertyMesurment = () => {
                               <button>
                                 <bootstrapIcon.BsFillFileEarmarkPersonFill />
                               </button>
-                              <button>
-                                <bootstrapIcon.BsTrashFill
-                                  onClick={() => {
-                                    setId(propertymeas[index].ID);
-                                    outDeleted;
-                                  }}
-                                />
+
+                              <button
+                                onClick={() => {
+                                  handelevent(propertymeas[index].ID);
+                                }}
+                              >
+                                <bootstrapIcon.BsTrashFill />
                               </button>
                             </div>
                           </td>
