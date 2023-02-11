@@ -130,6 +130,18 @@ body {
   left: 0;
   top: var(--header-height);
 }
+.sidebar .channel-logo>img:hover{
+    transform: scale(1.07);
+    transition: 1s ease-out;
+    }
+    .colz .colz-icon i{
+      color: white;
+      padding: 8px;
+      padding-left: 0px;
+    }
+    .colz .colz-icon:hover{
+      transform: scale(1.4);
+    }
 
 .icon {
   display: flex;
@@ -169,7 +181,11 @@ body {
   align-items: center;
   list-style: none;
 }
-
+.sidebar :hover {
+    color: var(--orange);
+    cursor: pointer;
+  }
+  
 .middle-sidebar {
   margin-top: 20px;
   flex-grow: 1;
