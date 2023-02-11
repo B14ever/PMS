@@ -88,9 +88,11 @@ steps={[
             <div className="select-lang">
                 <select onChange={(e)=>i18n.changeLanguage(e.target.value)}>
                      <option defaultValue >{t("LNG")}</option>
+                     <option value="ti">Tigrayna</option>
+                     <option value="so">somali</option>
                      <option value="or"> oromo</option>
-                    <option value="am">አማረኛ</option>
-                    <option value="en">Engilsh</option>
+                     <option value="am">አማረኛ</option>
+                     <option value="en">Engilsh</option>
                     </select>
                 </div>
         </div>
