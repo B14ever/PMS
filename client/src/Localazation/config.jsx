@@ -1,7 +1,7 @@
 import i18n from 'i18next'
 import {initReactI18next} from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
-import { TranslationEn,TranslationAm,TranslationOm } from './Languages'
+import { TranslationEn,TranslationAm ,TranslationOr,TranslationTi,TranslationSo} from './Languages'
 
 i18n 
 .use(LanguageDetector)
@@ -11,7 +11,9 @@ i18n
   resources:{
        en:{translation: TranslationEn},
        am:{translation:TranslationAm},
-      om:{translation:TranslationOm}
+       or:{translation:TranslationOr},
+       ti:{translation:TranslationTi},
+       so:{translation:TranslationSo},
     }
 }
 )
