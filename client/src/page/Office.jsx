@@ -9,6 +9,7 @@ import LoadMore from "../Componet/LoadMore";
 import Find from "../Componet/Find";
 import * as bootstrapIcon from "react-icons/bs";
 import styled from "styled-components";
+import axios from "axios";
 const Countainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -58,6 +59,11 @@ function Office() {
     url: "http://localhost:5000/AddOffice",
     Data: data,
   });
+
+  const handelevent = (id) => {
+    axios.delete(`http://localhost:5000/deleteOffice/${id}`);
+  };
+
   return (
     <>
       <Navbar />
@@ -159,7 +165,11 @@ function Office() {
                               <bootstrapIcon.BsFillFileEarmarkPersonFill />
                             </button>
                             <button>
-                              <bootstrapIcon.BsTrashFill />
+                              <bootstrapIcon.BsTrashFill
+                                onClick={() => {
+                                  handelevent(Offices[index].ID);
+                                }}
+                              />
                             </button>
                           </div>
                         </Td>
