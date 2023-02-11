@@ -51,9 +51,22 @@ const Login = ()=>{
                     <div className="logo">
                     <img src={photo} alt="Channal logo"/>
                     </div>
-                    <div className="heading">
-                        <h1 className="form__content__heading">{t("Software")}</h1>
-                    </div>
+                     <div className="heading">
+<h1> 
+{""}
+<Typical
+loop={Infinity}
+steps={[
+"WellcomeToPMS",
+500,
+"LoginPlease",
+500,
+
+]}
+/>
+
+</h1>
+</div>
                 </div>
                 <div className="form__field">
                     <label className="form__label" >User Name</label>
