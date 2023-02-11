@@ -3,6 +3,7 @@ import Context from '../Context/Contexts';
 import {useNavigate} from 'react-router-dom'
 import photo from '../image/images.jpg'
 import axios from 'axios'
+import Typical from 'react-typical';
 axios.defaults.withCredentials = true;
 import '../index.css'
 const Login = ()=>{
@@ -51,10 +52,22 @@ const Login = ()=>{
                     <div className="logo">
                     <img src={photo} alt="Channal logo"/>
                     </div>
-                    <div className="heading">
-                        <h1 className="form__content__heading">{t("Software")}</h1>
-                    </div>
-                </div>
+                     <div className="heading">
+<h1> 
+{""}
+<Typical
+loop={Infinity}
+steps={[
+"WellcomeToPMS",
+500,
+"LoginPlease",
+500,
+
+]}
+/>
+
+</h1>
+</div>
                 <div className="form__field">
                     <label className="form__label" >User Name</label>
                     <input className="form__input" placeholder='User Name' ref={emailRef} type="email" name="email" id="email" onChange={e=>{setEmail(e.target.value)}}/>
