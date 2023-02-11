@@ -3,6 +3,7 @@ import Context from '../Context/Contexts';
 import {useNavigate} from 'react-router-dom'
 import photo from '../image/images.jpg'
 import axios from 'axios'
+import Typical from 'react-typical';
 axios.defaults.withCredentials = true;
 import '../index.css'
 const Login = ()=>{
@@ -67,7 +68,7 @@ steps={[
 
 </h1>
 </div>
-                </div>
+
                 <div className="form__field">
                     <label className="form__label" >User Name</label>
                     <input className="form__input" placeholder='User Name' ref={emailRef} type="email" name="email" id="email" onChange={e=>{setEmail(e.target.value)}}/>
@@ -88,6 +89,7 @@ steps={[
             <div className="select-lang">
                 <select onChange={(e)=>i18n.changeLanguage(e.target.value)}>
                      <option defaultValue >{t("LNG")}</option>
+                     <option value="or"> oromo</option>
                     <option value="am">አማረኛ</option>
                     <option value="en">Engilsh</option>
                     </select>
