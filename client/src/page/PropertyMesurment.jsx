@@ -9,6 +9,7 @@ import { useGetData } from "../Hook/GetData";
 import usePostData from "../Hook/PostData";
 import LoadMore from "../Componet/LoadMore";
 import Find from "../Componet/Find";
+import axios from "axios";
 
 const inState = {
   Name: "",
@@ -19,11 +20,11 @@ const inState = {
 const reducer = (current, action) => {
   switch (action.type) {
     case "Name":
-      return { current, Name: action.value };
+      return { ...current, Name: action.value };
     case "Code":
-      return { current, Code: action.value };
+      return { ...current, Code: action.value };
     case "Description":
-      return { current, Description: action.value };
+      return { ...current, Description: action.value };
   }
   return current;
 };
@@ -40,6 +41,9 @@ const PropertyMesurment = () => {
     url: "http://localhost:5000/postPropClass",
     Data: data,
   });
+  const handelevent = (id) => {
+    axios.delete(`http://localhost:5000/deletePropClass/${id}`);
+  };
 
   const TableHeading = [
     t("ID"),
@@ -140,7 +144,7 @@ const PropertyMesurment = () => {
             <div className="Table-Right">
               <div className="Top-Text-Stoke">{t("StokeMainList")}</div>
               <div className="Table-Componet-Stoke">
-                <LoadMore /> <Find className="Findmargin" />
+                <LoadMore /> <Find />
               </div>
               <div className="TableStoke">
                 <table>
@@ -169,7 +173,12 @@ const PropertyMesurment = () => {
                               <button>
                                 <bootstrapIcon.BsFillFileEarmarkPersonFill />
                               </button>
-                              <button>
+
+                              <button
+                                onClick={() => {
+                                  handelevent(propertymeas[index].ID);
+                                }}
+                              >
                                 <bootstrapIcon.BsTrashFill />
                               </button>
                             </div>
