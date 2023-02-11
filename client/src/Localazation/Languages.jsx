@@ -255,7 +255,7 @@ export const TranslationAm = {
   subStoke: "ንኡስ ስቶክ ምድብ",
   stokeMeasurment: "መለኪያ",
 };
-export const TranslationOm = {
+export const TranslationOr = {
   Home:"mana",
             loginText:"Maaloo, itti fufuu fi tajaajila keenya hunda argachuuf ragaa seensaa kenni",
             UserName:"Maqaa Fayyadamaa",
