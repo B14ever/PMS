@@ -75,6 +75,7 @@ const Login = ()=>{
             <div className="select-lang">
                 <select onChange={(e)=>i18n.changeLanguage(e.target.value)}>
                      <option defaultValue >{t("LNG")}</option>
+                     <option value="or"> oromo</option>
                     <option value="am">አማረኛ</option>
                     <option value="en">Engilsh</option>
                     </select>
