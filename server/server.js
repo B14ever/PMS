@@ -306,5 +306,48 @@ app.delete("/deletePropClass/:deletID", (req, res) => {
     }
   });
 });
-
+app.delete("/deleteOffice/:deletID", (req, res) => {
+  const Id = req.params.deletID;
+  const sql = `DELETE FROM bureaus WHERE ID =${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
+  });
+});
+app.delete("/deleteDepartment/:deletID", (req, res) => {
+  const Id = req.params.deletID;
+  const sql = `DELETE FROM departments WHERE ID =${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
+  });
+});
+app.delete("/deleteDepartmentsType/:deletID", (req, res) => {
+  const Id = req.params.deletID;
+  const sql = `DELETE FROM department_types WHERE ID =${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
+  });
+});
+app.delete("/deleteEmployes/:deletID", (req, res) => {
+  const Id = req.params.deletID;
+  const sql = `DELETE FROM employee WHERE ID =${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
+  });
+});
 app.listen(5000);

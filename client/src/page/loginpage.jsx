@@ -33,7 +33,6 @@ const Login = ()=>{
     else
       {
         sessionStorage.setItem("autenthicate",JSON.stringify(responce.data[0].Email));
-        sessionStorage.setItem("autherazetion",JSON.stringify(responce.data[0].Access_Level));
         setEmail('');
         setPassword('');
         navigate('/home');
@@ -52,7 +51,7 @@ const Login = ()=>{
                     <div className="logo">
                     <img src={photo} alt="Channal logo"/>
                     </div>
-                     <div className="heading">
+                    <div className="heading">
 <h1> 
 {""}
 <Typical
@@ -69,8 +68,12 @@ steps={[
 </h1>
 </div>
 
+
+
+                </div>
+
                 <div className="form__field">
-                    <label className="form__label" >User Name</label>
+                    <label className="form__label" >UserName</label>
                     <input className="form__input" placeholder='User Name' ref={emailRef} type="email" name="email" id="email" onChange={e=>{setEmail(e.target.value)}}/>
                     <span>{emailError?emailError:''}</span>
                 </div>
@@ -89,9 +92,11 @@ steps={[
             <div className="select-lang">
                 <select onChange={(e)=>i18n.changeLanguage(e.target.value)}>
                      <option defaultValue >{t("LNG")}</option>
-                     <option value="or"> oromo</option>
                     <option value="am">አማረኛ</option>
                     <option value="en">Engilsh</option>
+                    <option value="or">Afan oromo</option>
+                    <option value="ti">Tigrayna</option>
+                    <option value="so">somali</option>
                     </select>
                 </div>
         </div>

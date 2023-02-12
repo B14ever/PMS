@@ -13,9 +13,11 @@ const Navbar = () => {
    <div className={`dropdawn ${langBtn?"open-dropdawn":""} `}>
     <button className="lang-btn" onClick={()=>langBtn?setLangBtn(false):setLangBtn(true)} >LNG</button>
     <div className="dropdawn-menu">
-    <button className='lang' onClick={()=>i18n.changeLanguage("om")}>Orom</button>
-       <button className='lang' onClick={()=>i18n.changeLanguage("am")}>አማረኛ</button>
-       <button className='lang' onClick={()=>i18n.changeLanguage("en")}>ENG</button>
+        <button className='lang' onClick={()=>i18n.changeLanguage("ti")}>Tig</button>
+        <button className='lang' onClick={()=>i18n.changeLanguage("so")}>soma</button>
+        <button className='lang' onClick={()=>i18n.changeLanguage("om")}>Orom</button>
+        <button className='lang' onClick={()=>i18n.changeLanguage("am")}>አማረኛ</button>
+        <button className='lang' onClick={()=>i18n.changeLanguage("en")}>ENG</button>
     </div>
    </div>
    <LogOut/>
