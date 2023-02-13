@@ -67,11 +67,7 @@ steps={[
 
 </h1>
 </div>
-
-
-
                 </div>
-
                 <div className="form__field">
                     <label className="form__label" >UserName</label>
                     <input className="form__input" placeholder='User Name' ref={emailRef} type="email" name="email" id="email" onChange={e=>{setEmail(e.target.value)}}/>
