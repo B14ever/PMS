@@ -8,7 +8,9 @@ import * as bootstrapIcon from "react-icons/bs";
 import { useGetData } from "../Hook/GetData";
 import usePostData from "../Hook/PostData";
 import LoadMore from "../Componet/LoadMore";
+import { NavLink } from "react-router-dom";
 import Find from "../Componet/Find";
+import axios from "axios";
 
 const inState = {
   Name: "",
@@ -40,6 +42,9 @@ const SubClassification = () => {
     url: "http://localhost:5000/postPropClass",
     Data: data,
   });
+  const handelevent = (id) => {
+    axios.delete(`http://localhost:5000/deletePropClass/${id}`);
+  };
 
   const TableHeading = [
     t("ID"),
@@ -78,7 +83,7 @@ const SubClassification = () => {
                 className="stokeMeas"
                 Message={[
                   t("stokeMeasurment"),
-                  "/Propertyclassification",
+                  "/typesOfMeasurments",
                   "btn-New stokeMeas",
                 ]}
               />
@@ -172,10 +177,17 @@ const SubClassification = () => {
                               <button>
                                 <bootstrapIcon.BsFillFileEarmarkCheckFill />
                               </button>
-                              <button>
-                                <bootstrapIcon.BsFillFileEarmarkPersonFill />
-                              </button>
-                              <button>
+                              <NavLink role="button" to="/detailInformation">
+                                <button>
+                                  <bootstrapIcon.BsFillFileEarmarkPersonFill />
+                                </button>
+                              </NavLink>
+
+                              <button
+                                onClick={() => {
+                                  handelevent(propertymeas[index].ID);
+                                }}
+                              >
                                 <bootstrapIcon.BsTrashFill />
                               </button>
                             </div>

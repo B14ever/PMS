@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState, useReducer } from "react";
-import { NavLink } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -10,6 +9,7 @@ import { useGetData } from "../Hook/GetData";
 import usePostData from "../Hook/PostData";
 import LoadMore from "../Componet/LoadMore";
 import Find from "../Componet/Find";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 const inState = {
@@ -30,7 +30,7 @@ const reducer = (current, action) => {
   return current;
 };
 
-const PropertyMesurment = () => {
+const MeasurmentType = () => {
   const [data, dispatch] = useReducer(reducer, inState);
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
@@ -79,15 +79,17 @@ const PropertyMesurment = () => {
                 className="stokeMeas"
                 Message={[
                   t("stokeMeasurment"),
-                  "/typesOfMeasurments",
+                  "/Propertyclassification",
                   "stokeMeas",
                 ]}
               />
             </div>
           </div>
           <div className="Two-Table">
-            <div className="Table-Left">
-              <div className="Top-Text-Stoke">{t("StokeMainReg")}</div>
+            <div className="Table-Left borderstokemeas">
+              <div className="Top-Text-Stoke stokeMeas">
+                {t("StokeMainReg")}
+              </div>
               <form action="" className="StokeRegForm">
                 <div className="StokeForm">
                   <div className="StokeMain">
@@ -133,7 +135,7 @@ const PropertyMesurment = () => {
                   <div className="StokeMain">
                     <button
                       type="submit"
-                      className="Stock-btn"
+                      className="Stock-btn stokeMeas"
                       onClick={propertyReg}
                     >
                       {t("Registor")}
@@ -142,8 +144,10 @@ const PropertyMesurment = () => {
                 </div>
               </form>
             </div>
-            <div className="Table-Right">
-              <div className="Top-Text-Stoke">{t("StokeMainList")}</div>
+            <div className="Table-Right borderstokemeas">
+              <div className="Top-Text-Stoke stokeMeas">
+                {t("StokeMainList")}
+              </div>
               <div className="Table-Componet-Stoke">
                 <LoadMore /> <Find />
               </div>
@@ -171,14 +175,7 @@ const PropertyMesurment = () => {
                               <button>
                                 <bootstrapIcon.BsFillFileEarmarkCheckFill />
                               </button>
-                              <NavLink
-                                role="button"
-                                to={{
-                                  pathname: "/detailInformation",
-
-                                  state: propertymeas[index].ID,
-                                }}
-                              >
+                              <NavLink role="button" to="/detailInformation">
                                 <button>
                                   <bootstrapIcon.BsFillFileEarmarkPersonFill />
                                 </button>
@@ -206,4 +203,4 @@ const PropertyMesurment = () => {
   );
 };
 
-export default PropertyMesurment;
+export default MeasurmentType;

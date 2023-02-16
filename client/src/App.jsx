@@ -13,6 +13,8 @@ import Department from "./page/Department";
 import SubClassification from "./page/stocksubClass";
 import PropertyMesurment from "./page/PropertyMesurment";
 import DepartmentType from "./page/DepartmentType";
+import DetailInfo from "./page/detailInfo";
+import MeasurmentType from "./page/MeasurmentType";
 const App = () => {
   return (
     <>
@@ -39,6 +41,11 @@ const App = () => {
             path="/PropertySubclassification"
             element={<SubClassification />}
           ></Route>
+          <Route
+            path="/typesOfMeasurments"
+            element={<MeasurmentType />}
+          ></Route>
+          <Route path="/detailInformation" element={<DetailInfo />}></Route>
         </Route>
       </Routes>
     </>
