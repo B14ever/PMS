@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -11,6 +12,7 @@ import Find from "../Componet/Find";
 import axios from "axios";
 
 const Employe = () => {
+  const navigate = useNavigate();
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
   const [employe] = useGetData(
@@ -78,7 +80,13 @@ const Employe = () => {
                         <button>
                           <bootstrapIcon.BsFillFileEarmarkCheckFill />
                         </button>
-                        <button>
+                        <button
+                          onClick={() => {
+                            navigate("/employeeInformation", {
+                              state: { employe: employe[index] },
+                            });
+                          }}
+                        >
                           <bootstrapIcon.BsFillFileEarmarkPersonFill />
                         </button>
                         <button>

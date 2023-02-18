@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState, useReducer } from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -31,6 +31,7 @@ const reducer = (current, action) => {
 };
 
 const PropertyMesurment = () => {
+  const navigate = useNavigate();
   const [data, dispatch] = useReducer(reducer, inState);
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
@@ -171,18 +172,16 @@ const PropertyMesurment = () => {
                               <button>
                                 <bootstrapIcon.BsFillFileEarmarkCheckFill />
                               </button>
-                              <NavLink
-                                role="button"
-                                to={{
-                                  pathname: "/detailInformation",
 
-                                  state: propertymeas[index].ID,
+                              <button
+                                onClick={() => {
+                                  navigate("/detailInformation", {
+                                    state: { property: propertymeas[index] },
+                                  });
                                 }}
                               >
-                                <button>
-                                  <bootstrapIcon.BsFillFileEarmarkPersonFill />
-                                </button>
-                              </NavLink>
+                                <bootstrapIcon.BsFillFileEarmarkPersonFill />
+                              </button>
 
                               <button
                                 onClick={() => {

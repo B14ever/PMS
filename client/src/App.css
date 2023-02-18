@@ -622,6 +622,31 @@ tr:nth-child(even) {
   border: 1px solid rgb(113, 85, 75);
 }
 
+.img-detail {
+  width: 98%;
+  height: 80vh;
+  display: flex;
+}
+
+.detail-Info {
+  margin-top: 100px;
+  margin-left: 20px;
+  font-size: 20px;
+  width: 50%;
+}
+
+.bold {
+  margin-bottom: 20px;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  margin-top: 100px;
+  margin-left: 200px;
+  background-color: #add8e6;
+}
+
 .Find {
   justify-self: end;
   display: flex;

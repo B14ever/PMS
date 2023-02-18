@@ -1,38 +1,16 @@
-import React, { useContext, useEffect, useState, useReducer } from "react";
-// import { useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
 import PageHeader from "../Componet/PageTitle";
-// import { useGetTotalData } from "../Hook/GetData";
 
-// const inState = {
-//   Name: "",
-//   Code: "",
-//   Description: "",
-// };
-
-// const reducer = (current, action) => {
-//   switch (action.type) {
-//     case "Name":
-//       return { ...current, Name: action.value };
-//     case "Code":
-//       return { ...current, Code: action.value };
-//     case "Description":
-//       return { ...current, Description: action.value };
-//   }
-//   return current;
-// };
-
-const DetailInfo = (props) => {
-  // const [data, dispatch] = useReducer(reducer, inState);
+const DetailInfo = () => {
   const getContext = useContext(Context);
   const { t } = getContext;
-  // const location = useLocation();
-  console.log(props);
-
-  // console.log(props.location.state);
-  // const [details] = useGetTotalData(`http://localhost:5000/getPropClass`);
+  const { state } = useLocation();
+  const { property } = state || {};
+  console.log(property.ID);
 
   return (
     <>
@@ -44,8 +22,29 @@ const DetailInfo = (props) => {
             <PageHeader Message={[t("PropertyMList")]} />
           </div>
           <div className="img-detailInfo">
-            <div className="detail-Img">Finally,It works {props.state}</div>
-            <div className="detail-Info"></div>
+            <div className="detail-Info">
+              <div className="bold">
+                <b>ID: &nbsp;&nbsp;</b>
+                {property.ID}
+              </div>
+              <div className="bold">
+                <b>Name Of Class: &nbsp;&nbsp;</b>
+                {property.Classification_Name}
+              </div>
+              <div className="bold">
+                <b> Code: &nbsp;&nbsp;</b>
+                {property.Classification_Code}
+              </div>
+              <div className="bold">
+                <b>Description: &nbsp;&nbsp;</b>
+                {property.Description}
+              </div>
+
+              <div className="bold">
+                <b>Type: &nbsp;&nbsp;</b>
+                {property.Type}
+              </div>
+            </div>
           </div>
         </main>
       </div>
