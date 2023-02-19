@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -9,6 +9,7 @@ import PageHeader from "../Componet/PageTitle";
 const EmployeeDetail = () => {
   const getContext = useContext(Context);
   const { t } = getContext;
+  const navigate = useNavigate();
   const { state } = useLocation();
   const { employe } = state || {};
   console.log(employe.ID);
@@ -144,6 +145,14 @@ const EmployeeDetail = () => {
                 </div>
               </div>
             )}
+            <button
+              className="back-btn"
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              Go Back
+            </button>
           </div>
         </main>
       </div>

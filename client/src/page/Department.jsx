@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -46,6 +47,7 @@ function Department() {
     Description: "",
   });
   const getContext = useContext(Context);
+  const navigate = useNavigate();
   const { t, load, find } = getContext;
   const TableHeading = [
     t("Order"),
@@ -198,7 +200,13 @@ function Department() {
                               <button>
                                 <bootstrapIcon.BsFillFileEarmarkCheckFill />
                               </button>
-                              <button>
+                              <button
+                                onClick={() => {
+                                  navigate("/departmentInformation", {
+                                    state: { departments: Departments[index] },
+                                  });
+                                }}
+                              >
                                 <bootstrapIcon.BsFillFileEarmarkPersonFill />
                               </button>
                               <button>

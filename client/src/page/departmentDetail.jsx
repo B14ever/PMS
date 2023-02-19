@@ -5,13 +5,12 @@ import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
 import PageHeader from "../Componet/PageTitle";
 
-const DetailInfo = () => {
+const DepartmentDetail = () => {
   const getContext = useContext(Context);
   const { t } = getContext;
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { property } = state || {};
-  console.log(property.ID);
+  const { departments } = state || {};
 
   return (
     <>
@@ -25,25 +24,29 @@ const DetailInfo = () => {
           <div className="img-detailInfo">
             <div className="detail-Info no-img">
               <div className="bold">
-                <b>ID: &nbsp;&nbsp;</b>
-                {property.ID}
+                <b>Code: &nbsp;&nbsp;</b>
+                {departments.Code}
               </div>
               <div className="bold">
-                <b>Name Of Class: &nbsp;&nbsp;</b>
-                {property.Classification_Name}
+                <b>Department Name: &nbsp;&nbsp;</b>
+                {departments.Offices_Name}
               </div>
               <div className="bold">
-                <b> Code: &nbsp;&nbsp;</b>
-                {property.Classification_Code}
+                <b>Office: &nbsp;&nbsp;</b>
+                {departments.Bureau}
               </div>
               <div className="bold">
-                <b>Description: &nbsp;&nbsp;</b>
-                {property.Description}
+                <b>Office Type: &nbsp;&nbsp;</b>
+                {departments.Offices_Type}
               </div>
 
               <div className="bold">
-                <b>Type: &nbsp;&nbsp;</b>
-                {property.Type}
+                <b>Description: &nbsp;&nbsp;</b>
+                {departments.Description}
+              </div>
+              <div className="bold">
+                <b>Registered Date: &nbsp;&nbsp;</b>
+                {departments.Registered_Date}
               </div>
             </div>
             <button
@@ -61,4 +64,4 @@ const DetailInfo = () => {
   );
 };
 
-export default DetailInfo;
+export default DepartmentDetail;
