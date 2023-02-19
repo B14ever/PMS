@@ -10,12 +10,15 @@ import VechleList from "./page/VechleList";
 import NewVecheles from "./page/NewVecheles";
 import Office from "./page/Office";
 import Department from "./page/Department";
-import SubClassification from "./page/stocksubClass";
 import PropertyMesurment from "./page/PropertyMesurment";
+import SubClassification from "./page/stocksubClass";
+import MeasurmentType from "./page/MeasurmentType";
 import DepartmentType from "./page/DepartmentType";
 import DetailInfo from "./page/detailInfo";
 import EmployeeDetail from "./page/employeeDetail";
-import MeasurmentType from "./page/MeasurmentType";
+import OfficeDetail from "./page/officeDetail";
+import DepartmentDetail from "./page/departmentDetail";
+import DepartmentTypeDetail from "./page/departmentTypeDetail";
 const App = () => {
   return (
     <>
@@ -50,6 +53,15 @@ const App = () => {
           <Route
             path="/employeeInformation"
             element={<EmployeeDetail />}
+          ></Route>
+          <Route path="/officeInformation" element={<OfficeDetail />}></Route>
+          <Route
+            path="/departmentInformation"
+            element={<DepartmentDetail />}
+          ></Route>
+          <Route
+            path="/departmentTypeInformation"
+            element={<DepartmentTypeDetail />}
           ></Route>
         </Route>
       </Routes>

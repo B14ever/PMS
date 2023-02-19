@@ -5,13 +5,12 @@ import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
 import PageHeader from "../Componet/PageTitle";
 
-const DetailInfo = () => {
+const DepartmentTypeDetail = () => {
   const getContext = useContext(Context);
   const { t } = getContext;
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { property } = state || {};
-  console.log(property.ID);
+  const { departmentType } = state || {};
 
   return (
     <>
@@ -26,24 +25,11 @@ const DetailInfo = () => {
             <div className="detail-Info no-img">
               <div className="bold">
                 <b>ID: &nbsp;&nbsp;</b>
-                {property.ID}
+                {departmentType.ID}
               </div>
               <div className="bold">
-                <b>Name Of Class: &nbsp;&nbsp;</b>
-                {property.Classification_Name}
-              </div>
-              <div className="bold">
-                <b> Code: &nbsp;&nbsp;</b>
-                {property.Classification_Code}
-              </div>
-              <div className="bold">
-                <b>Description: &nbsp;&nbsp;</b>
-                {property.Description}
-              </div>
-
-              <div className="bold">
-                <b>Type: &nbsp;&nbsp;</b>
-                {property.Type}
+                <b>Department Type Name : &nbsp;&nbsp;</b>
+                {departmentType.Type_Name}
               </div>
             </div>
             <button
@@ -61,4 +47,4 @@ const DetailInfo = () => {
   );
 };
 
-export default DetailInfo;
+export default DepartmentTypeDetail;

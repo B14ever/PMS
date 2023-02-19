@@ -5,13 +5,12 @@ import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
 import PageHeader from "../Componet/PageTitle";
 
-const DetailInfo = () => {
+const OfficeDetail = () => {
   const getContext = useContext(Context);
   const { t } = getContext;
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { property } = state || {};
-  console.log(property.ID);
+  const { offices } = state || {};
 
   return (
     <>
@@ -25,25 +24,20 @@ const DetailInfo = () => {
           <div className="img-detailInfo">
             <div className="detail-Info no-img">
               <div className="bold">
-                <b>ID: &nbsp;&nbsp;</b>
-                {property.ID}
+                <b>Code: &nbsp;&nbsp;</b>
+                {offices.Code}
               </div>
               <div className="bold">
-                <b>Name Of Class: &nbsp;&nbsp;</b>
-                {property.Classification_Name}
+                <b>Name Of Office: &nbsp;&nbsp;</b>
+                {offices.Bureaus_Name}
               </div>
               <div className="bold">
-                <b> Code: &nbsp;&nbsp;</b>
-                {property.Classification_Code}
+                <b> Description: &nbsp;&nbsp;</b>
+                {offices.Description}
               </div>
               <div className="bold">
-                <b>Description: &nbsp;&nbsp;</b>
-                {property.Description}
-              </div>
-
-              <div className="bold">
-                <b>Type: &nbsp;&nbsp;</b>
-                {property.Type}
+                <b>Registered Date: &nbsp;&nbsp;</b>
+                {offices.Registered_Date}
               </div>
             </div>
             <button
@@ -61,4 +55,4 @@ const DetailInfo = () => {
   );
 };
 
-export default DetailInfo;
+export default OfficeDetail;

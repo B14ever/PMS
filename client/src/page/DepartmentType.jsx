@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -40,6 +41,7 @@ const Td = styled.td`
 `;
 function DepartmentType() {
   const [data, setData] = useState({ departmentType: "" });
+  const navigate = useNavigate();
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
   const TableHeading = [t("Order"), t("DepartmentType"), t("Action")];
@@ -127,7 +129,15 @@ function DepartmentType() {
                               <button>
                                 <bootstrapIcon.BsFillFileEarmarkCheckFill />
                               </button>
-                              <button>
+                              <button
+                                onClick={() => {
+                                  navigate("/departmentTypeInformation", {
+                                    state: {
+                                      departmentType: DepartmentsType[index],
+                                    },
+                                  });
+                                }}
+                              >
                                 <bootstrapIcon.BsFillFileEarmarkPersonFill />
                               </button>
                               <button>

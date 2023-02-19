@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -43,6 +44,7 @@ function Office() {
     Code: "",
     Description: "",
   });
+  const navigate = useNavigate();
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
   const TableHeading = [
@@ -161,7 +163,13 @@ function Office() {
                             <button>
                               <bootstrapIcon.BsFillFileEarmarkCheckFill />
                             </button>
-                            <button>
+                            <button
+                              onClick={() => {
+                                navigate("/officeInformation", {
+                                  state: { offices: Offices[index] },
+                                });
+                              }}
+                            >
                               <bootstrapIcon.BsFillFileEarmarkPersonFill />
                             </button>
                             <button>
