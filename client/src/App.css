@@ -931,6 +931,198 @@ fieldset label {
   color: #000;
 }
 
+.profile {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.profile-countainer {
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 50px 18px 0;
+}
+
+.info-countainer {
+  height: 65vh;
+  width: 100%;
+  flex: 50%;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+}
+
+.info-countainer .image {
+  position: absolute;
+  top: -30px;
+  left: 30%;
+}
+
+.image img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.img_btn input {
+  display: none;
+}
+
+.img_btn label {
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  right: 0;
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon {
+  fill: #3071e7;
+}
+
+.img_btn label:hover {
+  background: #f1f1f1;
+  border-color: #d6d6d6;
+}
+
+.user_countainer {
+  position: absolute;
+  top: 8.2rem;
+  width: 100%;
+}
+
+.user_name {
+  display: flex;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3em;
+}
+
+.user-info {
+  padding-left: 0.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-info p:nth-child(1) {
+  width: 7rem;
+}
+
+.user-info p:nth-child(2) {
+  padding-left: 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+.setting-countainer {
+  height: 65vh;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+}
+
+.setting-header {
+  position: relative;
+  background-color: #3071e7;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header-text {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 2.2rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.setting-countent {
+  width: 100%;
+}
+
+.header-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.setting-btn {
+  padding: 8px 18px;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.setting-btn:focus {
+  background-color: #fff;
+  color: #3071e7;
+}
+
+.Security {
+  width: 100%;
+  display: none;
+}
+
+.Defualt .General {
+  display: flex;
+  flex-direction: column;
+}
+
+.General {
+  width: 100%;
+  display: none;
+}
+
+.Show,
+.display {
+  display: flex;
+  flex-direction: column;
+}
+
+.General .Form-Control {
+  display: flex;
+}
+
+.General .submit-control,
+.Security .submit-control {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+input::placeholder {
+  color: #e7e7e7;
+}
+
 @media (max-width: 768px) {
   .header {
     position: fixed;
@@ -968,5 +1160,23 @@ fieldset label {
   .input-control fieldset {
     display: flex;
     justify-content: center;
+  }
+  .row-1,
+  .row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 1.5rem;
+    gap: 1rem;
+  }
+  .profile-countainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .setting-countainer {
+    height: 100vh;
+  }
+  .General .Form-Control {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
