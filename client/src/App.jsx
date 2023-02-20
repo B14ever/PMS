@@ -19,6 +19,9 @@ import EmployeeDetail from "./page/employeeDetail";
 import OfficeDetail from "./page/officeDetail";
 import DepartmentDetail from "./page/departmentDetail";
 import DepartmentTypeDetail from "./page/departmentTypeDetail";
+import RareCost from "./page/RareCost";
+import NewRareCostItem from "./page/NewRareCostItem";
+import Profile from "./page/Profile";
 const App = () => {
   return (
     <>
@@ -63,6 +66,9 @@ const App = () => {
             path="/departmentTypeInformation"
             element={<DepartmentTypeDetail />}
           ></Route>
+          <Route path="/RareItemCost" element={<RareCost />} />
+          <Route path="/NewRareItemCost" element={<NewRareCostItem />} />
+          <Route path="/Profile" element={<Profile />} />
         </Route>
       </Routes>
     </>

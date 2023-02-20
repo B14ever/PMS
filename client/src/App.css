@@ -814,6 +814,123 @@ fieldset label {
   border-radius: 10px;
 }
 
+.submit-control button:nth-child(1) {
+  background-color: rgb(66, 103, 178);
+}
+
+.submit-control button:nth-child(2) {
+  background-color: #f5f6f7;
+  color: #4b4f56;
+}
+
+.row-1 {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 8rem;
+}
+
+.col-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-1 img {
+  width: 100px;
+  height: 100px;
+}
+
+.col-1f {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.Text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Text h1 {
+  font-size: 1.5rem;
+}
+
+.col-2 {
+  display: flex;
+  gap: 2rem;
+}
+
+.col-2f {
+  width: 100%;
+}
+
+.col-2f .input-control {
+  margin-top: 1rem;
+}
+
+.row-2 {
+  margin-top: 2rem;
+}
+
+.Add-btn {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Add-btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #fff;
+  background-color: #3071e7;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 40px;
+}
+
+.row-2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 400px 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.row-2-col-2 {
+  display: flex;
+}
+
+.row-input {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.roq-2-col-1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roq-2-col-1 .row-input {
+  width: 100%;
+  margin-left: 0;
+}
+
+.row-input input {
+  padding: 8px 8px;
+  border-radius: 10px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  outline: none;
+  color: #000;
+}
+
 @media (max-width: 768px) {
   .header {
     position: fixed;
