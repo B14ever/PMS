@@ -7,7 +7,7 @@ export const TranslationEn = {
   buttonText: "Login",
   Company: "Dire Dawa Adminstration",
   Software: "Property managment System",
-  LNG: "Language",
+  LNG: "Lang",
   Organization: "Organization",
   Structure: "Structure",
   Office: "Office",
