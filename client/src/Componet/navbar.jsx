@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useGetData } from "../Hook/GetData";
 const Navbar = () => {
   const StateContext = useContext(Context);
-  const { toggle, setToggle, langBtn, setLangBtn, i18n } = StateContext;
+  const { toggle, setToggle, langBtn, setLangBtn, i18n, t } = StateContext;
   const Email = sessionStorage.getItem("autenthicate");
   const [data] = useGetData(`http://localhost:5000/getPhoto?Email=${Email}`);
   return (
@@ -33,7 +33,7 @@ const Navbar = () => {
               className="lang-btn"
               onClick={() => (langBtn ? setLangBtn(false) : setLangBtn(true))}
             >
-              LNG
+              {t("LNG")}
             </button>
             <div className="dropdawn-menu">
               <button
@@ -50,7 +50,7 @@ const Navbar = () => {
               </button>
               <button
                 className="lang"
-                onClick={() => i18n.changeLanguage("om")}
+                onClick={() => i18n.changeLanguage("or")}
               >
                 Orom
               </button>
