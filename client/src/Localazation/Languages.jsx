@@ -108,7 +108,6 @@ export const TranslationEn = {
   VechileOwenerIdNumber: "Owner Card Id Number ",
   TypeofGas: "የሚጠቀመው የነዳጅ አይነት",
   NewVechilesRegistrationPage: "New Vehiles Registration Page",
-  OfficeName: "Office Name",
   Code: "Code",
   OfficeList: "Office List",
   AddNewOffice: "Add New Office",
@@ -138,8 +137,14 @@ export const TranslationEn = {
   AccountsPayableReceipt: "Accounts Payable Receipt Model 22ለ Detiles",
   deliverer: "Deliverer",
   FileNumber: "File Number",
+  OfficeName: "Office Name",
+  RegisteredDate: "Registered Date",
+  back: "Back",
 };
 export const TranslationAm = {
+  back: "ተመለስ",
+  RegisteredDate: "የተመዘገበበት ቀን",
+  OfficeName: "የቢሮ ስም",
   CreateNew22Model: "አዲስ ሞዴል 22ለ አዘጋጅ",
   AccountsPayableReceipt: "አላቂ ንብረትና የሂሳብ መዝገቦች ወጪ ማድረጊያ ደረሰኝ [ሞደል 22ለ] ዝርዝር",
   deliverer: "አስረካቢ",
@@ -263,7 +268,6 @@ export const TranslationAm = {
   VechileOwenerIdNumber: "የባለቤትነት መታወቂያ ደፕተር ቁጥር",
   TypeofGas: "የሚጠቀመው የነዳጅ አይነት",
   NewVechilesRegistrationPage: "አዲስ ተሽከርካሪ መርጃ መመዝገቢያ ቅጽ",
-  OfficeName: "የቢሮ ስም",
   Code: "መለያ",
   OfficeList: "የተመዘገቡ ቢሮዎች",
   AddNewOffice: "አዲስ ቢሮ መመዝገቢያ",
@@ -281,6 +285,8 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  back: "dugda",
+  RegisteredDate: "Guyyaa Galmaa'e",
   CreateNew22Model: "Moodeela 22L Haaraa Uumuu",
   AccountsPayableReceipt: "Nagahee Herrega Kaffaltii Moodeela 22L Bal’ina",
   deliverer: "Dhiyeessaa",
@@ -410,6 +416,8 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  back: "ዝባን",
+  RegisteredDate: "ዝተመዝገበበት ዕለት",
   CreateNew22Model: "ሓድሽ 22ለ ሞዴል ​​ምፍጣር",
   AccountsPayableReceipt: "ሒሳብ ዝኽፈል ቅብሊት ሞዴል 22ለ ዝርዝር",
   deliverer: "ኣቕራቢ",
@@ -540,6 +548,8 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  back: "dib",
+  RegisteredDate: "Taariikhda Diwaangashan",
   CreateNew22Model: "Samee Model Cusub 22L",
   AccountsPayableReceipt:
     "Qaabka Rasiidka Xisaabaadka La Bixin Karo 22L Faahfaahin",

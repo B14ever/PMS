@@ -24,19 +24,19 @@ const OfficeDetail = () => {
           <div className="img-detailInfo">
             <div className="detail-Info no-img">
               <div className="bold">
-                <b>Code: &nbsp;&nbsp;</b>
+                <b>{t("Code")}: &nbsp;&nbsp;</b>
                 {offices.Code}
               </div>
               <div className="bold">
-                <b>Name Of Office: &nbsp;&nbsp;</b>
-                {offices.Bureaus_Name}
+                <b>{t("OfficeName")}: &nbsp;&nbsp;</b>
+                {offices.Bureau_Name}
               </div>
               <div className="bold">
-                <b> Description: &nbsp;&nbsp;</b>
+                <b> {t("Describtion")}: &nbsp;&nbsp;</b>
                 {offices.Description}
               </div>
               <div className="bold">
-                <b>Registered Date: &nbsp;&nbsp;</b>
+                <b>{t("RegisteredDate")}: &nbsp;&nbsp;</b>
                 {offices.Registered_Date}
               </div>
             </div>
@@ -46,7 +46,7 @@ const OfficeDetail = () => {
                 navigate(-1);
               }}
             >
-              Go Back
+              {t("back")}
             </button>
           </div>
         </main>
