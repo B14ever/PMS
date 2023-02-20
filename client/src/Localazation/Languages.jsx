@@ -140,8 +140,10 @@ export const TranslationEn = {
   OfficeName: "Office Name",
   RegisteredDate: "Registered Date",
   back: "Back",
+  OfficeType: "Office Type",
 };
 export const TranslationAm = {
+  OfficeType: "የቢሮ አይነት",
   back: "ተመለስ",
   RegisteredDate: "የተመዘገበበት ቀን",
   OfficeName: "የቢሮ ስም",
@@ -285,6 +287,12 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  NewDepartment: "Kutaa Haaraa Dabaluu",
+  RegisterdDepartment: "Tarree Kutaa Kutaa",
+  DepartmentType: "Gosa Kutaa",
+  Department: "Qajeelcha",
+  Office: "Waajjira",
+  OfficeType: "Gosa Waajjira",
   back: "dugda",
   RegisteredDate: "Guyyaa Galmaa'e",
   CreateNew22Model: "Moodeela 22L Haaraa Uumuu",
@@ -416,6 +424,12 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  NewDepartment: "ሓድሽ ክፍሊ ምውሳኽ",
+  RegisterdDepartment: "ዝርዝር ክፍልታት",
+  DepartmentType: "ዓይነት ክፍሊ",
+  Department: "ክፍሊ",
+  Office: "ቤት-ፅሕፈት",
+  OfficeType: "ዓይነት ቤት ጽሕፈት",
   back: "ዝባን",
   RegisteredDate: "ዝተመዝገበበት ዕለት",
   CreateNew22Model: "ሓድሽ 22ለ ሞዴል ​​ምፍጣር",
@@ -548,6 +562,12 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  NewDepartment: "Kudar Waaxda Cusub",
+  RegisterdDepartment: "Liiska Waaxda",
+  DepartmentType: "Nooca Waaxda",
+  Department: "Waaxda",
+  Office: "Xafiiska",
+  OfficeType: "Nooca Xafiiska",
   back: "dib",
   RegisteredDate: "Taariikhda Diwaangashan",
   CreateNew22Model: "Samee Model Cusub 22L",
