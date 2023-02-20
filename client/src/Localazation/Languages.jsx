@@ -134,8 +134,16 @@ export const TranslationEn = {
   Comment: "Comment",
   CostCenter: "Cost Center",
   Quantity: "Quantity",
+  CreateNew22Model: "Create New 22ለ Model",
+  AccountsPayableReceipt: "Accounts Payable Receipt Model 22ለ Detiles",
+  deliverer: "Deliverer",
+  FileNumber: "File Number",
 };
 export const TranslationAm = {
+  CreateNew22Model: "አዲስ ሞዴል 22ለ አዘጋጅ",
+  AccountsPayableReceipt: "አላቂ ንብረትና የሂሳብ መዝገቦች ወጪ ማድረጊያ ደረሰኝ [ሞደል 22ለ] ዝርዝር",
+  deliverer: "አስረካቢ",
+  FileNumber: "የሰነድ ቁጥር",
   CostCenter: "የወጪ ማእከል",
   CompanyFullName: "የድሬዳዋ አስተዳደር ጽ/ቤት",
   FixedAssetCosting: "የቆሚ ንብረት ወጪ ማድረጊያ ደርሰኝ",
@@ -273,6 +281,10 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  CreateNew22Model: "Moodeela 22L Haaraa Uumuu",
+  AccountsPayableReceipt: "Nagahee Herrega Kaffaltii Moodeela 22L Bal’ina",
+  deliverer: "Dhiyeessaa",
+  FileNumber: "Lakkoofsa Faayilii",
   CostCenter: "Giddugala Baasii",
   reciver: "fudhataa",
   Date: "Guyyaa",
@@ -398,6 +410,10 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  CreateNew22Model: "ሓድሽ 22ለ ሞዴል ​​ምፍጣር",
+  AccountsPayableReceipt: "ሒሳብ ዝኽፈል ቅብሊት ሞዴል 22ለ ዝርዝር",
+  deliverer: "ኣቕራቢ",
+  FileNumber: "ቁጽሪ ፋይል",
   CostCenter: "ማእከል ወጻኢታት",
   reciver: "ተቐባሊ",
   Date: "ዕለት",
@@ -524,6 +540,11 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  CreateNew22Model: "Samee Model Cusub 22L",
+  AccountsPayableReceipt:
+    "Qaabka Rasiidka Xisaabaadka La Bixin Karo 22L Faahfaahin",
+  deliverer: "Bixiyaha",
+  FileNumber: "Lambarka Faylka",
   CostCenter: "Xarunta Qiimaha",
   reciver: "qaataha",
   Date: "Taariikhda",
