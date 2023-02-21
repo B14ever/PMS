@@ -287,6 +287,8 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  RegisterdDepartmentType: "Gosa Tarree Kutaa Kutaa",
+  NewDepartmentType: "Gosa Kutaa Haaraa Dabaluu",
   NewDepartment: "Kutaa Haaraa Dabaluu",
   RegisterdDepartment: "Tarree Kutaa Kutaa",
   DepartmentType: "Gosa Kutaa",
@@ -424,6 +426,8 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  RegisterdDepartmentType: "ዓይነት ዝርዝር ክፍሊ",
+  NewDepartmentType: "ሓድሽ ዓይነት ክፍሊ ምውሳኽ",
   NewDepartment: "ሓድሽ ክፍሊ ምውሳኽ",
   RegisterdDepartment: "ዝርዝር ክፍልታት",
   DepartmentType: "ዓይነት ክፍሊ",
@@ -562,6 +566,8 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  RegisterdDepartmentType: "Nooca Liiska Waaxda",
+  NewDepartmentType: "Kudar Nooca Waaxda Cusub",
   NewDepartment: "Kudar Waaxda Cusub",
   RegisterdDepartment: "Liiska Waaxda",
   DepartmentType: "Nooca Waaxda",
@@ -691,7 +697,6 @@ export const TranslationSo = {
   NewPropertyMList: "Diiwaanka fasalka cusub",
   Name: "Magaca Kala-saarista",
   Description: "Sharaxaada",
-  ID: "ID",
   StokeMain: "Stoke",
   StokeMainList: "Liiska Stoke",
   StokeMainReg: "Ku dar kayd cusub",
