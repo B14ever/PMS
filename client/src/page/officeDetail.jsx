@@ -19,7 +19,7 @@ const OfficeDetail = () => {
         <SideBar />
         <main className="content">
           <div className="content-countainer">
-            <PageHeader Message={[t("PropertyMList")]} />
+            <PageHeader Message={[t("Office")]} />
           </div>
           <div className="img-detailInfo">
             <div className="detail-Info no-img">

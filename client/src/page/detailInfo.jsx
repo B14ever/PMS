@@ -25,24 +25,24 @@ const DetailInfo = () => {
           <div className="img-detailInfo">
             <div className="detail-Info no-img">
               <div className="bold">
-                <b>ID: &nbsp;&nbsp;</b>
+                <b>{t("ID")}: &nbsp;&nbsp;</b>
                 {property.ID}
               </div>
               <div className="bold">
-                <b>Name Of Class: &nbsp;&nbsp;</b>
+                <b>{t("Name")}: &nbsp;&nbsp;</b>
                 {property.Classification_Name}
               </div>
               <div className="bold">
-                <b> Code: &nbsp;&nbsp;</b>
+                <b> {t("Code")}: &nbsp;&nbsp;</b>
                 {property.Classification_Code}
               </div>
               <div className="bold">
-                <b>Description: &nbsp;&nbsp;</b>
+                <b>{t("Description")}: &nbsp;&nbsp;</b>
                 {property.Description}
               </div>
 
               <div className="bold">
-                <b>Type: &nbsp;&nbsp;</b>
+                <b>{t("Type")}: &nbsp;&nbsp;</b>
                 {property.Type}
               </div>
             </div>
@@ -52,7 +52,7 @@ const DetailInfo = () => {
                 navigate(-1);
               }}
             >
-              Go Back
+              {t("back")}
             </button>
           </div>
         </main>
