@@ -24,11 +24,11 @@ const DepartmentTypeDetail = () => {
           <div className="img-detailInfo">
             <div className="detail-Info no-img">
               <div className="bold">
-                <b>ID: &nbsp;&nbsp;</b>
+                <b>{t("ID")}: &nbsp;&nbsp;</b>
                 {departmentType.ID}
               </div>
               <div className="bold">
-                <b>Department Type Name : &nbsp;&nbsp;</b>
+                <b>{t("DepartmentType")} : &nbsp;&nbsp;</b>
                 {departmentType.Type_Name}
               </div>
             </div>
@@ -38,7 +38,7 @@ const DepartmentTypeDetail = () => {
                 navigate(-1);
               }}
             >
-              Go Back
+              {t("back")}
             </button>
           </div>
         </main>
