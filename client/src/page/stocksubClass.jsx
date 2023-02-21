@@ -49,7 +49,7 @@ const SubClassification = () => {
 
   const TableHeading = [
     t("ID"),
-    t("Name"),
+    t("subStokeName"),
     t("Code"),
     t("ClassificationId"),
     t("Action"),
@@ -91,16 +91,16 @@ const SubClassification = () => {
           </div>
           <div className="Two-Table">
             <div className="Table-Left bordersubStoke">
-              <div className="Top-Text-Stoke subStoke">{t("StokeMainReg")}</div>
+              <div className="Top-Text-Stoke subStoke">{t("SubName")}</div>
               <form action="" className="StokeRegForm">
                 <div className="StokeForm">
                   <div className="StokeMain">
-                    <label className="StokeLable">{t("StokeName")}</label>
+                    <label className="StokeLable">{t("subStokeName")}</label>
                     <input
                       className="StokeInput"
                       type="text"
                       name="name"
-                      placeholder={t("StokeName")}
+                      placeholder={t("subStokeName")}
                       onChange={(e) => {
                         dispatch({ type: "Name", value: e.target.value });
                       }}
@@ -146,7 +146,7 @@ const SubClassification = () => {
             </div>
             <div className="Table-Right bordersubStoke">
               <div className="Top-Text-Stoke subStoke">
-                {t("StokeMainList")}
+                {t("subStokeMainList")}
               </div>
               <div className="Table-Componet-Stoke">
                 <LoadMore /> <Find />

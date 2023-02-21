@@ -117,8 +117,10 @@ export const TranslationEn = {
   Description: "Description",
   StokeMain: "Stoke",
   StokeMainList: "Stoke List",
+  subStokeMainList: "Sub-stoke List",
   StokeMainReg: "Add New Stock",
-  StokeName: "Stoce Name",
+  StokeName: "Stock Name",
+  subStokeName: "Sub-Stock Name",
   StokeDesc: "Description",
   Type: "Type",
   subStoke: "Subclassification of Stock",
@@ -145,8 +147,11 @@ export const TranslationEn = {
   BuildingNumber: "Building Number",
   Location: "Location",
   ClassificationId: "Classification Id",
+  SubName: "New Substock category",
 };
 export const TranslationAm = {
+  subStokeName: "የንዑስ ስቶክ ምድብ ስም",
+  SubName: "አዲስ የንዑስ ስቶክ ምድብ መመዝገቢያ",
   ClassificationId: "የምደባ መታወቂያ",
   Location: "አካባቢ",
   BuildingNumber: "የግንባታ ቁጥር",
@@ -287,6 +292,7 @@ export const TranslationAm = {
   Description: "መግለጫ",
   StokeMain: "የስቶክ ምድብ",
   StokeMainList: "የተመዘገቡ ስቶክ ምድብ ዝርዝር",
+  subStokeMainList: "የተመዘገቡ ንዑስ-ስቶክ ዝርዝር",
   StokeMainReg: "የስቶክ ምድብ መመዝገቢያ",
   StokeName: "ምደባ ስያሜ",
   StokeDesc: "መግለጫ",
@@ -295,6 +301,9 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  subStokeMainList: "Tarree Istookii Xiqqaa",
+  subStokeName: "Maqaa gosa istookii xiqqaa",
+  SubName: "Ramaddii Substock Haaraa",
   ClassificationId: "Ramaddii Id",
   Location: "Bakka",
   BuildingNumber: "Lakkoofsa Gamoo",
@@ -438,6 +447,9 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  subStokeMainList: "ዝርዝር ንኡስ ስቶክ",
+  subStokeName: "ንኡስ ስቶክ ምድብ ስም",
+  SubName: "ሓድሽ ምድብ ንኡስ ኣክስዮን",
   ClassificationId: "ምደባ መለለዪ",
   Location: "ኣንፈት",
   BuildingNumber: "ቁጽሪ ህንጻ",
@@ -582,6 +594,9 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  subStokeMainList: "Liiska saami-hoosaadka",
+  subStokeName: "Magaca qayb-hoosaadka",
+  SubName: "Qaybta Substock-ka cusub",
   ClassificationId: "Aqoonsiga Kala-saarista",
   Location: "Goobta",
   BuildingNumber: "Nambarka Dhismaha",
