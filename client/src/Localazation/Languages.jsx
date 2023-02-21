@@ -141,8 +141,14 @@ export const TranslationEn = {
   RegisteredDate: "Registered Date",
   back: "Back",
   OfficeType: "Office Type",
+  RoomNumber: "Room Number",
+  BuildingNumber: "Building Number",
+  Location: "Location",
 };
 export const TranslationAm = {
+  Location: "አካባቢ",
+  BuildingNumber: "የግንባታ ቁጥር",
+  RoomNumber: "የክፍል ቁጥር",
   OfficeType: "የቢሮ አይነት",
   back: "ተመለስ",
   RegisteredDate: "የተመዘገበበት ቀን",
@@ -287,6 +293,9 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  Location: "Bakka",
+  BuildingNumber: "Lakkoofsa Gamoo",
+  RoomNumber: "lakkoofsa kutaa",
   RegisterdDepartmentType: "Gosa Tarree Kutaa Kutaa",
   NewDepartmentType: "Gosa Kutaa Haaraa Dabaluu",
   NewDepartment: "Kutaa Haaraa Dabaluu",
@@ -426,6 +435,9 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  Location: "ኣንፈት",
+  BuildingNumber: "ቁጽሪ ህንጻ",
+  RoomNumber: "ቁጽሪ ክፍሊ",
   RegisterdDepartmentType: "ዓይነት ዝርዝር ክፍሊ",
   NewDepartmentType: "ሓድሽ ዓይነት ክፍሊ ምውሳኽ",
   NewDepartment: "ሓድሽ ክፍሊ ምውሳኽ",
@@ -566,6 +578,9 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  Location: "Goobta",
+  BuildingNumber: "Nambarka Dhismaha",
+  RoomNumber: "lambarka qolka",
   RegisterdDepartmentType: "Nooca Liiska Waaxda",
   NewDepartmentType: "Kudar Nooca Waaxda Cusub",
   NewDepartment: "Kudar Waaxda Cusub",
