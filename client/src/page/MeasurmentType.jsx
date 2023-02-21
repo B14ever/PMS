@@ -12,13 +12,13 @@ import Find from "../Componet/Find";
 import axios from "axios";
 
 const inState = {
-  Name: "",
+  unit: "",
 };
 
 const reducer = (current, action) => {
   switch (action.type) {
-    case "Name":
-      return { ...current, Name: action.value };
+    case "unit":
+      return { ...current, unit: action.value };
   }
   return current;
 };
@@ -83,10 +83,10 @@ const MeasurmentType = () => {
                     <input
                       className="StokeInput"
                       type="text"
-                      name="name"
+                      name="unit"
                       placeholder={t("StokeName")}
                       onChange={(e) => {
-                        dispatch({ type: "Name", value: e.target.value });
+                        dispatch({ type: "unit", value: e.target.value });
                       }}
                     />
                   </div>
