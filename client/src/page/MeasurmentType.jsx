@@ -9,23 +9,16 @@ import { useGetData } from "../Hook/GetData";
 import usePostData from "../Hook/PostData";
 import LoadMore from "../Componet/LoadMore";
 import Find from "../Componet/Find";
-import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 const inState = {
   Name: "",
-  Code: "",
-  Description: "",
 };
 
 const reducer = (current, action) => {
   switch (action.type) {
     case "Name":
       return { ...current, Name: action.value };
-    case "Code":
-      return { ...current, Code: action.value };
-    case "Description":
-      return { ...current, Description: action.value };
   }
   return current;
 };
@@ -35,25 +28,18 @@ const MeasurmentType = () => {
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
 
-  const [propertymeas] = useGetData(
-    `http://localhost:5000/getPropClass?find=${find}`
+  const [MeasurType] = useGetData(
+    `http://localhost:5000/getMeasurType?find=${find}`
   );
   const [res, propertyReg] = usePostData({
-    url: "http://localhost:5000/postPropClass",
+    url: "http://localhost:5000/postMeasurType",
     Data: data,
   });
   const handelevent = (id) => {
-    axios.delete(`http://localhost:5000/deletePropClass/${id}`);
+    axios.delete(`http://localhost:5000/deleteMeasurType/${id}`);
   };
 
-  const TableHeading = [
-    t("ID"),
-    t("Name"),
-    t("Code"),
-    t("Description"),
-    t("Type"),
-    t("Action"),
-  ];
+  const TableHeading = [t("ID"), t("Unit"), t("Action")];
   return (
     <>
       <Navbar />
@@ -104,34 +90,7 @@ const MeasurmentType = () => {
                       }}
                     />
                   </div>
-                  <div className="StokeMain">
-                    <label className="StokeLable">{t("Code")}</label>
-                    <input
-                      className="StokeInput"
-                      type="text"
-                      name="code"
-                      placeholder={t("Code")}
-                      onChange={(e) => {
-                        dispatch({ type: "Code", value: e.target.value });
-                      }}
-                    />
-                  </div>
-                  <div className="StokeMain">
-                    <label className="StokeLable">{t("StokeDesc")}</label>
-                    <textarea
-                      name="Description"
-                      id="StokeInput"
-                      cols="30"
-                      rows="10"
-                      placeholder={t("StokeDesc")}
-                      onChange={(e) => {
-                        dispatch({
-                          type: "Description",
-                          value: e.target.value,
-                        });
-                      }}
-                    ></textarea>
-                  </div>
+
                   <div className="StokeMain">
                     <button
                       type="submit"
@@ -161,37 +120,30 @@ const MeasurmentType = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {propertymeas
-                      .slice(0, load ? load : 5)
-                      .map((data, index) => (
-                        <tr key={index}>
-                          <td>{index + 1}</td>
-                          <td>{propertymeas[index].Classification_Name}</td>
-                          <td>{propertymeas[index].Classification_Code}</td>
-                          <td>{propertymeas[index].Description}</td>
-                          <td>{propertymeas[index].Type}</td>
-                          <td>
-                            <div className="table-button">
-                              <button>
-                                <bootstrapIcon.BsFillFileEarmarkCheckFill />
-                              </button>
-                              <NavLink role="button" to="/detailInformation">
-                                <button>
-                                  <bootstrapIcon.BsFillFileEarmarkPersonFill />
-                                </button>
-                              </NavLink>
+                    {MeasurType.slice(0, load ? load : 5).map((data, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{MeasurType[index].Unit}</td>
+                        <td>
+                          <div className="table-button">
+                            <button>
+                              <bootstrapIcon.BsFillFileEarmarkCheckFill />
+                            </button>
+                            <button>
+                              <bootstrapIcon.BsFillFileEarmarkPersonFill />
+                            </button>
 
-                              <button
-                                onClick={() => {
-                                  handelevent(propertymeas[index].ID);
-                                }}
-                              >
-                                <bootstrapIcon.BsTrashFill />
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
+                            <button
+                              onClick={() => {
+                                handelevent(MeasurType[index].ID);
+                              }}
+                            >
+                              <bootstrapIcon.BsTrashFill />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>{" "}

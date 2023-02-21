@@ -209,6 +209,22 @@ app.get("/getSubClass", async (req, res) => {
     });
   }
 });
+app.get("/getMeasurType", async (req, res) => {
+  const { find } = req.query;
+  if (find) {
+    const sql = `SELECT * FROM unit WHERE Unit LIKE '%${find}%'`;
+    con.query(sql, (err, data) => {
+      if (data.length > 0) {
+        res.send(data);
+      }
+    });
+  } else {
+    const sql = `SELECT * FROM unit`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  }
+});
 app.post("/postSubClass", async (req, res) => {
   const { Name, Code, ClassId } = req.body;
   const sql = `INSERT INTO Sub_Classification (Sub_Classification_Name, Sub_Classification_Code, Classification_ID) VALUES ("${Name}","${Code}", "${ClassId}")`;
