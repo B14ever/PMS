@@ -225,6 +225,17 @@ app.get("/getMeasurType", async (req, res) => {
     });
   }
 });
+app.post("/postMeasurType", async (req, res) => {
+  const unit = req.body;
+  const sql = `INSERT INTO unit (Unit) VALUES ("${unit}")`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("successful");
+    }
+  });
+});
 app.post("/postSubClass", async (req, res) => {
   const { Name, Code, ClassId } = req.body;
   const sql = `INSERT INTO Sub_Classification (Sub_Classification_Name, Sub_Classification_Code, Classification_ID) VALUES ("${Name}","${Code}", "${ClassId}")`;
@@ -396,6 +407,17 @@ app.delete("/deleteDepartmentsType/:deletID", (req, res) => {
 app.delete("/deleteEmployes/:deletID", (req, res) => {
   const Id = req.params.deletID;
   const sql = `DELETE FROM employee WHERE ID =${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
+  });
+});
+app.delete("/deleteMeasurType/:deletID", (req, res) => {
+  const Id = req.params.deletID;
+  const sql = `DELETE FROM unit WHERE ID = ${Id}`;
   con.query(sql, (err, data) => {
     if (err) {
       console.log(err);
