@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -31,6 +32,7 @@ const reducer = (current, action) => {
 
 const SubClassification = () => {
   const [data, dispatch] = useReducer(reducer, inState);
+  const navigate = useNavigate();
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
 
@@ -170,7 +172,13 @@ const SubClassification = () => {
                             <button>
                               <bootstrapIcon.BsFillFileEarmarkCheckFill />
                             </button>
-                            <button>
+                            <button
+                              onClick={() => {
+                                navigate("/substokeClassInfo", {
+                                  state: { subStoke: subClass[index] },
+                                });
+                              }}
+                            >
                               <bootstrapIcon.BsFillFileEarmarkPersonFill />
                             </button>
 
