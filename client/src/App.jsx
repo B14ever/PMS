@@ -22,6 +22,7 @@ import DepartmentTypeDetail from "./page/departmentTypeDetail";
 import RareCost from "./page/RareCost";
 import NewRareCostItem from "./page/NewRareCostItem";
 import Profile from "./page/Profile";
+import SubStokeClassDetail from "./page/subStokeClassDetail";
 const App = () => {
   return (
     <>
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/RareItemCost" element={<RareCost />} />
           <Route path="/NewRareItemCost" element={<NewRareCostItem />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/substokeClassInfo" element={<SubStokeClassDetail />} />
         </Route>
       </Routes>
     </>
