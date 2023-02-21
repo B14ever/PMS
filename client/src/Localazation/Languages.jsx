@@ -144,8 +144,10 @@ export const TranslationEn = {
   RoomNumber: "Room Number",
   BuildingNumber: "Building Number",
   Location: "Location",
+  ClassificationId: "Classification Id",
 };
 export const TranslationAm = {
+  ClassificationId: "የምደባ መታወቂያ",
   Location: "አካባቢ",
   BuildingNumber: "የግንባታ ቁጥር",
   RoomNumber: "የክፍል ቁጥር",
@@ -293,6 +295,7 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  ClassificationId: "Ramaddii Id",
   Location: "Bakka",
   BuildingNumber: "Lakkoofsa Gamoo",
   RoomNumber: "lakkoofsa kutaa",
@@ -435,6 +438,7 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  ClassificationId: "ምደባ መለለዪ",
   Location: "ኣንፈት",
   BuildingNumber: "ቁጽሪ ህንጻ",
   RoomNumber: "ቁጽሪ ክፍሊ",
@@ -578,6 +582,7 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  ClassificationId: "Aqoonsiga Kala-saarista",
   Location: "Goobta",
   BuildingNumber: "Nambarka Dhismaha",
   RoomNumber: "lambarka qolka",

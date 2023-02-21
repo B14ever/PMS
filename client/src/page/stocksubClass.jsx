@@ -35,23 +35,22 @@ const SubClassification = () => {
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
 
-  const [propertymeas] = useGetData(
-    `http://localhost:5000/getPropClass?find=${find}`
+  const [subClass] = useGetData(
+    `http://localhost:5000/getSubClass?find=${find}`
   );
   const [res, propertyReg] = usePostData({
-    url: "http://localhost:5000/postPropClass",
+    url: "http://localhost:5000/postSubClass",
     Data: data,
   });
   const handelevent = (id) => {
-    axios.delete(`http://localhost:5000/deletePropClass/${id}`);
+    axios.delete(`http://localhost:5000/deleteSubClass/${id}`);
   };
 
   const TableHeading = [
     t("ID"),
     t("Name"),
     t("Code"),
-    t("Description"),
-    t("Type"),
+    t("ClassificationId"),
     t("Action"),
   ];
   return (
@@ -163,37 +162,32 @@ const SubClassification = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {propertymeas
-                      .slice(0, load ? load : 5)
-                      .map((data, index) => (
-                        <tr key={index}>
-                          <td>{index + 1}</td>
-                          <td>{propertymeas[index].Classification_Name}</td>
-                          <td>{propertymeas[index].Classification_Code}</td>
-                          <td>{propertymeas[index].Description}</td>
-                          <td>{propertymeas[index].Type}</td>
-                          <td>
-                            <div className="table-button">
-                              <button>
-                                <bootstrapIcon.BsFillFileEarmarkCheckFill />
-                              </button>
-                              <NavLink role="button" to="/detailInformation">
-                                <button>
-                                  <bootstrapIcon.BsFillFileEarmarkPersonFill />
-                                </button>
-                              </NavLink>
+                    {subClass.slice(0, load ? load : 5).map((data, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{subClass[index].Sub_Classification_Name}</td>
+                        <td>{subClass[index].Sub_Classification_Code}</td>
+                        <td>{subClass[index].Classification_ID}</td>
+                        <td>
+                          <div className="table-button">
+                            <button>
+                              <bootstrapIcon.BsFillFileEarmarkCheckFill />
+                            </button>
+                            <button>
+                              <bootstrapIcon.BsFillFileEarmarkPersonFill />
+                            </button>
 
-                              <button
-                                onClick={() => {
-                                  handelevent(propertymeas[index].ID);
-                                }}
-                              >
-                                <bootstrapIcon.BsTrashFill />
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
+                            <button
+                              onClick={() => {
+                                handelevent(subClass[index].ID);
+                              }}
+                            >
+                              <bootstrapIcon.BsTrashFill />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>{" "}

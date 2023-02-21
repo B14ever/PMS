@@ -193,6 +193,22 @@ app.get("/getPropClass", async (req, res) => {
     });
   }
 });
+app.get("/getSubClass", async (req, res) => {
+  const { find } = req.query;
+  if (find) {
+    const sql = `SELECT * FROM Sub_Classification WHERE Sub_Classification_Name LIKE '%${find}%' OR Sub_Classification_Code LIKE '%${find}%'`;
+    con.query(sql, (err, data) => {
+      if (data.length > 0) {
+        res.send(data);
+      }
+    });
+  } else {
+    const sql = `SELECT * FROM Sub_Classification`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  }
+});
 app.post("/postPropClass", async (req, res) => {
   const { Name, Code, Description } = req.body;
   const sql = `INSERT INTO classification  (Classification_Name, Classification_Code, Description) VALUES ("${Name}","${Code}","${Description}");`;
