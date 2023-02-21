@@ -209,6 +209,17 @@ app.get("/getSubClass", async (req, res) => {
     });
   }
 });
+app.post("/postSubClass", async (req, res) => {
+  const { Name, Code, ClassId } = req.body;
+  const sql = `INSERT INTO Sub_Classification (Sub_Classification_Name, Sub_Classification_Code, Classification_ID) VALUES ("${Name}","${Code}", "${ClassId}")`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("successful");
+    }
+  });
+});
 app.post("/postPropClass", async (req, res) => {
   const { Name, Code, Description } = req.body;
   const sql = `INSERT INTO classification  (Classification_Name, Classification_Code, Description) VALUES ("${Name}","${Code}","${Description}");`;
@@ -309,6 +320,17 @@ app.post("/AddDepartmentType", (req, res) => {
   con.query(sql, (err, responce) => {
     if (err) throw err;
     console.log("succsful");
+  });
+});
+app.delete("/deleteSubClass/:deleteID", (req, res) => {
+  const Id = req.params.deleteID;
+  const sql = `DELETE FROM Sub_Classification WHERE ID = ${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
   });
 });
 app.delete("/deletePropClass/:deletID", (req, res) => {

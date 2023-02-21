@@ -580,7 +580,7 @@ tr:nth-child(even) {
   margin: 10px;
   border: 1px solid rgb(6, 54, 6);
   border-radius: 5px;
-  height: 525px;
+  /* height: 525px; */
   -webkit-box-shadow: 0px 0px 7px -1px #000000;
   box-shadow: 0px 0px 7px -1px #000000;
 }

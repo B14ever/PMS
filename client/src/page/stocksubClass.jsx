@@ -8,14 +8,13 @@ import * as bootstrapIcon from "react-icons/bs";
 import { useGetData } from "../Hook/GetData";
 import usePostData from "../Hook/PostData";
 import LoadMore from "../Componet/LoadMore";
-import { NavLink } from "react-router-dom";
 import Find from "../Componet/Find";
 import axios from "axios";
 
 const inState = {
   Name: "",
   Code: "",
-  Description: "",
+  ClassId: "",
 };
 
 const reducer = (current, action) => {
@@ -24,8 +23,8 @@ const reducer = (current, action) => {
       return { ...current, Name: action.value };
     case "Code":
       return { ...current, Code: action.value };
-    case "Description":
-      return { ...current, Description: action.value };
+    case "ClassId":
+      return { ...current, ClassId: action.value };
   }
   return current;
 };
@@ -118,20 +117,18 @@ const SubClassification = () => {
                     />
                   </div>
                   <div className="StokeMain">
-                    <label className="StokeLable">{t("StokeDesc")}</label>
-                    <textarea
-                      name="Description"
-                      id="StokeInput"
-                      cols="30"
-                      rows="10"
-                      placeholder={t("StokeDesc")}
+                    <label className="StokeLable">
+                      {t("ClassificationId")}
+                    </label>
+                    <input
+                      className="StokeInput"
+                      type="text"
+                      name="classId"
+                      placeholder={t("ClassificationId")}
                       onChange={(e) => {
-                        dispatch({
-                          type: "Description",
-                          value: e.target.value,
-                        });
+                        dispatch({ type: "ClassId", value: e.target.value });
                       }}
-                    ></textarea>
+                    />
                   </div>
                   <div className="StokeMain">
                     <button
