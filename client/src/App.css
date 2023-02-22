@@ -592,6 +592,9 @@ tr:nth-child(even) {
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 7px -1px #000000;
   box-shadow: 0px 0px 7px -1px #000000;
+  /* position: relative;
+  left: 460px;
+  top: -220px; */
 }
 
 .Top-Text-Stoke {

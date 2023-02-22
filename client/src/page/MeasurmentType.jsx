@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
@@ -25,6 +26,7 @@ const reducer = (current, action) => {
 
 const MeasurmentType = () => {
   const [data, dispatch] = useReducer(reducer, inState);
+  const navigate = useNavigate();
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
 
@@ -129,7 +131,13 @@ const MeasurmentType = () => {
                             <button>
                               <bootstrapIcon.BsFillFileEarmarkCheckFill />
                             </button>
-                            <button>
+                            <button
+                              onClick={() => {
+                                navigate("/measurTypeInformation", {
+                                  state: { measurment: MeasurType[index] },
+                                });
+                              }}
+                            >
                               <bootstrapIcon.BsFillFileEarmarkPersonFill />
                             </button>
 
