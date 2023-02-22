@@ -440,4 +440,15 @@ app.delete("/deleteMeasurType/:deletID", (req, res) => {
     }
   });
 });
+app.delete("/deleteProperty/:deleteID", (req, res) => {
+  const Id = req.params.deleteID;
+  const sql = `DELETE FROM property WHERE ID = ${Id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, deleted");
+    }
+  });
+});
 app.listen(5000);
