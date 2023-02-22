@@ -225,6 +225,20 @@ app.get("/getMeasurType", async (req, res) => {
     });
   }
 });
+app.get("/getProperty", async (req, res) => {
+  const { find } = req.query;
+  if (find) {
+    const sql = `SELECT * FROM property WHERE Name LIKE '%${find}%'OR Code LIKE '%${Code}%'`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  } else {
+    const sql = `SELECT * FROM property`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  }
+});
 app.post("/postMeasurType", async (req, res) => {
   const { unit } = req.body;
   const sql = `INSERT INTO unit (Unit) VALUES ("${unit}")`;

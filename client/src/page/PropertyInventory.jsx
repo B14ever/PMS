@@ -15,11 +15,11 @@ const PropertyInventory = () => {
   const navigate = useNavigate();
   const getContext = useContext(Context);
   const { t, load, find } = getContext;
-  const [employe] = useGetData(
-    `http://localhost:5000/getEmployes?find=${find}`
+  const [Property] = useGetData(
+    `http://localhost:5000/getProperty?find=${find}`
   );
   const handelevent = (id) => {
-    axios.delete(`http://localhost:5000/deleteEmployes/${id}`);
+    axios.delete(`http://localhost:5000/deleteProperty/${id}`);
   };
   const TableHeading = [
     t("Order"),
@@ -28,6 +28,7 @@ const PropertyInventory = () => {
     t("FullName"),
     t("Gender"),
     t("WorkClass"),
+    t("WorkRoom"),
     t("WorkRoom"),
     t("Action"),
   ];
@@ -55,26 +56,25 @@ const PropertyInventory = () => {
                 </tr>
               </thead>
               <tbody>
-                {employe?.slice(0, load ? load : 5).map((data, index) => (
+                {Property?.slice(0, load ? load : 5).map((data, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>
-                      {employe[index].Photo ? (
+                      {Property[index].Photo ? (
                         <img
                           className="Emplyee-Photo"
-                          src={`../image/${employe[index].Photo}`}
+                          src={`../image/${Property[index].Photo}`}
                         />
                       ) : (
                         <bootstrapIcon.BsFillPersonFill className="Employee-Picture" />
                       )}
                     </td>
-                    <td>{employe[index].ID_Number}</td>
-                    <td>
-                      {employe[index].First_Name} {employe[index].Last_Name}{" "}
-                    </td>
-                    <td>{employe[index].Sex}</td>
-                    <td>{employe[index].Job_Title}</td>
-                    <td>{employe[index].Department}</td>
+                    <td>{Property[index].ID}</td>
+                    <td>{Property[index].Code}</td>
+                    <td>{Property[index].Name}</td>
+                    <td>{Property[index].Unit}</td>
+                    <td>{Property[index].Store}</td>
+                    <td>{Property[index].Property_Type}</td>
                     <td>
                       <div className="table-button">
                         <button>
@@ -83,7 +83,7 @@ const PropertyInventory = () => {
                         <button
                           onClick={() => {
                             navigate("/employeeInformation", {
-                              state: { employe: employe[index] },
+                              state: { Property: Property[index] },
                             });
                           }}
                         >
@@ -92,7 +92,7 @@ const PropertyInventory = () => {
                         <button>
                           <bootstrapIcon.BsTrashFill
                             onClick={() => {
-                              handelevent(employe[index].ID);
+                              handelevent(Property[index].ID);
                             }}
                           />
                         </button>
