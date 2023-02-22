@@ -149,8 +149,12 @@ export const TranslationEn = {
   ClassificationId: "Classification Id",
   SubName: "New Substock category",
   Unit: "Unit",
+  measurNew: "Add New Unit",
+  unitList: "Unit List",
 };
 export const TranslationAm = {
+  unitList: "የተመዘገቡ የመለኪያ ዝርዝር",
+  measurNew: "አዲስ መለኪያ መመዝገቢያ",
   Unit: "መለኪያ",
   subStokeName: "የንዑስ ስቶክ ምድብ ስም",
   SubName: "አዲስ የንዑስ ስቶክ ምድብ መመዝገቢያ",
@@ -303,6 +307,8 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  unitList: "safartuu Tarree",
+  measurNew: "galmeessuun Safartuu haaraa",
   Unit: "safartuu",
   subStokeMainList: "Tarree Istookii Xiqqaa",
   subStokeName: "Maqaa gosa istookii xiqqaa",
@@ -450,6 +456,8 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  unitList: "መለክዒ ዝርዝር",
+  measurNew: "ምምዝጋብ ሓድሽ መለክዒ",
   Unit: "መለክዒ ምግባር",
   subStokeMainList: "ዝርዝር ንኡስ ስቶክ",
   subStokeName: "ንኡስ ስቶክ ምድብ ስም",
@@ -598,6 +606,8 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  unitList: "Liiska cabbiraadda",
+  measurNew: "diiwaangelinta cabbir cusub",
   Unit: "cabbirid",
   subStokeMainList: "Liiska saami-hoosaadka",
   subStokeName: "Magaca qayb-hoosaadka",

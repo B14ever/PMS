@@ -75,18 +75,16 @@ const MeasurmentType = () => {
           </div>
           <div className="Two-Table">
             <div className="Table-Left borderstokemeas">
-              <div className="Top-Text-Stoke stokeMeas">
-                {t("StokeMainReg")}
-              </div>
+              <div className="Top-Text-Stoke stokeMeas">{t("measurNew")}</div>
               <form action="" className="StokeRegForm">
                 <div className="StokeForm">
                   <div className="StokeMain">
-                    <label className="StokeLable">{t("StokeName")}</label>
+                    <label className="StokeLable">{t("Unit")}</label>
                     <input
                       className="StokeInput"
                       type="text"
                       name="unit"
-                      placeholder={t("StokeName")}
+                      placeholder={t("Unit")}
                       onChange={(e) => {
                         dispatch({ type: "unit", value: e.target.value });
                       }}
@@ -106,9 +104,7 @@ const MeasurmentType = () => {
               </form>
             </div>
             <div className="Table-Right borderstokemeas">
-              <div className="Top-Text-Stoke stokeMeas">
-                {t("StokeMainList")}
-              </div>
+              <div className="Top-Text-Stoke stokeMeas">{t("unitList")}</div>
               <div className="Table-Componet-Stoke">
                 <LoadMore /> <Find />
               </div>
