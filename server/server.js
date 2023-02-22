@@ -226,7 +226,7 @@ app.get("/getMeasurType", async (req, res) => {
   }
 });
 app.post("/postMeasurType", async (req, res) => {
-  const unit = req.body;
+  const { unit } = req.body;
   const sql = `INSERT INTO unit (Unit) VALUES ("${unit}")`;
   con.query(sql, (err, data) => {
     if (err) {
