@@ -5,6 +5,7 @@ import Employe from "./page/Employe";
 import ForbidenPage from "./page/ForbidenPage";
 import RequireAuth from "./Componet/RequireAthu";
 import NewEmployee from "./page/NewEmployee";
+import PropertyInventory from "./page/PropertyInventory";
 import PropertyRegistration from "./page/PropertyRegistration";
 import VechleList from "./page/VechleList";
 import NewVecheles from "./page/NewVecheles";
@@ -40,6 +41,11 @@ const App = () => {
           <Route path="/employe" element={<Employe />}></Route>
           <Route path="/newEmployee" element={<NewEmployee />}></Route>
           <Route path="/PropertyI" element={<PropertyRegistration />}></Route>
+          <Route
+            path="/Propertyinventory"
+            element={<PropertyInventory />}
+          ></Route>
+
           <Route path="/Office" element={<Office />}></Route>
           <Route path="/Departmenttype" element={<DepartmentType />} />
           <Route
