@@ -19,7 +19,7 @@ const PropertyInfo = () => {
         <SideBar />
         <main className="content">
           <div className="content-countainer">
-            <PageHeader Message={[t("PropertyMList")]} />
+            <PageHeader Message={[t("PropertyList")]} />
           </div>
           <div className="img-detailInfo">
             <div className="detail-Info no-img">
@@ -28,12 +28,12 @@ const PropertyInfo = () => {
                 {Property.ID}
               </div>
               <div className="bold">
-                <b>{t("Name")}: &nbsp;&nbsp;</b>
-                {Property.Classification_Name}
+                <b>{t("PropertyCode")}: &nbsp;&nbsp;</b>
+                {Property.Code}
               </div>
               <div className="bold">
-                <b> {t("Code")}: &nbsp;&nbsp;</b>
-                {Property.Classification_Code}
+                <b> {t("PropertyName")}: &nbsp;&nbsp;</b>
+                {Property.Name}
               </div>
               <div className="bold">
                 <b>{t("Description")}: &nbsp;&nbsp;</b>
@@ -41,8 +41,48 @@ const PropertyInfo = () => {
               </div>
 
               <div className="bold">
-                <b>{t("Type")}: &nbsp;&nbsp;</b>
-                {Property.Type}
+                <b>{t("SerieNumber")}: &nbsp;&nbsp;</b>
+                {Property.Serie}
+              </div>
+              <div className="bold">
+                <b>{t("Model")}: &nbsp;&nbsp;</b>
+                {Property.Model}
+              </div>
+              <div className="bold">
+                <b>{t("Propertycategory")}: &nbsp;&nbsp;</b>
+                {Property.Category}
+              </div>
+              <div className="bold">
+                <b>{t("Unit")}: &nbsp;&nbsp;</b>
+                {Property.Unit}
+              </div>
+              <div className="bold">
+                <b>{t("Price")}: &nbsp;&nbsp;</b>
+                {Property.Unit_Price}
+              </div>
+              <div className="bold">
+                <b>{t("Store")}: &nbsp;&nbsp;</b>
+                {Property.Store}
+              </div>
+              <div className="bold">
+                <b>{t("PropertyType")}: &nbsp;&nbsp;</b>
+                {Property.Property_Type}
+              </div>
+              <div className="bold">
+                <b>{t("ClassificationId")}: &nbsp;&nbsp;</b>
+                {Property.Classification_ID}
+              </div>
+              <div className="bold">
+                <b>{t("subClassificationId")}: &nbsp;&nbsp;</b>
+                {Property.Sub_Classification_ID}
+              </div>
+              <div className="bold">
+                <b>{t("RegisteredDate")}: &nbsp;&nbsp;</b>
+                {Property.Registered_Date}
+              </div>
+              <div className="bold">
+                <b>{t("ExpireDate")}: &nbsp;&nbsp;</b>
+                {Property.Expire_Date}
               </div>
             </div>
             <button

@@ -147,12 +147,22 @@ export const TranslationEn = {
   BuildingNumber: "Building Number",
   Location: "Location",
   ClassificationId: "Classification Id",
+  subClassificationId: "Sub-classification Id",
   SubName: "New Substock category",
   Unit: "Unit",
   measurNew: "Add New Unit",
   unitList: "Unit List",
+  PropertyName: "Property Name",
+  Store: "Store",
+  PropertyList: "Property",
+  SerieNumber: "Serial Number",
 };
 export const TranslationAm = {
+  SerieNumber: "ተከታታይ ቁጥር",
+  subClassificationId: "የንዑስ ምደባ መታወቂያ",
+  PropertyList: "ንብረት",
+  Store: "ማከማቻ",
+  PropertyName: "የንብረት ስም",
   unitList: "የተመዘገቡ የመለኪያ ዝርዝር",
   measurNew: "አዲስ መለኪያ መመዝገቢያ",
   Unit: "መለኪያ",
@@ -204,7 +214,7 @@ export const TranslationAm = {
   Employee: "ሰራተኛ",
   pro: "ንብረት",
   Property: "ንብረት መረጃ መመዝገቢያ",
-  PropertyI: "ንብረት መመዝገቢያ",
+  propertyI: "ንብረት መመዝገቢያ",
   Income: "ገቢ ንብረት",
   Fixed: "ቆሚ ንብረት",
   PropertyII: "አላቂ ንብረት",
@@ -307,6 +317,11 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  SerieNumber: "Lakkoofsa Tartiiba",
+  subClassificationId: "Ramaddii xiqqaa Id",
+  PropertyList: "Qabeenya",
+  Store: "Kuusuu",
+  PropertyName: "Maqaa Qabeenyaa",
   unitList: "safartuu Tarree",
   measurNew: "galmeessuun Safartuu haaraa",
   Unit: "safartuu",
@@ -456,6 +471,11 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  SerieNumber: "ተኸታታሊ ቁጽሪ",
+  subClassificationId: "ንኡስ ምደባ Id",
+  PropertyList: "ንብረት",
+  Store: "መኽዝን",
+  PropertyName: "ስም ንብረት",
   unitList: "መለክዒ ዝርዝር",
   measurNew: "ምምዝጋብ ሓድሽ መለክዒ",
   Unit: "መለክዒ ምግባር",
@@ -606,6 +626,11 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  SerieNumber: "Nambarada taxan",
+  subClassificationId: "Aqoonsiga kala-soocidda-hoosaadka",
+  PropertyList: "Hanti",
+  Store: "Bakhaar",
+  PropertyName: "Magaca Hantida",
   unitList: "Liiska cabbiraadda",
   measurNew: "diiwaangelinta cabbir cusub",
   Unit: "cabbirid",
