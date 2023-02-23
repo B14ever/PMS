@@ -23,13 +23,11 @@ const PropertyInventory = () => {
   };
   const TableHeading = [
     t("Order"),
-    t("EmployeePhoto"),
-    t("ID"),
-    t("FullName"),
-    t("Gender"),
-    t("WorkClass"),
-    t("WorkRoom"),
-    t("WorkRoom"),
+    t("PropertyCode"),
+    t("PropertyName"),
+    t("Unit"),
+    t("Store"),
+    t("PropertyType"),
     t("Action"),
   ];
   return (
@@ -39,7 +37,7 @@ const PropertyInventory = () => {
         <SideBar />
         <main className="content">
           <div className="content-countainer">
-            <PageHeader Message={[t("EmployeeList")]} />
+            <PageHeader Message={[t("PropertyList")]} />
             <RegistorButton Message={[t("propertyI"), "/PropertyI"]} />
           </div>
 
@@ -59,17 +57,6 @@ const PropertyInventory = () => {
                 {Property?.slice(0, load ? load : 5).map((data, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>
-                      {Property[index].Photo ? (
-                        <img
-                          className="Emplyee-Photo"
-                          src={`../image/${Property[index].Photo}`}
-                        />
-                      ) : (
-                        <bootstrapIcon.BsFillPersonFill className="Employee-Picture" />
-                      )}
-                    </td>
-                    <td>{Property[index].ID}</td>
                     <td>{Property[index].Code}</td>
                     <td>{Property[index].Name}</td>
                     <td>{Property[index].Unit}</td>
