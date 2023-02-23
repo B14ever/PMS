@@ -82,7 +82,7 @@ const PropertyInventory = () => {
                         </button>
                         <button
                           onClick={() => {
-                            navigate("/employeeInformation", {
+                            navigate("/PropertyInformation", {
                               state: { Property: Property[index] },
                             });
                           }}
