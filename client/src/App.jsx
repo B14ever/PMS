@@ -7,6 +7,7 @@ import RequireAuth from "./Componet/RequireAthu";
 import NewEmployee from "./page/NewEmployee";
 import PropertyInventory from "./page/PropertyInventory";
 import PropertyRegistration from "./page/PropertyRegistration";
+import PropertyInfo from "./page/propertyInformation";
 import VechleList from "./page/VechleList";
 import NewVecheles from "./page/NewVecheles";
 import Office from "./page/Office";
@@ -45,6 +46,7 @@ const App = () => {
             path="/Propertyinventory"
             element={<PropertyInventory />}
           ></Route>
+          <Route path="/PropertyInformation" element={<PropertyInfo />}></Route>
 
           <Route path="/Office" element={<Office />}></Route>
           <Route path="/Departmenttype" element={<DepartmentType />} />
