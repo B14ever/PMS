@@ -86,11 +86,11 @@ function NewFixedIncome() {
               <div className="col-2f">
                 <div className="input-control">
                   <label htmlFor="Model">{t("Model")}</label>
-                  <input type="text" placeholder={t("Model19U")} disabled />
+                  <input type="text" placeholder={t("Model19U")} enabled />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Code")}</label>
-                  <input type="text" placeholder="######" disabled />
+                  <input type="text" placeholder="######" enabled />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Treasuryexpert">{t("Treasuryexpert")}</label>
