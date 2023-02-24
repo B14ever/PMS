@@ -25,10 +25,13 @@ import RareCost from "./page/RareCost";
 import NewRareCostItem from "./page/NewRareCostItem";
 import FixedIncome from "./page/FixedIncome";
 import NewFixedIncome from "./page/NewFixedIncome";
+import FixedCost from "./page/FixedCost";
+import NewFixedCost from "./page/NewFixedCost";
 import NewRareItemIncome from "./page/NewRareItemIncome";
 import RareIncome from "./page/RareIncome";
 import UsedPropertyIncome from "./page/UsedPropertyIncome";
 import NewUsedPropertyIncome from "./page/NewUsedPropertyIncome";
+
 import Profile from "./page/Profile";
 import SubStokeClassDetail from "./page/subStokeClassDetail";
 import MeasurType from "./page/measurTypeDetail";
@@ -93,6 +96,8 @@ const App = () => {
           <Route path="/NewRareItemIncome" element={<NewRareItemIncome />} />
           <Route path="/UsedProrpertIncome" element={<UsedPropertyIncome />} />
           <Route path="/NewUsedPropertyIncome" element={<NewUsedPropertyIncome />} />
+          <Route path="/FixedCost" element={<FixedCost />} />
+          <Route path="/NewFixedCost" element={<NewFixedCost />} />
         </Route>
       </Routes>
     </>
