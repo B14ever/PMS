@@ -86,11 +86,11 @@ function NewUsedPropertyIncome() {
               <div className="col-2f">
                 <div className="input-control">
                   <label htmlFor="Model">{t("Model")}</label>
-                  <input type="text" placeholder={t("Model19ሐ")} enabled />
+                  <input type="text" placeholder={t("Model19ሐ")} disabled />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Code")}</label>
-                  <input type="text" placeholder="######" enabled />
+                  <input type="text" placeholder="######" disabled />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Treasuryexpert">{t("Treasuryexpert")}</label>
