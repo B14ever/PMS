@@ -57,12 +57,12 @@ const FixedIncome = () => {
                 {Vechiles?.slice(0, load ? load : 5).map((data, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <Td>{Vechiles[index].Brand}</Td>
-                    <Td>{Vechiles[index].Model}</Td>
-                    <Td>{Vechiles[index].Year}</Td>
-                    <Td>{Vechiles[index].Engine}</Td>
-                    <Td>{Vechiles[index].Cylinder_Capacity}</Td>
-                    <Td>{Vechiles[index].Chassis_Number}</Td>
+                    <td>{Vechiles[index].Number}</td>
+                    <td>{Vechiles[index].Model}</td>
+                    <td>{Vechiles[index].Received_Office_Name}</td>
+                    <td>{Vechiles[index].Received_Date}</td>
+                    <td>{Vechiles[index].Recipient}</td>
+                    <td>{Vechiles[index].Supplier_Name}</td>
                     <td>
                       <div className="table-button">
                         <button>
