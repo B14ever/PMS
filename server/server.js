@@ -295,6 +295,21 @@ app.get("/getFixedCost", async (req, res) => {
     });
   }
 });
+app.get("/getRareCost", async (req, res) => {
+  const { find } = req.query;
+  if (find) {
+    const sql = `SELECT * FROM issued_property WHERE Received_Office_Name LIKE '%${find}%' AND Model = 'ሞዴል 22 ለ'`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  } else {
+    const sql = `SELECT * FROM issued_property WHERE Model = 'ሞዴል 22 ለ'`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  }
+});
+
 app.post("/postNewFixedCost", async (req, res) => {
   const { PropertyType, Mesurment, Quantity, Price, Comment } = req.body;
   const sql = `INSERT INTO issued_property_details (Quantity,Unit_Cost,Property_Issued_ID,IPD_Office_Name,Remark) VALUES ("${Quantity}","${Price}", "${PropertyType}","${Comment}")`;

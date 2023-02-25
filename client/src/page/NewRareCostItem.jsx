@@ -4,16 +4,17 @@ import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
 import photo from "../image/images.jpg";
 import { useGetData } from "../Hook/GetData";
+import usePostData from "../Hook/PostData";
 import * as bootstrapIcon from "react-icons/bs";
 import SubmitButton from "../Componet/SubmitButton";
 const intialstate = {
-  CostCenter: "",
-  PropertyType: "",
-  reciver: "",
-  Quantity: "",
-  Comment: "",
-  Treasuryexpert: "",
-  Price: "",
+  CostCenter: [],
+  PropertyType: [],
+  reciver: [],
+  Quantity: [],
+  Comment: [],
+  Treasuryexpert: [],
+  Price: [],
 };
 
 const reducer = (currentState, action) => {
@@ -36,11 +37,17 @@ const reducer = (currentState, action) => {
   return currentState;
 };
 function NewRareCostItem() {
+  const [data, dispatch] = useReducer(reducer, intialstate);
+  const [rows, setRows] = useState([]);
   const getContext = useContext(Context);
   const { t, find, date } = getContext;
   const [Employe] = useGetData(
     `http://localhost:5000/serachEmployee?find=${find}`
   );
+  const [res, HandleSubmit] = usePostData({
+    url: "http://localhost:5000/postNewFixedCost",
+    Data: data,
+  });
   const TableHeading = [
     t("Order"),
     t("PropertyType"),
@@ -50,8 +57,6 @@ function NewRareCostItem() {
     t("Comment"),
     t("Action"),
   ];
-  const [data, dispatch] = useReducer(reducer, intialstate);
-  const [rows, setRows] = useState([]);
 
   return (
     <>
@@ -138,60 +143,62 @@ function NewRareCostItem() {
               </div>
             </div>
           </div>
-          <div className="row-2">
-            <div className="roq-2-col-1">
-              <div className="row-input">
-                <label htmlFor="">{t("PropertyType")}</label>
-                <input
-                  type="text"
-                  onChange={(e) =>
-                    dispatch({ type: "PropertyType", value: e.target.value })
-                  }
-                />
+          <form action="">
+            <div className="row-2">
+              <div className="roq-2-col-1">
+                <div className="row-input">
+                  <label htmlFor="">{t("PropertyType")}</label>
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      dispatch({ type: "PropertyType", value: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+              <div className="row-2-col-2">
+                <div className="row-input">
+                  <label htmlFor="">{t("Mesurment")}</label>
+                  <input type="text" disabled />
+                </div>
+                <div className="row-input">
+                  <label htmlFor="">{t("Quantity")}</label>
+                  <input
+                    type="number"
+                    onChange={(e) =>
+                      dispatch({ type: "Quantity", value: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+              <div className="row-2-col-2">
+                <div className="row-input">
+                  <label htmlFor="">{t("Price")}</label>
+                  <input
+                    type="number"
+                    onChange={(e) =>
+                      dispatch({ type: "Price", value: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="row-input">
+                  <label htmlFor="">{t("Comment")}</label>
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      dispatch({ type: "Comment", value: e.target.value })
+                    }
+                  />
+                </div>
               </div>
             </div>
-            <div className="row-2-col-2">
-              <div className="row-input">
-                <label htmlFor="">{t("Mesurment")}</label>
-                <input type="text" disabled />
-              </div>
-              <div className="row-input">
-                <label htmlFor="">{t("Quantity")}</label>
-                <input
-                  type="number"
-                  onChange={(e) =>
-                    dispatch({ type: "Quantity", value: e.target.value })
-                  }
-                />
-              </div>
+            <div className="Add-btn">
+              <button onClick={() => setRows([...rows, data])}>
+                <bootstrapIcon.BsFillCartPlusFill />
+                Add
+              </button>
             </div>
-            <div className="row-2-col-2">
-              <div className="row-input">
-                <label htmlFor="">{t("Price")}</label>
-                <input
-                  type="number"
-                  onChange={(e) =>
-                    dispatch({ type: "Price", value: e.target.value })
-                  }
-                />
-              </div>
-              <div className="row-input">
-                <label htmlFor="">{t("Comment")}</label>
-                <input
-                  type="text"
-                  onChange={(e) =>
-                    dispatch({ type: "Comment", value: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Add-btn">
-            <button onClick={() => setRows([...rows, data])}>
-              <bootstrapIcon.BsFillCartPlusFill />
-              Add
-            </button>
-          </div>
+          </form>
           <div
             className="Table"
             style={{ marginBottom: "1rem", height: "250px" }}
@@ -233,7 +240,13 @@ function NewRareCostItem() {
               </tbody>
             </table>
           </div>
-          {rows.length ? <SubmitButton /> : null}
+          {rows.length ? (
+            <SubmitButton
+              onClick={() => {
+                HandleSubmit;
+              }}
+            />
+          ) : null}
         </main>
       </div>
     </>
