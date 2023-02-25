@@ -62,7 +62,7 @@ const RareIncome = () => {
                     <td>{Vechiles[index].Received_Office_Name}</td>
                     <td>{Vechiles[index].Received_Date}</td>
                     <td>{Vechiles[index].Recipient}</td>
-                    <td>{Vechiles[index].Supplier_Name}</td>
+                    <td>{Vechiles[index].Donor}</td>
 
                     <td>
                       <div className="table-button">
