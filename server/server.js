@@ -239,6 +239,31 @@ app.get("/getProperty", async (req, res) => {
     });
   }
 });
+app.get("/getRareIncome", async (req, res) => {
+  const { find } = req.query;
+  if (find) {
+    const sql = `SELECT * FROM received_property WHERE Received_Office_Name LIKE '%${find}%' AND Model = 'ሞዴል 19 ለ'`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  } else {
+    const sql = `SELECT * FROM received_property WHERE Model = 'ሞዴል 19 ለ'`;
+    con.query(sql, (err, data) => {
+      res.send(data);
+    });
+  }
+});
+app.post("/postNewRareIncome", async (req, res) => {
+  const { PropertyType, Mesurment, Quantity, Price, Comment } = req.body;
+  const sql = `INSERT INTO received_property_details (Quantity,Unit_Cost,Property_Received_ID,RPD_Office_Name,Remark) VALUES ("${Quantity}","${Price}", "${PropertyType}","${Comment}")`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("successful");
+    }
+  });
+});
 app.post("/postMeasurType", async (req, res) => {
   const { unit } = req.body;
   const sql = `INSERT INTO unit (Unit) VALUES ("${unit}")`;
