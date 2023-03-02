@@ -197,7 +197,13 @@ function Department() {
                           <Td>{Departments[index].Description}</Td>
                           <Td>
                             <div className="table-button">
-                              <button>
+                              <button
+                                onClick={() => {
+                                  navigate("/editDepartment", {
+                                    state: { departments: Departments[index] },
+                                  });
+                                }}
+                              >
                                 <bootstrapIcon.BsFillFileEarmarkCheckFill />
                               </button>
                               <button
