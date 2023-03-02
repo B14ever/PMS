@@ -577,4 +577,15 @@ app.put("/EditOffice", (req, res) => {
     }
   });
 });
+app.put("/EditDepartment", (req, res) => {
+  const { id, Department, Description } = req.body;
+  const sql = `UPDATE departments SET Offices_Name = "${Department}",  Description = "${Description}" WHERE ID = ${id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, Edited");
+    }
+  });
+});
 app.listen(5000);
