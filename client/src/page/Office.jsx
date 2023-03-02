@@ -160,7 +160,13 @@ function Office() {
                         <Td>{Offices[index].Description}</Td>
                         <Td>
                           <div className="table-button">
-                            <button>
+                            <button
+                              onClick={() => {
+                                navigate("/editOffice", {
+                                  state: { offices: Offices[index] },
+                                });
+                              }}
+                            >
                               <bootstrapIcon.BsFillFileEarmarkCheckFill />
                             </button>
                             <button

@@ -10,7 +10,7 @@ const MySQLStore = require("express-mysql-session")(session);
 app.use(
   cors({
     origin: ["http://localhost:5173"],
-    methods: ["GET", "POST", "DELETE"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
 );
@@ -563,6 +563,17 @@ app.delete("/deleteProperty/:deleteID", (req, res) => {
       console.log(err);
     } else {
       console.log("success, deleted");
+    }
+  });
+});
+app.put("/EditOffice", (req, res) => {
+  const { id, officeName, Code, Description } = req.body;
+  const sql = `UPDATE bureaus SET Bureau_Name = "${officeName}", Code = "${Code}", Description = "${Description}" WHERE ID = ${id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, Edited");
     }
   });
 });
