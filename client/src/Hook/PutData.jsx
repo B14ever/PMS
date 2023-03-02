@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-const useDeleteData = (url) => {
+const usePutData = ({ url, Data }) => {
   const [data, setData] = useState([]);
-  const HandleDelete = async (event) => {
+  const HandleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const responce = await axios.delete(url);
+      const responce = await axios.put(url, Data);
       setData(responce);
     } catch (err) {
       console.error(err);
     }
   };
-  return [data, HandleDelete];
+  return [data, HandleSubmit];
 };
 
-export default useDeleteData;
+export default usePutData;

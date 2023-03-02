@@ -31,6 +31,7 @@ import NewRareItemIncome from "./page/NewRareItemIncome";
 import RareIncome from "./page/RareIncome";
 import UsedPropertyIncome from "./page/UsedPropertyIncome";
 import NewUsedPropertyIncome from "./page/NewUsedPropertyIncome";
+import EditOffice from "./page/EditOffice";
 
 import Profile from "./page/Profile";
 import SubStokeClassDetail from "./page/subStokeClassDetail";
@@ -95,9 +96,13 @@ const App = () => {
           <Route path="/RareItemIncome" element={<RareIncome />} />
           <Route path="/NewRareItemIncome" element={<NewRareItemIncome />} />
           <Route path="/UsedProrpertIncome" element={<UsedPropertyIncome />} />
-          <Route path="/NewUsedPropertyIncome" element={<NewUsedPropertyIncome />} />
+          <Route
+            path="/NewUsedPropertyIncome"
+            element={<NewUsedPropertyIncome />}
+          />
           <Route path="/FixedCost" element={<FixedCost />} />
           <Route path="/NewFixedCost" element={<NewFixedCost />} />
+          <Route path="/editOffice" element={<EditOffice />} />
         </Route>
       </Routes>
     </>

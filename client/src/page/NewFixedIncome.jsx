@@ -223,8 +223,8 @@ function NewFixedIncome() {
                   return (
                     <tr key={index}>
                       <td>{index + 1}</td>
-                      <td>{rows[index].CostCenter}</td>
                       <td>{rows[index].PropertyType}</td>
+                      <td>{rows[index].Mesurment}</td>
                       <td>{rows[index].Quantity}</td>
                       <td>{rows[index].Comment}</td>
                       <td>{rows[index].Price}</td>
