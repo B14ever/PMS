@@ -56,7 +56,7 @@ const EmployeeDetail = () => {
                   </div>
                   <div className="bold">
                     <b>{t("Mobile")}: &nbsp;&nbsp;</b>
-                    {employe.Mobile}
+                    {employe.Moblie}
                   </div>
                   <div className="bold">
                     <b>{t("Address")}: &nbsp;&nbsp;</b>

@@ -126,9 +126,6 @@ function DepartmentType() {
                           <Td>{DepartmentsType[index].Type_Name}</Td>
                           <Td>
                             <div className="table-button">
-                              <button>
-                                <bootstrapIcon.BsFillFileEarmarkCheckFill />
-                              </button>
                               <button
                                 onClick={() => {
                                   navigate("/departmentTypeInformation", {
@@ -140,7 +137,7 @@ function DepartmentType() {
                               >
                                 <bootstrapIcon.BsFillFileEarmarkPersonFill />
                               </button>
-                              <button>
+                              <button style={{ backgroundColor: "red" }}>
                                 <bootstrapIcon.BsTrashFill
                                   onClick={() => {
                                     handelevent(DepartmentsType[index].ID);

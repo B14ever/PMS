@@ -566,17 +566,7 @@ app.delete("/deleteProperty/:deleteID", (req, res) => {
     }
   });
 });
-app.put("/EditOffice", (req, res) => {
-  const { id, officeName, Code, Description } = req.body;
-  const sql = `UPDATE bureaus SET Bureau_Name = "${officeName}", Code = "${Code}", Description = "${Description}" WHERE ID = ${id}`;
-  con.query(sql, (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("success, Edited");
-    }
-  });
-});
+
 app.put("/EditDepartment", (req, res) => {
   const { id, Department, Description } = req.body;
   const sql = `UPDATE departments SET Offices_Name = "${Department}",  Description = "${Description}" WHERE ID = ${id}`;
@@ -588,4 +578,30 @@ app.put("/EditDepartment", (req, res) => {
     }
   });
 });
+app.put("/EditEmployee", (req, res) => {
+  const {
+    id,
+    FirstName,
+    MidleName,
+    LastName,
+    Gender,
+    PhoneNumber,
+    Mobile,
+    Email,
+    Address,
+    CostCenterName,
+    WorkPlaceName,
+    WorkPostionName,
+    Photo,
+  } = req.body;
+  const sql = `UPDATE employee SET First_Name = "${FirstName}",Middle_Name = "${MidleName}",Last_Name = "${LastName}" ,Sex = "${Gender}" , Job_Title = "${WorkPostionName}",Phone = "${PhoneNumber}",Email = "${Email}",Moblie = "${Mobile}",Address = "${Address}" ,Department = "${CostCenterName}",Photo = "${Photo}",Location = "${WorkPlaceName}"  WHERE ID = ${id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, Edited");
+    }
+  });
+});
+
 app.listen(5000);
