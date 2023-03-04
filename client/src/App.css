@@ -650,6 +650,10 @@ tr:nth-child(even) {
   margin-left: 200px;
   background-color: #add8e6;
 }
+.photo-detail {
+  width: 200px;
+  height: 200px;
+}
 
 .no-img {
   margin-left: 200px;

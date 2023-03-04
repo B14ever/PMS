@@ -161,6 +161,7 @@ function Office() {
                         <Td>
                           <div className="table-button">
                             <button
+                              style={{ backgroundColor: "rgb(213, 213, 9)" }}
                               onClick={() => {
                                 navigate("/officeInformation", {
                                   state: { offices: Offices[index] },
