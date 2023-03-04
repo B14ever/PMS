@@ -310,6 +310,38 @@ app.get("/getRareCost", async (req, res) => {
   }
 });
 
+app.get("/getPhoto", async (req, res) => {
+  const { Email } = req.query;
+  const sql = `SELECT Employee_ID FROM users WHERE  Email = ${Email}`;
+  con.query(sql, (err, data) => {
+    const Employe_ID = data[0].Employee_ID;
+    con.query(
+      `SELECT Photo FROM employee WHERE  ID = ${Employe_ID}`,
+      (err, photo) => {
+        return res.send(photo);
+      }
+    );
+  });
+});
+
+app.get("/getEmployeeInfo", async (req, res) => {
+  const { Email } = req.query;
+  const sql = `SELECT Employee_ID FROM users WHERE  Email = ${Email};`;
+  con.query(sql, (err, data) => {
+    const Employe_ID = data[0].Employee_ID;
+    con.query(
+      `SELECT * FROM employee WHERE  ID = ${Employe_ID}`,
+      (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(data);
+        }
+      }
+    );
+  });
+});
+
 app.post("/postNewFixedCost", async (req, res) => {
   const { PropertyType, Mesurment, Quantity, Price, Comment } = req.body;
   const sql = `INSERT INTO issued_property_details (Quantity,Unit_Cost,Property_Issued_ID,IPD_Office_Name,Remark) VALUES ("${Quantity}","${Price}", "${PropertyType}","${Comment}")`;
@@ -578,6 +610,7 @@ app.put("/EditDepartment", (req, res) => {
     }
   });
 });
+
 app.put("/EditEmployee", (req, res) => {
   const {
     id,
