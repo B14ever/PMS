@@ -77,7 +77,13 @@ const Employe = () => {
                     <td>{employe[index].Department}</td>
                     <td>
                       <div className="table-button">
-                        <button>
+                        <button
+                          onClick={() => {
+                            navigate("/editEmployee", {
+                              state: { employe: employe[index] },
+                            });
+                          }}
+                        >
                           <bootstrapIcon.BsFillFileEarmarkCheckFill />
                         </button>
                         <button

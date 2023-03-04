@@ -143,67 +143,65 @@ function NewFixedIncome() {
               </div>
             </div>
           </div>
-          <form action="">
-            <div className="row-2">
-              <div className="roq-2-col-1">
-                <div className="row-input">
-                  <label htmlFor="">{t("PropertyType")}</label>
-                  <input
-                    type="text"
-                    onChange={(e) =>
-                      dispatch({ type: "PropertyType", value: e.target.value })
-                    }
-                  />
-                </div>
-              </div>
-              <div className="row-2-col-2">
-                <div className="row-input">
-                  <label htmlFor="">{t("Mesurment")}</label>
-                  <input
-                    type="text"
-                    onChange={(e) =>
-                      dispatch({ type: "Mesurment", value: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="row-input">
-                  <label htmlFor="">{t("Quantity")}</label>
-                  <input
-                    type="number"
-                    onChange={(e) =>
-                      dispatch({ type: "Quantity", value: e.target.value })
-                    }
-                  />
-                </div>
-              </div>
-              <div className="row-2-col-2">
-                <div className="row-input">
-                  <label htmlFor="">{t("Price")}</label>
-                  <input
-                    type="number"
-                    onChange={(e) =>
-                      dispatch({ type: "Price", value: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="row-input">
-                  <label htmlFor="">{t("Comment")}</label>
-                  <input
-                    type="text"
-                    onChange={(e) =>
-                      dispatch({ type: "Comment", value: e.target.value })
-                    }
-                  />
-                </div>
+          <div className="row-2">
+            <div className="roq-2-col-1">
+              <div className="row-input">
+                <label htmlFor="">{t("PropertyType")}</label>
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    dispatch({ type: "PropertyType", value: e.target.value })
+                  }
+                />
               </div>
             </div>
-            <div className="Add-btn">
-              <button onClick={() => setRows([...rows, data])}>
-                <bootstrapIcon.BsFillCartPlusFill />
-                Add
-              </button>
+            <div className="row-2-col-2">
+              <div className="row-input">
+                <label htmlFor="">{t("Mesurment")}</label>
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    dispatch({ type: "Mesurment", value: e.target.value })
+                  }
+                />
+              </div>
+              <div className="row-input">
+                <label htmlFor="">{t("Quantity")}</label>
+                <input
+                  type="number"
+                  onChange={(e) =>
+                    dispatch({ type: "Quantity", value: e.target.value })
+                  }
+                />
+              </div>
             </div>
-          </form>
+            <div className="row-2-col-2">
+              <div className="row-input">
+                <label htmlFor="">{t("Price")}</label>
+                <input
+                  type="number"
+                  onChange={(e) =>
+                    dispatch({ type: "Price", value: e.target.value })
+                  }
+                />
+              </div>
+              <div className="row-input">
+                <label htmlFor="">{t("Comment")}</label>
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    dispatch({ type: "Comment", value: e.target.value })
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div className="Add-btn">
+            <button onClick={() => setRows([...rows, data])}>
+              <bootstrapIcon.BsFillCartPlusFill />
+              Add
+            </button>
+          </div>
           <div
             className="Table"
             style={{ marginBottom: "1rem", height: "250px" }}

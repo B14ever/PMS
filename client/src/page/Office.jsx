@@ -162,15 +162,6 @@ function Office() {
                           <div className="table-button">
                             <button
                               onClick={() => {
-                                navigate("/editOffice", {
-                                  state: { offices: Offices[index] },
-                                });
-                              }}
-                            >
-                              <bootstrapIcon.BsFillFileEarmarkCheckFill />
-                            </button>
-                            <button
-                              onClick={() => {
                                 navigate("/officeInformation", {
                                   state: { offices: Offices[index] },
                                 });
@@ -178,7 +169,7 @@ function Office() {
                             >
                               <bootstrapIcon.BsFillFileEarmarkPersonFill />
                             </button>
-                            <button>
+                            <button style={{ backgroundColor: "red" }}>
                               <bootstrapIcon.BsTrashFill
                                 onClick={() => {
                                   handelevent(Offices[index].ID);

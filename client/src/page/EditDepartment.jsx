@@ -4,7 +4,6 @@ import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 import Context from "../Context/Contexts";
 import PageHeader from "../Componet/PageTitle";
-import { useGetData } from "../Hook/GetData";
 import usePutData from "../Hook/PutData";
 import styled from "styled-components";
 const Header = styled.div`
@@ -39,10 +38,6 @@ function EditDepartment() {
     url: "http://localhost:5000/EditDepartment",
     Data: data,
   });
-  const [OfficeName] = useGetData("http://localhost:5000/getOfficeName");
-  const [DepartmentsType] = useGetData(
-    "http://localhost:5000/getDepartmentType"
-  );
 
   return (
     <>
