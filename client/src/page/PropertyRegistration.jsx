@@ -64,9 +64,9 @@ function PropertyRegistration() {
     url: "http://localhost:5000/postNewProperty",
     Data: data,
   });
-  useEffect(() => {
-    console.log(data);
-  });
+  // useEffect(() => {
+  //   console.log(data);
+  // });
   return (
     <div>
       <Navbar />

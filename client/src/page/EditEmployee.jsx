@@ -74,7 +74,7 @@ function EditEmployee() {
       <div className="countainer">
         <SideBar />
         <main className="content">
-          <PageHeader Message={[t("NewEmployeeRegistration")]} />
+          <PageHeader Message={[t("EditEmployee")]} />
           <hr />
           <div className="form-countainer">
             <form action="">

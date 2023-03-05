@@ -162,8 +162,10 @@ export const TranslationEn = {
   Store: "Store",
   PropertyList: "Property",
   SerieNumber: "Serial Number",
+  EditEmployee: "Edit Information of Employee",
 };
 export const TranslationAm = {
+  EditEmployee: "የሰራተኛ መረጃን ያርትዑ",
   SerieNumber: "ተከታታይ ቁጥር",
   subClassificationId: "የንዑስ ምደባ መታወቂያ",
   PropertyList: "ንብረት",
@@ -331,6 +333,7 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
+  EditEmployee: "Odeeffannoo Hojjetaa Gulaali",
   SerieNumber: "Lakkoofsa Tartiiba",
   subClassificationId: "Ramaddii xiqqaa Id",
   PropertyList: "Qabeenya",
@@ -493,6 +496,7 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
+  EditEmployee: "ሓበሬታ ሰራሕተኛ ኣርትዕ",
   SerieNumber: "ተኸታታሊ ቁጽሪ",
   subClassificationId: "ንኡስ ምደባ Id",
   PropertyList: "ንብረት",
@@ -652,6 +656,7 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
+  EditEmployee: "Wax ka beddel xogta shaqaalaha",
   SerieNumber: "Nambarada taxan",
   subClassificationId: "Aqoonsiga kala-soocidda-hoosaadka",
   PropertyList: "Hanti",
