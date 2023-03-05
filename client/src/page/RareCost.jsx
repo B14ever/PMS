@@ -37,7 +37,7 @@ const RareCost = () => {
           <div className="content-countainer">
             <PageHeader Message={[t("AccountsPayableReceipt")]} />
             <RegistorButton
-              Message={[t("CreateNew22Model"), "/NewRareItemCost"]}
+              Message={[t("CreateNew22Model1"), "/NewRareItemCost"]}
             />
           </div>
 
