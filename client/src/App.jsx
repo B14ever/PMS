@@ -33,11 +33,13 @@ import UsedPropertyIncome from "./page/UsedPropertyIncome";
 import NewUsedPropertyIncome from "./page/NewUsedPropertyIncome";
 import EditDepartment from "./page/EditDepartment";
 import EditEmployee from "./page/EditEmployee";
-import EditProperty from "./page/EditProperty";
-
 import Profile from "./page/Profile";
 import SubStokeClassDetail from "./page/subStokeClassDetail";
 import MeasurType from "./page/measurTypeDetail";
+import CostAdjustment from "./page/CostAdjustment";
+import IncomeAdjustment from "./page/IncomeAdjustment";
+import UsedPropertyCost from "./page/UsedPropertyCost";
+import NewUsedPropertyCost from "./page/NewUsedPropertyCost";
 const App = () => {
   return (
     <>
@@ -98,15 +100,20 @@ const App = () => {
           <Route path="/RareItemIncome" element={<RareIncome />} />
           <Route path="/NewRareItemIncome" element={<NewRareItemIncome />} />
           <Route path="/UsedProrpertIncome" element={<UsedPropertyIncome />} />
+          <Route path="/UsedPropertyCost" element={<UsedPropertyCost />} />
+          <Route path="/CostAdjustment" element={<CostAdjustment />} />
+          <Route path="/IncomeAdjustment" element={<IncomeAdjustment />} />
           <Route
             path="/NewUsedPropertyIncome"
             element={<NewUsedPropertyIncome />}
           />
+          <Route
+            path="/NewUsedPropertyCost"
+            element={<NewUsedPropertyCost />}/>
           <Route path="/FixedCost" element={<FixedCost />} />
           <Route path="/NewFixedCost" element={<NewFixedCost />} />
           <Route path="/editDepartment" element={<EditDepartment />} />
           <Route path="/editEmployee" element={<EditEmployee />} />
-          <Route path="/editProperty" element={<EditProperty />} />
         </Route>
       </Routes>
     </>
