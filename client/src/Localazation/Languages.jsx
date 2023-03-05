@@ -17,6 +17,7 @@ export const TranslationEn = {
   RegisterdDepartment: "Department List",
   NewDepartmentType: "Add New Departmnet Type",
   RegisterdDepartmentType: "Department List Type",
+  Costadjustment:"Cost adjustment",
   Stock: "Stock",
   Information: "Information",
   Employee: "Employee",
@@ -162,10 +163,8 @@ export const TranslationEn = {
   Store: "Store",
   PropertyList: "Property",
   SerieNumber: "Serial Number",
-  EditEmployee: "Edit Information of Employee",
 };
 export const TranslationAm = {
-  EditEmployee: "የሰራተኛ መረጃን ያርትዑ",
   SerieNumber: "ተከታታይ ቁጥር",
   subClassificationId: "የንዑስ ምደባ መታወቂያ",
   PropertyList: "ንብረት",
@@ -178,6 +177,7 @@ export const TranslationAm = {
   SubName: "አዲስ የንዑስ ስቶክ ምድብ መመዝገቢያ",
   ClassificationId: "የምደባ መታወቂያ",
   Location: "አካባቢ",
+  Costadjustment:"የወጪ ማስተካከያ",
   BuildingNumber: "የግንባታ ቁጥር",
   RoomNumber: "የክፍል ቁጥር",
   OfficeType: "የቢሮ አይነት",
@@ -333,7 +333,6 @@ export const TranslationAm = {
   stokeMeasurment: "መለኪያ",
 };
 export const TranslationOr = {
-  EditEmployee: "Odeeffannoo Hojjetaa Gulaali",
   SerieNumber: "Lakkoofsa Tartiiba",
   subClassificationId: "Ramaddii xiqqaa Id",
   PropertyList: "Qabeenya",
@@ -349,6 +348,7 @@ export const TranslationOr = {
   Location: "Bakka",
   BuildingNumber: "Lakkoofsa Gamoo",
   RoomNumber: "lakkoofsa kutaa",
+  Costadjustment:"Sirreeffama baasii",
   RegisterdDepartmentType: "Gosa Tarree Kutaa Kutaa",
   NewDepartmentType: "Gosa Kutaa Haaraa Dabaluu",
   NewDepartment: "Kutaa Haaraa Dabaluu",
@@ -496,7 +496,6 @@ export const TranslationOr = {
   stokeMeasurment: "Safartuu",
 };
 export const TranslationTi = {
-  EditEmployee: "ሓበሬታ ሰራሕተኛ ኣርትዕ",
   SerieNumber: "ተኸታታሊ ቁጽሪ",
   subClassificationId: "ንኡስ ምደባ Id",
   PropertyList: "ንብረት",
@@ -512,6 +511,7 @@ export const TranslationTi = {
   Location: "ኣንፈት",
   BuildingNumber: "ቁጽሪ ህንጻ",
   RoomNumber: "ቁጽሪ ክፍሊ",
+  Costadjustment:"ምትዕርራይ ወጻኢታት",
   RegisterdDepartmentType: "ዓይነት ዝርዝር ክፍሊ",
   NewDepartmentType: "ሓድሽ ዓይነት ክፍሊ ምውሳኽ",
   NewDepartment: "ሓድሽ ክፍሊ ምውሳኽ",
@@ -656,7 +656,6 @@ export const TranslationTi = {
 };
 
 export const TranslationSo = {
-  EditEmployee: "Wax ka beddel xogta shaqaalaha",
   SerieNumber: "Nambarada taxan",
   subClassificationId: "Aqoonsiga kala-soocidda-hoosaadka",
   PropertyList: "Hanti",
@@ -672,6 +671,7 @@ export const TranslationSo = {
   Location: "Goobta",
   BuildingNumber: "Nambarka Dhismaha",
   RoomNumber: "lambarka qolka",
+  Costadjustment:"Kordhinta qiimaha",
   RegisterdDepartmentType: "Nooca Liiska Waaxda",
   NewDepartmentType: "Kudar Nooca Waaxda Cusub",
   NewDepartment: "Kudar Waaxda Cusub",
