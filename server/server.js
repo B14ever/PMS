@@ -636,5 +636,63 @@ app.put("/EditEmployee", (req, res) => {
     }
   });
 });
+app.put("/EditProperty", (req, res) => {
+  const {
+    id,
+    Propertycategory,
+    PropertySubcategory,
+    PropertyType,
+    Model,
+    ShelfNumber,
+    Mesurment,
+    ItemType,
+    Price,
+    MinValue,
+    MaxValue,
+    ExpireDate,
+    Photo,
+    Describtion,
+  } = req.body;
+  console.log(req.body);
+  const sql = `UPDATE property SET Classification_ID = "${Propertycategory}",Sub_Classification_ID = "${PropertySubcategory}",Last_Name = "${LastName}" ,Sex = "${Gender}" , Job_Title = "${WorkPostionName}",Phone = "${PhoneNumber}",Email = "${Email}",Moblie = "${Mobile}",Address = "${Address}" ,Department = "${CostCenterName}",Photo = "${Photo}",Location = "${WorkPlaceName}"  WHERE ID = ${id}`;
+  con.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success, Edited");
+    }
+  });
+});
+const sql = `INSERT INTO property (First_Name,Middle_Name,Last_Name,Sex,Job_Title,Phone,Email,Moblie,Address,Department,Photo,Location) VALUES ("${Propertycategory}","${PropertySubcategory}","${PropertyType}","${Model}","${ShelfNumber}","${Mesurment}","${ItemType}","${Price}","${MinValue}","${MaxValue}","${ExpireDate}","${Photo}","${Describtion}")`;
+con.query(sql, (err, responce) => {
+  if (err) throw err;
+  console.log("succsful");
+});
+ID,
+  Code,
+  Name,
+  Description,
+  Serie,
+  Model,
+  Category,
+  Unit,
+  Reorder_Level,
+  Target_Lavel,
+  Unit_Price,
+  Store,
+  Attachment,
+  Property_Type,
+  Classification_ID,
+  Sub_Classification_ID,
+  Shelf_Number,
+  Fixed_Classification_Code,
+  Fixed_Sub_Classification_Code,
+  Budget_Source_Code,
+  Location_Code,
+  Fixed_Code,
+  Bureau_Code,
+  Department_Code,
+  Registered_Date,
+  Expire_Date;
 
 app.listen(5000);
