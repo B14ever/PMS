@@ -124,10 +124,8 @@ const MeasurmentType = () => {
                         <td>{MeasurType[index].Unit}</td>
                         <td>
                           <div className="table-button">
-                            <button>
-                              <bootstrapIcon.BsFillFileEarmarkCheckFill />
-                            </button>
                             <button
+                              style={{ backgroundColor: "rgb(223, 223, 29)" }}
                               onClick={() => {
                                 navigate("/measurTypeInformation", {
                                   state: { measurment: MeasurType[index] },
@@ -138,6 +136,7 @@ const MeasurmentType = () => {
                             </button>
 
                             <button
+                              style={{ backgroundColor: "red" }}
                               onClick={() => {
                                 handelevent(MeasurType[index].ID);
                               }}

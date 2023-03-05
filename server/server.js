@@ -458,7 +458,8 @@ app.post("/postNewProperty", (req, res) => {
     Describtion,
   } = req.body;
   console.log(req.body);
-  const sql = `INSERT INTO property (First_Name,Middle_Name,Last_Name,Sex,Job_Title,Phone,Email,Moblie,Address,Department,Photo,Location) VALUES ("${Propertycategory}","${PropertySubcategory}","${PropertyType}","${Model}","${ShelfNumber}","${Mesurment}","${ItemType}","${Price}","${MinValue}","${MaxValue}","${ExpireDate}","${Photo}","${Describtion}")`;
+  const sql = `INSERT INTO property (Classification_ID,Sub_Classification_ID,Property_Type, Model,Shelf_Number, Unit,Category,Unit_Price,Reorder_Level,Target_Lavel, Expire_Date ,Attachment, Description)
+   VALUES ("${Propertycategory}","${PropertySubcategory}","${PropertyType}","${Model}","${ShelfNumber}","${Mesurment}","${ItemType}","${Price}","${MinValue}","${MaxValue}","${ExpireDate}","${Photo}","${Describtion}")`;
   con.query(sql, (err, responce) => {
     if (err) throw err;
     console.log("succsful");
@@ -653,8 +654,7 @@ app.put("/EditProperty", (req, res) => {
     Photo,
     Describtion,
   } = req.body;
-  console.log(req.body);
-  const sql = `UPDATE property SET Classification_ID = "${Propertycategory}",Sub_Classification_ID = "${PropertySubcategory}",Last_Name = "${LastName}" ,Sex = "${Gender}" , Job_Title = "${WorkPostionName}",Phone = "${PhoneNumber}",Email = "${Email}",Moblie = "${Mobile}",Address = "${Address}" ,Department = "${CostCenterName}",Photo = "${Photo}",Location = "${WorkPlaceName}"  WHERE ID = ${id}`;
+  const sql = `UPDATE property SET Classification_ID = "${Propertycategory}", Sub_Classification_ID = "${PropertySubcategory}", Property_Type = "${PropertyType}" , Model = "${Model}" , Shelf_Number = "${ShelfNumber}",Unit = "${Mesurment}",Fixed_Classification_Code = "${ItemType}",Unit_Price = "${Price}", Reorder_Level = "${MinValue}" ,Target_Lavel = "${MaxValue}", Attachment = "${Photo}", Expire_Date = "${ExpireDate}",Description = "${Describtion}"  WHERE ID = ${id};`;
   con.query(sql, (err, data) => {
     if (err) {
       console.log(err);
@@ -663,36 +663,5 @@ app.put("/EditProperty", (req, res) => {
     }
   });
 });
-const sql = `INSERT INTO property (First_Name,Middle_Name,Last_Name,Sex,Job_Title,Phone,Email,Moblie,Address,Department,Photo,Location) VALUES ("${Propertycategory}","${PropertySubcategory}","${PropertyType}","${Model}","${ShelfNumber}","${Mesurment}","${ItemType}","${Price}","${MinValue}","${MaxValue}","${ExpireDate}","${Photo}","${Describtion}")`;
-con.query(sql, (err, responce) => {
-  if (err) throw err;
-  console.log("succsful");
-});
-ID,
-  Code,
-  Name,
-  Description,
-  Serie,
-  Model,
-  Category,
-  Unit,
-  Reorder_Level,
-  Target_Lavel,
-  Unit_Price,
-  Store,
-  Attachment,
-  Property_Type,
-  Classification_ID,
-  Sub_Classification_ID,
-  Shelf_Number,
-  Fixed_Classification_Code,
-  Fixed_Sub_Classification_Code,
-  Budget_Source_Code,
-  Location_Code,
-  Fixed_Code,
-  Bureau_Code,
-  Department_Code,
-  Registered_Date,
-  Expire_Date;
 
 app.listen(5000);
