@@ -37,7 +37,7 @@ const UsedPropertyCost = () => {
           <div className="content-countainer">
             <PageHeader Message={[t("AccountsPayableReceipt2")]} />
             <RegistorButton
-              Message={[t("CreateNew22ሐModel"), "/NewUsedPropertyCost"]}
+              Message={[t("CreateNew22Model2"), "/NewUsedPropertyCost"]}
             />
           </div>
 
