@@ -574,7 +574,6 @@ export const TranslationTi = {
   Company: "ምምሕዳር ድሬዳዋ",
   Software: "ስርዓት ምሕደራ ንብረት",
   LNG: "ቋንቋ",
-  Stock: "Stock",
   Information: "ሓበሬታ",
   Employee: "ሰራሕተኛ",
   pro: "ንብረት",
