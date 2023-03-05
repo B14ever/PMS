@@ -64,7 +64,13 @@ const PropertyInventory = () => {
                     <td>{Property[index].Property_Type}</td>
                     <td>
                       <div className="table-button">
-                        <button>
+                        <button
+                          onClick={() => {
+                            navigate("/editProperty", {
+                              state: { Property: Property[index] },
+                            });
+                          }}
+                        >
                           <bootstrapIcon.BsFillFileEarmarkCheckFill />
                         </button>
                         <button

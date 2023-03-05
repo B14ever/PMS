@@ -33,6 +33,7 @@ import UsedPropertyIncome from "./page/UsedPropertyIncome";
 import NewUsedPropertyIncome from "./page/NewUsedPropertyIncome";
 import EditDepartment from "./page/EditDepartment";
 import EditEmployee from "./page/EditEmployee";
+import EditProperty from "./page/EditProperty";
 
 import Profile from "./page/Profile";
 import SubStokeClassDetail from "./page/subStokeClassDetail";
@@ -105,6 +106,7 @@ const App = () => {
           <Route path="/NewFixedCost" element={<NewFixedCost />} />
           <Route path="/editDepartment" element={<EditDepartment />} />
           <Route path="/editEmployee" element={<EditEmployee />} />
+          <Route path="/editProperty" element={<EditProperty />} />
         </Route>
       </Routes>
     </>
