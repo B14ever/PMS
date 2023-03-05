@@ -91,11 +91,21 @@ function NewFixedIncome() {
               <div className="col-2f">
                 <div className="input-control">
                   <label htmlFor="Model">{t("Model")}</label>
-                  <input type="text" placeholder={t("Model19U")} disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    placeholder={t("Model19U")}
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Code")}</label>
-                  <input type="text" placeholder="######" disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    placeholder="######"
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Treasuryexpert">{t("Treasuryexpert")}</label>
@@ -114,6 +124,7 @@ function NewFixedIncome() {
                 <div className="input-control">
                   <label htmlFor="Model">{t("CostType")}</label>
                   <input
+                    style={{ backgroundColor: "black" }}
                     type="text"
                     placeholder={t("FixedAssetCosting")}
                     disabled
@@ -121,7 +132,12 @@ function NewFixedIncome() {
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Date")}</label>
-                  <input type="text" value={date} disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    value={date}
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("reciver")}</label>

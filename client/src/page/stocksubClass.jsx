@@ -169,10 +169,8 @@ const SubClassification = () => {
                         <td>{subClass[index].Classification_ID}</td>
                         <td>
                           <div className="table-button">
-                            <button>
-                              <bootstrapIcon.BsFillFileEarmarkCheckFill />
-                            </button>
                             <button
+                              style={{ backgroundColor: "rgb(223, 223, 29)" }}
                               onClick={() => {
                                 navigate("/substokeClassInfo", {
                                   state: { subStoke: subClass[index] },
@@ -183,6 +181,7 @@ const SubClassification = () => {
                             </button>
 
                             <button
+                              style={{ backgroundColor: "red" }}
                               onClick={() => {
                                 handelevent(subClass[index].ID);
                               }}

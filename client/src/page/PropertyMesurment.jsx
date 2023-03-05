@@ -169,11 +169,8 @@ const PropertyMesurment = () => {
                           <td>{propertymeas[index].Type}</td>
                           <td>
                             <div className="table-button">
-                              <button>
-                                <bootstrapIcon.BsFillFileEarmarkCheckFill />
-                              </button>
-
                               <button
+                                style={{ backgroundColor: "rgb(223, 223, 29)" }}
                                 onClick={() => {
                                   navigate("/detailInformation", {
                                     state: { property: propertymeas[index] },
@@ -184,6 +181,7 @@ const PropertyMesurment = () => {
                               </button>
 
                               <button
+                                style={{ backgroundColor: "red" }}
                                 onClick={() => {
                                   handelevent(propertymeas[index].ID);
                                 }}

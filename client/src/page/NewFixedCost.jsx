@@ -92,11 +92,21 @@ function NewFixedCost() {
               <div className="col-2f">
                 <div className="input-control">
                   <label htmlFor="Model">{t("Model")}</label>
-                  <input type="text" placeholder={t("Model22U")} disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    placeholder={t("Model22U")}
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Code")}</label>
-                  <input type="text" placeholder="######" disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    placeholder="######"
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Treasuryexpert">{t("Treasuryexpert")}</label>
@@ -115,6 +125,7 @@ function NewFixedCost() {
                 <div className="input-control">
                   <label htmlFor="Model">{t("CostType")}</label>
                   <input
+                    style={{ backgroundColor: "black" }}
                     type="text"
                     placeholder={t("FixedAssetCosting")}
                     disabled
@@ -122,7 +133,12 @@ function NewFixedCost() {
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Date")}</label>
-                  <input type="text" value={date} disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    value={date}
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("reciver")}</label>

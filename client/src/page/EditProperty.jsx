@@ -156,6 +156,7 @@ function EditProperty() {
                   <div className="input-control">
                     <label htmlFor="PropertyCode">{t("PropertyCode")}</label>
                     <input
+                      style={{ backgroundColor: "black" }}
                       type="text"
                       placeholder={t("PropertyCode")}
                       id="PropertyCode"
@@ -340,15 +341,15 @@ function EditProperty() {
                   </div>
                 </div>
               </form>
-              <button
-                className="back-btn"
-                onClick={() => {
-                  navigate(-1);
-                }}
-              >
-                {t("back")}
-              </button>
             </div>
+            <button
+              className="back-btn"
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              {t("back")}
+            </button>
           </main>
         </div>
       </div>
