@@ -36,7 +36,7 @@ const reducer = (currentState, action) => {
   }
   return currentState;
 };
-function NewFixedIncome() {
+function CostAdjustment() {
   const [data, dispatch] = useReducer(reducer, intialstate);
   const [rows, setRows] = useState([]);
   const getContext = useContext(Context);
@@ -256,4 +256,4 @@ function NewFixedIncome() {
   );
 }
 
-export default NewFixedIncome;
+export default CostAdjustment;
