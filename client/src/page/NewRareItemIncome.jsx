@@ -8,13 +8,14 @@ import usePostData from "../Hook/PostData";
 import * as bootstrapIcon from "react-icons/bs";
 import SubmitButton from "../Componet/SubmitButton";
 const intialstate = {
-  CostCenter: [],
-  PropertyType: [],
-  reciver: [],
-  Quantity: [],
-  Comment: [],
-  Treasuryexpert: [],
-  Price: [],
+  CostCenter: "",
+  PropertyType: "",
+  Mesurment: "",
+  reciver: "",
+  Quantity: "",
+  Comment: "",
+  Treasuryexpert: "",
+  Price: "",
 };
 
 const reducer = (currentState, action) => {
@@ -23,6 +24,8 @@ const reducer = (currentState, action) => {
       return { ...currentState, CostCenter: action.value };
     case "PropertyType":
       return { ...currentState, PropertyType: action.value };
+    case "Mesurment":
+      return { ...currentState, Mesurment: action.value };
     case "reciver":
       return { ...currentState, reciver: action.value };
     case "Quantity":
@@ -240,8 +243,8 @@ function NewRareItemIncome() {
                   return (
                     <tr key={index}>
                       <td>{index + 1}</td>
-                      <td>{rows[index].CostCenter}</td>
                       <td>{rows[index].PropertyType}</td>
+                      <td>{rows[index].Mesurment}</td>
                       <td>{rows[index].Quantity}</td>
                       <td>{rows[index].Comment}</td>
                       <td>{rows[index].Price}</td>

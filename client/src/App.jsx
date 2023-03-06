@@ -33,6 +33,7 @@ import UsedPropertyIncome from "./page/UsedPropertyIncome";
 import NewUsedPropertyIncome from "./page/NewUsedPropertyIncome";
 import EditDepartment from "./page/EditDepartment";
 import EditEmployee from "./page/EditEmployee";
+import EditProperty from "./page/EditProperty";
 import Profile from "./page/Profile";
 import SubStokeClassDetail from "./page/subStokeClassDetail";
 import MeasurType from "./page/measurTypeDetail";
@@ -40,6 +41,7 @@ import CostAdjustment from "./page/CostAdjustment";
 import IncomeAdjustment from "./page/IncomeAdjustment";
 import UsedPropertyCost from "./page/UsedPropertyCost";
 import NewUsedPropertyCost from "./page/NewUsedPropertyCost";
+import Receipt from "./page/Reciept";
 const App = () => {
   return (
     <>
@@ -49,19 +51,20 @@ const App = () => {
         <Route element={<RequireAuth Autherazetion={["Employee", "Admin"]} />}>
           <Route path="/home" element={<Home />} />
           <Route path="/Vehiclelist" element={<VechleList />} />
-          <Route path="/NewVechiles" element={<NewVecheles />} />
-          <Route path="/Department" element={<Department />} />
-        </Route>
-        <Route element={<RequireAuth Autherazetion={["Admin"]} />}>
           <Route path="/employe" element={<Employe />}></Route>
-          <Route path="/newEmployee" element={<NewEmployee />}></Route>
-          <Route path="/PropertyI" element={<PropertyRegistration />}></Route>
+          <Route path="/Department" element={<Department />} />
           <Route
             path="/Propertyinventory"
             element={<PropertyInventory />}
           ></Route>
-          <Route path="/PropertyInformation" element={<PropertyInfo />}></Route>
+        </Route>
+        <Route element={<RequireAuth Autherazetion={["Admin"]} />}>
+          <Route path="/newEmployee" element={<NewEmployee />}></Route>
+          <Route path="/NewVechiles" element={<NewVecheles />} />
+          <Route path="/PropertyI" element={<PropertyRegistration />}></Route>
 
+          <Route path="/PropertyInformation" element={<PropertyInfo />}></Route>
+          <Route path="/generateReceipt" element={<Receipt />}></Route>
           <Route path="/Office" element={<Office />}></Route>
           <Route path="/Departmenttype" element={<DepartmentType />} />
           <Route
@@ -109,11 +112,13 @@ const App = () => {
           />
           <Route
             path="/NewUsedPropertyCost"
-            element={<NewUsedPropertyCost />}/>
+            element={<NewUsedPropertyCost />}
+          />
           <Route path="/FixedCost" element={<FixedCost />} />
           <Route path="/NewFixedCost" element={<NewFixedCost />} />
           <Route path="/editDepartment" element={<EditDepartment />} />
           <Route path="/editEmployee" element={<EditEmployee />} />
+          <Route path="/editProperty" element={<EditProperty />} />
         </Route>
       </Routes>
     </>

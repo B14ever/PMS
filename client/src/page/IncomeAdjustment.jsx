@@ -91,11 +91,21 @@ function IncomeAdjustment() {
               <div className="col-2f">
                 <div className="input-control">
                   <label htmlFor="Model">{t("Model")}</label>
-                  <input type="text" placeholder={t("Model19መ")} disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    placeholder={t("Model22መ")}
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Code")}</label>
-                  <input type="text" placeholder="######" disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    placeholder="######"
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Treasuryexpert">{t("Treasuryexpert")}</label>
@@ -114,6 +124,7 @@ function IncomeAdjustment() {
                 <div className="input-control">
                   <label htmlFor="Model">{t("CostType")}</label>
                   <input
+                    style={{ backgroundColor: "black" }}
                     type="text"
                     placeholder={t("Cost adjustment")}
                     disabled
@@ -121,7 +132,12 @@ function IncomeAdjustment() {
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("Date")}</label>
-                  <input type="text" value={date} disabled />
+                  <input
+                    style={{ backgroundColor: "black" }}
+                    type="text"
+                    value={date}
+                    disabled
+                  />
                 </div>
                 <div className="input-control">
                   <label htmlFor="Model">{t("reciver")}</label>

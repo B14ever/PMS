@@ -1,58 +1,15 @@
-import React, { useState, useContext, useEffect, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import photo from "../image/images.jpg";
+import Context from "../Context/Contexts";
 import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
-import Context from "../Context/Contexts";
-import photo from "../image/images.jpg";
-import { useGetData } from "../Hook/GetData";
-import usePostData from "../Hook/PostData";
-import * as bootstrapIcon from "react-icons/bs";
-import SubmitButton from "../Componet/SubmitButton";
-const intialstate = {
-  CostCenter: "",
-  PropertyType: "",
-  Mesurment: "",
-  reciver: "",
-  Quantity: "",
-  Comment: "",
-  Treasuryexpert: "",
-  Price: "",
-};
-
-const reducer = (currentState, action) => {
-  switch (action.type) {
-    case "CostCenter":
-      return { ...currentState, CostCenter: action.value };
-    case "PropertyType":
-      return { ...currentState, PropertyType: action.value };
-    case "Mesurment":
-      return { ...currentState, Mesurment: action.value };
-    case "reciver":
-      return { ...currentState, reciver: action.value };
-    case "Quantity":
-      return { ...currentState, Quantity: action.value };
-    case "Price":
-      return { ...currentState, Price: action.value };
-    case "Comment":
-      return { ...currentState, Comment: action.value };
-    case "Treasuryexpert":
-      return { ...currentState, Treasuryexpert: action.value };
-  }
-  return currentState;
-};
-function NewFixedIncome() {
-  const navigate = useNavigate();
-  const [data, dispatch] = useReducer(reducer, intialstate);
-  const [rows, setRows] = useState([]);
+function Receipt() {
+  const { location } = useLocation;
+  const { row } = location || [];
   const getContext = useContext(Context);
+  // const [rows, setRows] = useState([]);
   const { t, find, date } = getContext;
-  const [Employe] = useGetData(
-    `http://localhost:5000/serachEmployee?find=${find}`
-  );
-  const [res, HandleSubmit] = usePostData({
-    url: "http://localhost:5000/postNewFixedIncome",
-    Data: data,
-  });
   const TableHeading = [
     t("Order"),
     t("PropertyType"),
@@ -60,13 +17,14 @@ function NewFixedIncome() {
     t("Quantity"),
     t("Price"),
     t("Comment"),
-    t("Action"),
   ];
-
   return (
     <>
       <Navbar />
-      <div className="countainer">
+      <div
+        className="countainer"
+        style={{ backgroundColor: "rgb(244, 244, 172)" }}
+      >
         <SideBar />
         <main className="content">
           <div className="row-1">
@@ -80,15 +38,14 @@ function NewFixedIncome() {
                 <div className="input-control">
                   <label htmlFor="Model">{t("CostCenter")}</label>
                   <input
+                    style={{ backgroundColor: "black" }}
                     type="text"
                     lis="CostCenters"
                     onChange={(e) =>
                       dispatch({ type: "CostCenter", value: e.target.value })
                     }
+                    disabled
                   />
-                  {/* <details>
-               
-                </details> */}
                 </div>
               </div>
             </div>
@@ -112,7 +69,7 @@ function NewFixedIncome() {
                     disabled
                   />
                 </div>
-                <div className="input-control">
+                {/* <div className="input-control">
                   <label htmlFor="Treasuryexpert">{t("Treasuryexpert")}</label>
                   <input
                     type="text"
@@ -123,7 +80,7 @@ function NewFixedIncome() {
                       })
                     }
                   />
-                </div>
+                </div> */}
               </div>
               <div className="col-2f">
                 <div className="input-control">
@@ -144,7 +101,7 @@ function NewFixedIncome() {
                     disabled
                   />
                 </div>
-                <div className="input-control">
+                {/* <div className="input-control">
                   <label htmlFor="Model">{t("reciver")}</label>
                   <input
                     type="text"
@@ -160,11 +117,11 @@ function NewFixedIncome() {
                       );
                     })}
                   </datalist>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
-          <div className="row-2">
+          {/* <div className="row-2">
             <div className="roq-2-col-1">
               <div className="row-input">
                 <label htmlFor="">{t("PropertyType")}</label>
@@ -216,13 +173,13 @@ function NewFixedIncome() {
                 />
               </div>
             </div>
-          </div>
-          <div className="Add-btn">
+          </div> */}
+          {/* <div className="Add-btn">
             <button onClick={() => setRows([...rows, data])}>
               <bootstrapIcon.BsFillCartPlusFill />
               Add
             </button>
-          </div>
+          </div> */}
           <div
             className="Table"
             style={{ marginBottom: "1rem", height: "250px" }}
@@ -238,16 +195,16 @@ function NewFixedIncome() {
                 </tr>
               </thead>
               <tbody>
-                {rows?.map((row, index) => {
+                {row?.map((rows, index) => {
                   return (
                     <tr key={index}>
                       <td>{index + 1}</td>
-                      <td>{rows[index].PropertyType}</td>
-                      <td>{rows[index].Mesurment}</td>
-                      <td>{rows[index].Quantity}</td>
-                      <td>{rows[index].Comment}</td>
-                      <td>{rows[index].Price}</td>
-                      <td>
+                      <td>{row[index].PropertyType}</td>
+                      <td>{row[index].Mesurment}</td>
+                      <td>{row[index].Quantity}</td>
+                      <td>{row[index].Comment}</td>
+                      <td>{row[index].Price}</td>
+                      {/* <td>
                         <button
                           style={{ background: "red", float: "right" }}
                           onClick={() =>
@@ -257,38 +214,16 @@ function NewFixedIncome() {
                           {" "}
                           Delete
                         </button>
-                      </td>
+                      </td> */}
                     </tr>
                   );
                 })}
               </tbody>
             </table>
           </div>
-          {rows.length ? (
-            <button
-              style={{
-                alignContent: "right",
-                borderStyle: "none",
-                width: "100px",
-                height: "45px",
-                color: "white",
-                backgroundColor: "gray",
-                borderRadius: "15px",
-                fontWeight: "bold",
-                fontSize: "20px",
-              }}
-              onClick={() => {
-                navigate("/generateReceipt", { state: { row: rows } });
-                // HandleSubmit;
-              }}
-            >
-              Save
-            </button>
-          ) : null}
         </main>
       </div>
     </>
   );
 }
-
-export default NewFixedIncome;
+export default Receipt;

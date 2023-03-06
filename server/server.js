@@ -193,6 +193,13 @@ app.get("/getPropClass", async (req, res) => {
     });
   }
 });
+app.get("/serachEmployee", async (req, res) => {
+  const { find } = req.query;
+  const sql = `SELECT First_Name FROM employee WHERE First_Name LIKE '%${find}%' `;
+  con.query(sql, (err, data) => {
+    if (data.length > 0) res.send(data);
+  });
+});
 app.get("/getSubClass", async (req, res) => {
   const { find } = req.query;
   if (find) {
