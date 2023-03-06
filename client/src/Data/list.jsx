@@ -56,12 +56,6 @@ export const MiddleSideBarList = [
         iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,
         classfication: [
           {
-            id: 1,
-            name: "OrganizationIstitution",
-            path: "/OrganizationIstitution",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-          {
             id: 2,
             name: "Property",
             path: "/Propertyinventory",
@@ -155,28 +149,6 @@ export const MiddleSideBarList = [
     svg: <IconName.FaCoins className="sidebar-icon" />,
     submenu: [
       {
-        id: 1,
-        name: "InformationRegister",
-        svg: <IoEllipsisVerticalSharp className="sidebar-icon" />,
-        iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,
-        classfication: [
-          {
-            id: 1,
-            name: "CategorySource",
-            Title: "Model 19ሀ",
-            path: "/CategorySourceFunding",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-          {
-            id: 2,
-            name: "IdentificationNumber",
-            Title: "Model 19ለ",
-            path: "/IdentificationNumber",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-        ],
-      },
-      {
         id: 2,
         name: "PropertyInventory",
         svg: <IoEllipsisVerticalSharp className="sidebar-icon" />,
@@ -187,49 +159,6 @@ export const MiddleSideBarList = [
             name: "InventoryFixedAssets",
             Title: "Model 19ሀ",
             path: "/PropertyInventory",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-        ],
-      },
-      {
-        id: 3,
-        name: "Report",
-        svg: <IoEllipsisVerticalSharp className="sidebar-icon" />,
-        iconClosed: <RiIcons.RiArrowDownSFill className="sidebar-icon" />,
-        classfication: [
-          {
-            id: 1,
-            name: "FAOU",
-            Title: "Model 19ሀ",
-            path: "/FixedAssetsOfUsers",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-          {
-            id: 2,
-            name: "FAOUIC",
-            Title: "Model 19ሀ",
-            path: "/FixedAssetsOfUsersIAndC",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-          {
-            id: 3,
-            name: "FAOUC",
-            Title: "Model 19ሀ",
-            path: "/InventoryUsersProperty",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-          {
-            id: 4,
-            name: "FAOUS",
-            Title: "Model 19ሀ",
-            path: "/FixedAssetDiscountRate",
-            svg: <IoEnterOutline className="sidebar-icon" />,
-          },
-          {
-            id: 5,
-            name: "FAOUM",
-            Title: "Model 19ሀ",
-            path: "/FixedAssetAccountReport",
             svg: <IoEnterOutline className="sidebar-icon" />,
           },
         ],

@@ -6,9 +6,34 @@ import SideBar from "../Componet/sidebar";
 import Navbar from "../Componet/navbar";
 function Receipt() {
   const { location } = useLocation;
-  const { row } = location || [];
+  // const { row } = location || [];
   const getContext = useContext(Context);
-  // const [rows, setRows] = useState([]);
+  const [row, setRows] = useState([
+    {
+      id: 1,
+      name: "ብእር",
+      unit: "በቁጥር",
+      amount: 2,
+      price: 10,
+      comme: "ቢክ ቀይ",
+    },
+    {
+      id: 1,
+      name: "ብእር",
+      unit: "በቁጥር",
+      amount: 2,
+      price: 10,
+      comme: "ቢክ ቀይ",
+    },
+    {
+      id: 1,
+      name: "ብእር",
+      unit: "በቁጥር",
+      amount: 2,
+      price: 10,
+      comme: "ቢክ ቀይ",
+    },
+  ]);
   const { t, find, date } = getContext;
   const TableHeading = [
     t("Order"),
@@ -26,6 +51,7 @@ function Receipt() {
         style={{ backgroundColor: "rgb(244, 244, 172)" }}
       >
         <SideBar />
+
         <main className="content">
           <div className="row-1">
             <div className="col-1">
@@ -195,15 +221,16 @@ function Receipt() {
                 </tr>
               </thead>
               <tbody>
-                {row?.map((rows, index) => {
+                {/* {rows?.map((rowss, index) => { */}
+                {row.map((rows) => {
                   return (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{row[index].PropertyType}</td>
-                      <td>{row[index].Mesurment}</td>
-                      <td>{row[index].Quantity}</td>
-                      <td>{row[index].Comment}</td>
-                      <td>{row[index].Price}</td>
+                    <tr style={{ height: "30px" }}>
+                      <td>{rows.id}</td>
+                      <td>{rows.name}</td>
+                      <td>{rows.unit}</td>
+                      <td>{rows.price}</td>
+                      <td>{rows.amount}</td>
+                      <td>{rows.comme}</td>
                       {/* <td>
                         <button
                           style={{ background: "red", float: "right" }}
