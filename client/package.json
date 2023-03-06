@@ -23,6 +23,7 @@
     "react-icons": "^4.7.1",
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.6.1",
+    "react-to-print": "^2.14.12",
     "sass": "^1.58.0",
     "styled-components": "^5.3.6",
     "sweetalert2": "^11.7.1",
