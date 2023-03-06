@@ -168,6 +168,7 @@ function EditProperty() {
                       {t("IdentityNumber")}
                     </label>
                     <input
+                      style={{ backgroundColor: "black" }}
                       type="text"
                       id="IdentityNumber"
                       placeholder={t("IdentityNumber")}

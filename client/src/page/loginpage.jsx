@@ -60,16 +60,16 @@ const Login = () => {
                   {""}
                   <Typical
                     loop={Infinity}
-                    steps={["WellcomeToPMS", 500, "LoginPlease", 500]}
+                    steps={[t("WellcomeToPMS"), 500, t("LoginPlease"), 500]}
                   />
                 </h1>
               </div>
             </div>
             <div className="form__field">
-              <label className="form__label">UserName</label>
+              <label className="form__label">{t("UserName")}</label>
               <input
                 className="form__input"
-                placeholder="User Name"
+                placeholder={t("UserName")}
                 ref={emailRef}
                 type="email"
                 name="email"
@@ -81,10 +81,10 @@ const Login = () => {
               <span>{emailError ? emailError : ""}</span>
             </div>
             <div className="form__field">
-              <label className="form__label">Password</label>
+              <label className="form__label">{t("Password")}</label>
               <input
                 className="form__input"
-                placeholder="Password"
+                placeholder={t("Password")}
                 ref={passRef}
                 type="password"
                 name="pwd"
