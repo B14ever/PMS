@@ -42,6 +42,7 @@ import IncomeAdjustment from "./page/IncomeAdjustment";
 import UsedPropertyCost from "./page/UsedPropertyCost";
 import NewUsedPropertyCost from "./page/NewUsedPropertyCost";
 import Receipt from "./page/Reciept";
+import Organazation from "./page/Organazation";
 const App = () => {
   return (
     <>
@@ -119,6 +120,7 @@ const App = () => {
           <Route path="/editDepartment" element={<EditDepartment />} />
           <Route path="/editEmployee" element={<EditEmployee />} />
           <Route path="/editProperty" element={<EditProperty />} />
+          <Route path="/Organazation" element={<Organazation />} />
         </Route>
       </Routes>
     </>
